@@ -10,7 +10,7 @@ namespace Egypt_National_Library
 {
     public class DBManager
     {
-        static string DB_Connection_String = @"";
+        static string DB_Connection_String = @"Data Source=MARSHAL-MOAMEN\MOAMENDB;Initial Catalog=Egypt National Library;Integrated Security=True";
         SqlConnection myConnection;
 
         public DBManager()

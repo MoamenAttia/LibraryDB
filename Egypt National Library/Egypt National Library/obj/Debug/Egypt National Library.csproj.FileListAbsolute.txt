@@ -17,3 +17,21 @@ C:\Users\Moamen Hassan\Desktop\Egypt National Library\Egypt National Library\obj
 C:\Users\Moamen Hassan\Desktop\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_User_Form.resources
 C:\Users\Moamen Hassan\Desktop\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Sections_Form.resources
 C:\Users\Moamen Hassan\Desktop\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Computer_Form.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\bin\Debug\Egypt National Library.exe.config
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\bin\Debug\Egypt National Library.exe
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\bin\Debug\Egypt National Library.pdb
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.csprojResolveAssemblyReference.cache
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Book_Form.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Computer_Form.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Employee_Form.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Musical_Instrument_Form.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Sections_Form.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Story_Form.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_User_Form.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Login_Form.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Properties.Resources.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.SignUp_Form.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.User_Form.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.csproj.GenerateResource.Cache
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.exe
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.pdb
