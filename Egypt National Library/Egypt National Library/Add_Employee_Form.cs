@@ -12,9 +12,11 @@ namespace Egypt_National_Library
 {
     public partial class Add_Employee_Form : Form
     {
+        Controller Controller_OBJ;
         public Add_Employee_Form()
         {
             InitializeComponent();
+            Controller_OBJ = new Controller();
         }
 
         private void Browse_Image_Click(object sender, EventArgs e)
@@ -33,6 +35,11 @@ namespace Egypt_National_Library
         private void Return_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Add_Button_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -35,3 +35,4 @@ C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National L
 C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.csproj.GenerateResource.Cache
 C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.exe
 C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.pdb
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Library_Department_Form.resources

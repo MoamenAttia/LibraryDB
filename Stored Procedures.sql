@@ -93,3 +93,45 @@ Begin
 			   values ( @Story_ID , @Story_Name , @Sroty_Price , @recently_read , @Story_Type , @Story_Dep , @Story_User_ID , @Story_Image );
 End
 GO
+
+Create Procedure spGetBooks
+As
+Begin
+	Select * From Book;
+End
+GO
+
+Create Procedure spGetStories
+As
+Begin
+	Select * From Story;
+End
+GO
+
+Create Procedure spGetBookSec
+As
+Begin
+	Select * From Book_Section;
+End
+GO
+
+Create Procedure spGetStorySec
+As
+Begin
+	Select * From Story_Section;
+End
+GO
+
+Create Procedure spGetLibDepartments
+As
+Begin
+	Select * From Library_Department;
+End
+GO
+
+Create Procedure spGetEmployees
+As
+Begin
+	Select * From Employee;
+End
+GO

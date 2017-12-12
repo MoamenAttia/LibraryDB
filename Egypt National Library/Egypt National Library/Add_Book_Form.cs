@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,14 @@ namespace Egypt_National_Library
         private void Return_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Add_Button_Click(object sender, EventArgs e)
+        {
+            MemoryStream ms = new MemoryStream();
+            PictureBox.Image.Save(ms, PictureBox.Image.RawFormat);
+            byte[] Image = ms.ToArray();
+        
         }
     }
 }

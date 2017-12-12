@@ -62,6 +62,12 @@
     <Compile Include="Add_Employee_Form.Designer.cs">
       <DependentUpon>Add_Employee_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Add_Library_Department_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Library_Department_Form.Designer.cs">
+      <DependentUpon>Add_Library_Department_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Add_Musical_Instrument_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Add_Employee_Form.resx">
       <DependentUpon>Add_Employee_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Library_Department_Form.resx">
+      <DependentUpon>Add_Library_Department_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Add_Musical_Instrument_Form.resx">
       <DependentUpon>Add_Musical_Instrument_Form.cs</DependentUpon>

@@ -207,6 +207,7 @@
             this.Add_Button.TabIndex = 64;
             this.Add_Button.Text = "Add Employee";
             this.Add_Button.UseVisualStyleBackColor = true;
+            this.Add_Button.Click += new System.EventHandler(this.Add_Button_Click);
             // 
             // panel3
             // 
