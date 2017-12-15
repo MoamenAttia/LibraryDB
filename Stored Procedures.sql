@@ -10,20 +10,21 @@ Create Procedure spAddEmployee
 @Password nvarchar(10),
 @Age int,
 @JobTitle nvarchar(50),
+@Needs nvarchar(max),
 @Address nvarchar(50),
 @Manager_ID int,
 @Employee_Image image
 As
 Begin 
-	Insert Into Employee (Fname,Mname,Lname,Salary,Emp_ID,[Password],Age,Job_Title,[Address],Manager_ID,Employee_Image) values (@Fname,@MName,@LName,@Salary,@Emp_ID,@Password,@Age,@JobTitle,@Address,@Manager_ID,@Employee_Image);
+	Insert Into Employee (Fname,Mname,Lname,Salary,Emp_ID,[Password],Age,Job_Title,Needs,[Address],Manager_ID,Employee_Image) values (@Fname,@MName,@LName,@Salary,@Emp_ID,@Password,@Age,@JobTitle,@Needs,@Address,@Manager_ID,@Employee_Image);
 End
 GO
 
 Create procedure spAddLibDep
 @Lib_Dep_ID int,
 @Lib_Dep_Name nvarchar(30),
-@Construction_Date date,
-@Services_Can_Provide nvarchar(50),
+@Construction_Date nvarchar(10),
+@Services_Can_Provide nvarchar(max),
 @Available_Seats int,
 @Supervisor_ID int
 As
@@ -48,22 +49,18 @@ Create Procedure spAddBook
 @Author_MName nvarchar(30),
 @Author_LName nvarchar(30),
 @Book_ID int,
-@Book_Rate int,
-@Release_Date date,
+@Release_Date nvarchar(10),
 @Book_Name nvarchar(30),
 @price int,
 @publisher nvarchar(30),
-@Book_Status nvarchar(10),
-@Time_To_Be_Deliver date,
-@Kind_Of_Use nvarchar(20),
-@Book_User_ID int,
+@Book_Status nvarchar(20),
 @Book_Type nvarchar(30),
 @Book_Dep int,
 @Book_Image image
 As
 Begin
-	Insert Into Book( Author_FName , Author_MName , Author_LName , Book_ID , Book_Rate , Release_Date , Book_Name , price , publisher , Book_Status , Time_To_Be_Deliver , Kind_Of_Use , Book_User_ID , Book_Type , Book_Dep , Book_Image) 
-	values ( @Author_FName , @Author_MName , @Author_LName , @Book_ID , @Book_Rate , @Release_Date , @Book_Name , @price , @publisher , @Book_Status , @Time_To_Be_Deliver , @Kind_Of_Use , @Book_User_ID , @Book_Type , @Book_Dep , @Book_Image  );
+	Insert Into Book( Author_FName , Author_MName , Author_LName , Book_ID  , Release_Date , Book_Name , price , publisher , Book_Status  , Book_Type , Book_Dep , Book_Image) 
+	values ( @Author_FName , @Author_MName , @Author_LName , @Book_ID   , @Release_Date , @Book_Name , @price , @publisher , @Book_Status  , @Book_Type , @Book_Dep , @Book_Image  );
 End
 GO
 
@@ -135,3 +132,29 @@ Begin
 	Select * From Employee;
 End
 GO
+
+Create Procedure spGetBook_Image
+@Book_ID int,
+@Book_Type nvarchar(30),
+@Book_Dep int
+As
+Begin
+	Select Book_Image 
+	From Book 
+	where 
+		Book_ID = @Book_ID And
+		Book_Type =  @Book_Type And
+		Book_Dep = @Book_Dep
+End
+GO
+
+Create Procedure spGetEmployee_Image
+@Emp_ID int
+As
+Begin
+	Select Employee_Image 
+	From Employee
+	where Emp_ID = @Emp_ID
+End
+GO
+

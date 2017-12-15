@@ -1,6 +1,6 @@
-Create database Library
+Create database [Egypt National Library]
 GO
-use Library
+use [Egypt National Library]
 ------------Table Creation-----------------
 create table Employee
 (
@@ -12,7 +12,7 @@ Emp_ID int primary key,
 Password nvarchar(10) not null,
 Age int,
 Job_Title nvarchar(50) not null,
-Needs nvarchar(50),
+Needs nvarchar(max),
 Address nvarchar(50),
 Manager_ID int foreign key references Employee(Emp_Id),
 Employee_Image image,
@@ -22,8 +22,8 @@ create table Library_Department
 (
 Lib_Dep_ID int primary key,
 Lib_Dep_Name nvarchar (30),
-Construction_Date date not null,
-Services_Can_Provide nvarchar (50) not null,
+Construction_Date nvarchar(10) not null,
+Services_Can_Provide nvarchar (max) not null,
 Available_Seats int not null,
 Supervisor_ID int foreign key references Employee(Emp_ID)
 );
@@ -74,7 +74,6 @@ Primary key(Book_Sec_Name,Book_Lib_Dep_ID)
 );
 
 
-
 create table Story
 (
 Story_ID int,
@@ -88,7 +87,6 @@ Story_Image image,
 foreign key(Story_Type,Story_Dep) references Story_Section(Story_Sec_Name,Story_Lib_Dep_ID),
 Primary key (Story_ID,Story_Type,Story_Dep)
 );
-
 
 
 create table Musical_Instrument
@@ -137,13 +135,12 @@ Author_MName nvarchar(30) not null,
 Author_LName nvarchar(30) not null,
 Book_ID int,
 Book_Rate int,
-Release_Date date,
+Release_Date nvarchar(10),
 Book_Name nvarchar(30) not null,
 price int not null,
 publisher nvarchar(30) not null,
-Book_Status nvarchar(10) not null,--kind of use
-Time_To_Be_Deliver date,
-Kind_Of_Use nvarchar(20) not null,
+Book_Status nvarchar(20) not null,--kind of use
+Time_To_Be_Deliver nvarchar(10),
 Book_User_ID int foreign key references [User]( User_ID),
 Book_Type nvarchar(30),
 Book_Dep int ,

@@ -37,7 +37,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,7 +47,6 @@
             this.AuthorMName = new System.Windows.Forms.TextBox();
             this.AuthorLName = new System.Windows.Forms.TextBox();
             this.Book_ID = new System.Windows.Forms.TextBox();
-            this.Release_Date = new System.Windows.Forms.TextBox();
             this.Book_Name = new System.Windows.Forms.TextBox();
             this.Price = new System.Windows.Forms.TextBox();
             this.Publisher = new System.Windows.Forms.TextBox();
@@ -57,6 +55,13 @@
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.Browse_Image = new System.Windows.Forms.Button();
             this.Return = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.DayTextbox = new System.Windows.Forms.TextBox();
+            this.MonthTextbox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.YearTextbox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
@@ -65,7 +70,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(256, 340);
+            this.label15.Location = new System.Drawing.Point(256, 297);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(92, 23);
             this.label15.TabIndex = 18;
@@ -74,7 +79,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(256, 383);
+            this.label14.Location = new System.Drawing.Point(256, 340);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(167, 23);
             this.label14.TabIndex = 19;
@@ -83,7 +88,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(256, 435);
+            this.label13.Location = new System.Drawing.Point(256, 388);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(168, 23);
             this.label13.TabIndex = 20;
@@ -123,7 +128,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(256, 303);
+            this.label8.Location = new System.Drawing.Point(256, 260);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 23);
             this.label8.TabIndex = 17;
@@ -132,20 +137,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(256, 261);
+            this.label7.Location = new System.Drawing.Point(256, 218);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(123, 23);
             this.label7.TabIndex = 16;
             this.label7.Text = "Book_Name";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(256, 220);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(137, 23);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Release_Date";
             // 
             // label5
             // 
@@ -185,16 +181,17 @@
             // 
             // AuthorFName
             // 
+            this.AuthorFName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.AuthorFName.ForeColor = System.Drawing.Color.DarkSalmon;
             this.AuthorFName.Location = new System.Drawing.Point(435, 47);
             this.AuthorFName.Name = "AuthorFName";
-            this.AuthorFName.Size = new System.Drawing.Size(161, 31);
+            this.AuthorFName.Size = new System.Drawing.Size(203, 31);
             this.AuthorFName.TabIndex = 10;
             // 
             // Add_Button
             // 
             this.Add_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Add_Button.Location = new System.Drawing.Point(328, 493);
+            this.Add_Button.Location = new System.Drawing.Point(327, 537);
             this.Add_Button.Name = "Add_Button";
             this.Add_Button.Size = new System.Drawing.Size(199, 45);
             this.Add_Button.TabIndex = 9;
@@ -208,79 +205,79 @@
             this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelheader.Location = new System.Drawing.Point(0, 0);
             this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(686, 35);
+            this.panelheader.Size = new System.Drawing.Size(677, 35);
             this.panelheader.TabIndex = 7;
             // 
             // AuthorMName
             // 
+            this.AuthorMName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.AuthorMName.ForeColor = System.Drawing.Color.DarkSalmon;
             this.AuthorMName.Location = new System.Drawing.Point(435, 86);
             this.AuthorMName.Name = "AuthorMName";
-            this.AuthorMName.Size = new System.Drawing.Size(161, 31);
+            this.AuthorMName.Size = new System.Drawing.Size(203, 31);
             this.AuthorMName.TabIndex = 24;
             // 
             // AuthorLName
             // 
+            this.AuthorLName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.AuthorLName.ForeColor = System.Drawing.Color.DarkSalmon;
             this.AuthorLName.Location = new System.Drawing.Point(435, 127);
             this.AuthorLName.Name = "AuthorLName";
-            this.AuthorLName.Size = new System.Drawing.Size(161, 31);
+            this.AuthorLName.Size = new System.Drawing.Size(203, 31);
             this.AuthorLName.TabIndex = 25;
             // 
             // Book_ID
             // 
+            this.Book_ID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Book_ID.ForeColor = System.Drawing.Color.DarkSalmon;
             this.Book_ID.Location = new System.Drawing.Point(435, 168);
             this.Book_ID.Name = "Book_ID";
-            this.Book_ID.Size = new System.Drawing.Size(161, 31);
+            this.Book_ID.Size = new System.Drawing.Size(203, 31);
             this.Book_ID.TabIndex = 26;
-            // 
-            // Release_Date
-            // 
-            this.Release_Date.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Release_Date.Location = new System.Drawing.Point(435, 212);
-            this.Release_Date.Name = "Release_Date";
-            this.Release_Date.Size = new System.Drawing.Size(161, 31);
-            this.Release_Date.TabIndex = 27;
             // 
             // Book_Name
             // 
+            this.Book_Name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Book_Name.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Book_Name.Location = new System.Drawing.Point(435, 253);
+            this.Book_Name.Location = new System.Drawing.Point(435, 210);
             this.Book_Name.Name = "Book_Name";
-            this.Book_Name.Size = new System.Drawing.Size(161, 31);
+            this.Book_Name.Size = new System.Drawing.Size(203, 31);
             this.Book_Name.TabIndex = 28;
             // 
             // Price
             // 
+            this.Price.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Price.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Price.Location = new System.Drawing.Point(435, 295);
+            this.Price.Location = new System.Drawing.Point(435, 252);
             this.Price.Name = "Price";
-            this.Price.Size = new System.Drawing.Size(161, 31);
+            this.Price.Size = new System.Drawing.Size(203, 31);
             this.Price.TabIndex = 29;
             // 
             // Publisher
             // 
+            this.Publisher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Publisher.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Publisher.Location = new System.Drawing.Point(435, 337);
+            this.Publisher.Location = new System.Drawing.Point(435, 294);
             this.Publisher.Name = "Publisher";
-            this.Publisher.Size = new System.Drawing.Size(161, 31);
+            this.Publisher.Size = new System.Drawing.Size(203, 31);
             this.Publisher.TabIndex = 30;
             // 
             // Book_Sec_Name
             // 
+            this.Book_Sec_Name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Book_Sec_Name.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Book_Sec_Name.Location = new System.Drawing.Point(435, 383);
+            this.Book_Sec_Name.Location = new System.Drawing.Point(435, 340);
             this.Book_Sec_Name.Name = "Book_Sec_Name";
-            this.Book_Sec_Name.Size = new System.Drawing.Size(161, 31);
+            this.Book_Sec_Name.Size = new System.Drawing.Size(203, 31);
             this.Book_Sec_Name.TabIndex = 31;
             // 
             // Book_Lib_Dep_ID
             // 
+            this.Book_Lib_Dep_ID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Book_Lib_Dep_ID.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Book_Lib_Dep_ID.Location = new System.Drawing.Point(435, 427);
+            this.Book_Lib_Dep_ID.Location = new System.Drawing.Point(435, 384);
             this.Book_Lib_Dep_ID.Name = "Book_Lib_Dep_ID";
-            this.Book_Lib_Dep_ID.Size = new System.Drawing.Size(161, 31);
+            this.Book_Lib_Dep_ID.Size = new System.Drawing.Size(203, 31);
             this.Book_Lib_Dep_ID.TabIndex = 32;
             // 
             // PictureBox
@@ -306,7 +303,7 @@
             // Return
             // 
             this.Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Return.Location = new System.Drawing.Point(579, 516);
+            this.Return.Location = new System.Drawing.Point(578, 569);
             this.Return.Name = "Return";
             this.Return.Size = new System.Drawing.Size(85, 45);
             this.Return.TabIndex = 35;
@@ -314,12 +311,82 @@
             this.Return.UseVisualStyleBackColor = true;
             this.Return.Click += new System.EventHandler(this.Return_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(256, 434);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(155, 23);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Release_Date :-";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(256, 477);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 23);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Day";
+            // 
+            // DayTextbox
+            // 
+            this.DayTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.DayTextbox.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.DayTextbox.Location = new System.Drawing.Point(309, 474);
+            this.DayTextbox.Name = "DayTextbox";
+            this.DayTextbox.Size = new System.Drawing.Size(51, 31);
+            this.DayTextbox.TabIndex = 39;
+            // 
+            // MonthTextbox
+            // 
+            this.MonthTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.MonthTextbox.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.MonthTextbox.Location = new System.Drawing.Point(440, 474);
+            this.MonthTextbox.Name = "MonthTextbox";
+            this.MonthTextbox.Size = new System.Drawing.Size(69, 31);
+            this.MonthTextbox.TabIndex = 41;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(372, 477);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(67, 23);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "Month";
+            // 
+            // YearTextbox
+            // 
+            this.YearTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.YearTextbox.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.YearTextbox.Location = new System.Drawing.Point(569, 474);
+            this.YearTextbox.Name = "YearTextbox";
+            this.YearTextbox.Size = new System.Drawing.Size(69, 31);
+            this.YearTextbox.TabIndex = 43;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(515, 477);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 23);
+            this.label11.TabIndex = 42;
+            this.label11.Text = "Year";
+            // 
             // Add_Book_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.ClientSize = new System.Drawing.Size(686, 573);
+            this.ClientSize = new System.Drawing.Size(677, 626);
+            this.Controls.Add(this.YearTextbox);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.MonthTextbox);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.DayTextbox);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.Return);
             this.Controls.Add(this.Browse_Image);
             this.Controls.Add(this.PictureBox);
@@ -328,7 +395,6 @@
             this.Controls.Add(this.Publisher);
             this.Controls.Add(this.Price);
             this.Controls.Add(this.Book_Name);
-            this.Controls.Add(this.Release_Date);
             this.Controls.Add(this.Book_ID);
             this.Controls.Add(this.AuthorLName);
             this.Controls.Add(this.AuthorMName);
@@ -337,7 +403,6 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -373,7 +438,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -384,7 +448,6 @@
         private System.Windows.Forms.TextBox AuthorMName;
         private System.Windows.Forms.TextBox AuthorLName;
         private System.Windows.Forms.TextBox Book_ID;
-        private System.Windows.Forms.TextBox Release_Date;
         private System.Windows.Forms.TextBox Book_Name;
         private System.Windows.Forms.TextBox Price;
         private System.Windows.Forms.TextBox Publisher;
@@ -393,6 +456,12 @@
         private System.Windows.Forms.PictureBox PictureBox;
         private System.Windows.Forms.Button Browse_Image;
         private System.Windows.Forms.Button Return;
-
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox DayTextbox;
+        private System.Windows.Forms.TextBox MonthTextbox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox YearTextbox;
+        private System.Windows.Forms.Label label11;
     }
 }

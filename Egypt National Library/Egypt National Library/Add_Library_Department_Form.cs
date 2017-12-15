@@ -12,6 +12,7 @@ namespace Egypt_National_Library
 {
     public partial class Add_Library_Department_Form : Form
     {
+       // int[] Validation = new int[7];  //ID,Dep_Name,Day,Month,Year,AvailableSeats,SupervisorID
         Controller Controller_OBJ;
         public Add_Library_Department_Form()
         {
@@ -21,17 +22,15 @@ namespace Egypt_National_Library
 
         private void Add_Library_Dep_Click(object sender, EventArgs e)
         {
-            DateTime Construction_Date = new DateTime(2000, 1, 1);
-            Construction_Date =Construction_Date.AddDays(DayCombobox.SelectedIndex);
-            Construction_Date=Construction_Date.AddMonths(MonthcomboBox.SelectedIndex+1);
-            Construction_Date=Construction_Date.AddYears(int.Parse(YearComboBox.Text) - 2000);
-
-            int Success = Controller_OBJ.Add_Library_Department(int.Parse(Lib_Dep_ID.Text), Lib_Dep_Name.Text, Construction_Date, Services_Can_Provide.Text, int.Parse(Available_Seats.Text), int.Parse(Supervisor_ID.Text));
+            int Year = CheckYearValidation(); int Month = CheckMonthValidation(); int Day = CheckDayValidation();
+            int ID = Check_IDValidation(); int Supervisor_ID = Check_IDValidation(); int AvailableSeats = CheckAvailableSeatsValidation();
+            if (Year == 0 || Day == 0 || Month == 0 || ID == 0 || Supervisor_ID == 0 || AvailableSeats == 0) { return; }
+            string Construction_Date = Day.ToString() + "/" + Month.ToString() + "/" + Year.ToString();
+            int Success = Controller_OBJ.Add_Library_Department(ID, Lib_Dep_Name.Text, Construction_Date, Services_Can_Provide.Text,AvailableSeats, Supervisor_ID);
             if (Success == 0)
-                MessageBox.Show("Failed To Add A new Library Departmen", "Informaion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               MessageBox.Show("Failed To Add A new Library Department", "Informaion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("A new Library Department has been added Successfully", "Informaion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+               MessageBox.Show("A New Library Department has been added Successfully", "Informaion", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Return_Click(object sender, EventArgs e)
@@ -41,19 +40,53 @@ namespace Egypt_National_Library
 
         private void Add_Library_Department_Form_Load(object sender, EventArgs e)
         {
-            string[] Days = new string[30];
-            for (int i = 0; i < 30; ++i)
-                Days[i] = (i + 1).ToString();
-
-            string[] Years = new string[30];
-            for (int i = 0; i < 30; ++i)
-                Years[i] = (1980 + i).ToString();
-
-            string[] Months = new string[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
-
-            DayCombobox.Items.AddRange(Days);
-            MonthcomboBox.Items.AddRange(Months);
-            YearComboBox.Items.AddRange(Years);
+            
         }
+        private int CheckYearValidation()
+        {
+            int Year = 0;
+            try { Year = int.Parse(YearTextbox.Text); }
+            catch(Exception Ex) { MessageBox.Show("Please Sir , Add A valid Year", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
+            if (Year > 2018)
+            { MessageBox.Show("Please Sir , Add A valid Year", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
+            return Year;
+        }
+        private int CheckDayValidation()
+        {
+            int Day = 0;
+            try { Day = int.Parse(DayTextbox.Text); }
+            catch (Exception Ex) { MessageBox.Show("Please Sir , Add A valid Day", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
+            if (Day > 31 || Day < 1)
+            { MessageBox.Show("Please Sir , Add A valid Day", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
+            return Day;
+        }
+        private int CheckMonthValidation()
+        {
+            int Month = 0;
+            try { Month = int.Parse(MonthTextbox.Text); }
+            catch (Exception Ex) { MessageBox.Show("Please Sir , Add A valid Month", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
+            if (Month > 12 || Month < 1)
+            { MessageBox.Show("Please Sir , Add A valid Month", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
+            return Month;
+        }
+        private int Check_IDValidation()
+        {
+            int ID = 0;
+            try { ID = int.Parse(Lib_Dep_ID.Text); }
+            catch (Exception Ex) { MessageBox.Show("Please Sir , Add A valid ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
+            if (ID < 1)
+            { MessageBox.Show("Please Sir , Add A valid ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
+            return ID;
+        }
+        private int CheckAvailableSeatsValidation()
+        {
+            int AvailableSeats = 0;
+            try { AvailableSeats = int.Parse(Available_Seats.Text); }
+            catch (Exception Ex) { MessageBox.Show("Please Sir , Add A valid Num For Seats", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
+            if (AvailableSeats < 1)
+            { MessageBox.Show("Please Sir , Add A valid Num For Seats", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
+            return AvailableSeats;
+        }
+        
     }
 }
