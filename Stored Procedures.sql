@@ -94,7 +94,7 @@ GO
 Create Procedure spGetBooks
 As
 Begin
-	Select * From Book;
+	Select * from Book
 End
 GO
 

@@ -28,7 +28,7 @@ namespace Egypt_National_Library
         private void Browse_Image_Click(object sender, EventArgs e)
         {
             OpenFileDialog OpenFileDialogobj = new OpenFileDialog();
-            OpenFileDialogobj.Filter = "Images | *.jpg; *.png";
+            OpenFileDialogobj.Filter = "Images | *.jpg; *.png; *.jpeg";
             if (OpenFileDialogobj.ShowDialog() == DialogResult.OK)
                 PictureBox.Image = Image.FromFile(OpenFileDialogobj.FileName);
         }
