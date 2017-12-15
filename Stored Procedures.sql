@@ -79,15 +79,13 @@ Create Procedure spAddStory
 @Story_ID int,
 @Story_Name nvarchar(50),
 @Sroty_Price int ,
-@recently_read int ,
 @Story_Type nvarchar(30),
 @Story_Dep int ,
-@Story_User_ID int ,
 @Story_Image image
 As
 Begin
-	Insert Into Story ( Story_ID , Story_Name , Sroty_Price , recently_read , Story_Type , Story_Dep , Story_User_ID , Story_Image )
-			   values ( @Story_ID , @Story_Name , @Sroty_Price , @recently_read , @Story_Type , @Story_Dep , @Story_User_ID , @Story_Image );
+	Insert Into Story ( Story_ID , Story_Name , Sroty_Price  , Story_Type , Story_Dep  , Story_Image,recently_read )
+			   values ( @Story_ID , @Story_Name , @Sroty_Price , @Story_Type , @Story_Dep , @Story_Image ,0);
 End
 GO
 

@@ -23,10 +23,10 @@ namespace Egypt_National_Library
         private void Add_Library_Dep_Click(object sender, EventArgs e)
         {
             int Year = CheckYearValidation(); int Month = CheckMonthValidation(); int Day = CheckDayValidation();
-            int ID = Check_IDValidation(); int Supervisor_ID = Check_IDValidation(); int AvailableSeats = CheckAvailableSeatsValidation();
-            if (Year == 0 || Day == 0 || Month == 0 || ID == 0 || Supervisor_ID == 0 || AvailableSeats == 0) { return; }
+            int ID = Check_IDValidation(Lib_Dep_ID); int Supervisor_id = Check_IDValidation(Supervisor_ID); int AvailableSeats = CheckAvailableSeatsValidation();
+            if (Year == 0 || Day == 0 || Month == 0 || ID == 0 || Supervisor_id == 0 || AvailableSeats == 0) { return; }
             string Construction_Date = Day.ToString() + "/" + Month.ToString() + "/" + Year.ToString();
-            int Success = Controller_OBJ.Add_Library_Department(ID, Lib_Dep_Name.Text, Construction_Date, Services_Can_Provide.Text,AvailableSeats, Supervisor_ID);
+            int Success = Controller_OBJ.Add_Library_Department(ID, Lib_Dep_Name.Text, Construction_Date, Services_Can_Provide.Text,AvailableSeats, Supervisor_id);
             if (Success == 0)
                MessageBox.Show("Failed To Add A new Library Department", "Informaion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
@@ -69,10 +69,10 @@ namespace Egypt_National_Library
             { MessageBox.Show("Please Sir , Add A valid Month", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
             return Month;
         }
-        private int Check_IDValidation()
+        private int Check_IDValidation(Control Textbox)
         {
             int ID = 0;
-            try { ID = int.Parse(Lib_Dep_ID.Text); }
+            try { ID = int.Parse(Textbox.Text); }
             catch (Exception Ex) { MessageBox.Show("Please Sir , Add A valid ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
             if (ID < 1)
             { MessageBox.Show("Please Sir , Add A valid ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }

@@ -32,13 +32,11 @@
             this.Return = new System.Windows.Forms.Button();
             this.Browse_Image = new System.Windows.Forms.Button();
             this.PictureBox = new System.Windows.Forms.PictureBox();
-            this.Book_Lib_Dep_ID = new System.Windows.Forms.TextBox();
-            this.Book_Sec_Name = new System.Windows.Forms.TextBox();
+            this.Story_Sec_Name = new System.Windows.Forms.TextBox();
             this.Price = new System.Windows.Forms.TextBox();
             this.Story_Name = new System.Windows.Forms.TextBox();
             this.Story_ID = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,6 +45,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Add_Button = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Story_Dep = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -85,24 +85,18 @@
             this.PictureBox.TabIndex = 59;
             this.PictureBox.TabStop = false;
             // 
-            // Book_Lib_Dep_ID
+            // Story_Sec_Name
             // 
-            this.Book_Lib_Dep_ID.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Book_Lib_Dep_ID.Location = new System.Drawing.Point(436, 239);
-            this.Book_Lib_Dep_ID.Name = "Book_Lib_Dep_ID";
-            this.Book_Lib_Dep_ID.Size = new System.Drawing.Size(161, 31);
-            this.Book_Lib_Dep_ID.TabIndex = 58;
-            // 
-            // Book_Sec_Name
-            // 
-            this.Book_Sec_Name.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Book_Sec_Name.Location = new System.Drawing.Point(436, 195);
-            this.Book_Sec_Name.Name = "Book_Sec_Name";
-            this.Book_Sec_Name.Size = new System.Drawing.Size(161, 31);
-            this.Book_Sec_Name.TabIndex = 57;
+            this.Story_Sec_Name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.Story_Sec_Name.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.Story_Sec_Name.Location = new System.Drawing.Point(436, 195);
+            this.Story_Sec_Name.Name = "Story_Sec_Name";
+            this.Story_Sec_Name.Size = new System.Drawing.Size(161, 31);
+            this.Story_Sec_Name.TabIndex = 58;
             // 
             // Price
             // 
+            this.Price.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Price.ForeColor = System.Drawing.Color.DarkSalmon;
             this.Price.Location = new System.Drawing.Point(436, 149);
             this.Price.Name = "Price";
@@ -111,6 +105,7 @@
             // 
             // Story_Name
             // 
+            this.Story_Name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Story_Name.ForeColor = System.Drawing.Color.DarkSalmon;
             this.Story_Name.Location = new System.Drawing.Point(436, 107);
             this.Story_Name.Name = "Story_Name";
@@ -119,6 +114,7 @@
             // 
             // Story_ID
             // 
+            this.Story_ID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Story_ID.ForeColor = System.Drawing.Color.DarkSalmon;
             this.Story_ID.Location = new System.Drawing.Point(436, 60);
             this.Story_ID.Name = "Story_ID";
@@ -129,21 +125,11 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label13.Location = new System.Drawing.Point(257, 242);
+            this.label13.Location = new System.Drawing.Point(257, 198);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(109, 23);
             this.label13.TabIndex = 49;
             this.label13.Text = "Story_Type";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label14.Location = new System.Drawing.Point(257, 195);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(103, 23);
-            this.label14.TabIndex = 48;
-            this.label14.Text = "Story_Dep";
             // 
             // label8
             // 
@@ -215,6 +201,7 @@
             this.Add_Button.TabIndex = 38;
             this.Add_Button.Text = "Add Story";
             this.Add_Button.UseVisualStyleBackColor = true;
+            this.Add_Button.Click += new System.EventHandler(this.Add_Button_Click);
             // 
             // panel3
             // 
@@ -226,22 +213,41 @@
             this.panel3.Size = new System.Drawing.Size(184, 194);
             this.panel3.TabIndex = 37;
             // 
+            // Story_Dep
+            // 
+            this.Story_Dep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.Story_Dep.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.Story_Dep.Location = new System.Drawing.Point(436, 238);
+            this.Story_Dep.Name = "Story_Dep";
+            this.Story_Dep.Size = new System.Drawing.Size(161, 31);
+            this.Story_Dep.TabIndex = 63;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.label14.Location = new System.Drawing.Point(257, 238);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(103, 23);
+            this.label14.TabIndex = 62;
+            this.label14.Text = "Story_Dep";
+            // 
             // Add_Story_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.ClientSize = new System.Drawing.Size(678, 537);
+            this.Controls.Add(this.Story_Dep);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.Return);
             this.Controls.Add(this.Browse_Image);
             this.Controls.Add(this.PictureBox);
-            this.Controls.Add(this.Book_Lib_Dep_ID);
-            this.Controls.Add(this.Book_Sec_Name);
+            this.Controls.Add(this.Story_Sec_Name);
             this.Controls.Add(this.Price);
             this.Controls.Add(this.Story_Name);
             this.Controls.Add(this.Story_ID);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -268,13 +274,11 @@
         private System.Windows.Forms.Button Return;
         private System.Windows.Forms.Button Browse_Image;
         private System.Windows.Forms.PictureBox PictureBox;
-        private System.Windows.Forms.TextBox Book_Lib_Dep_ID;
-        private System.Windows.Forms.TextBox Book_Sec_Name;
+        private System.Windows.Forms.TextBox Story_Sec_Name;
         private System.Windows.Forms.TextBox Price;
         private System.Windows.Forms.TextBox Story_Name;
         private System.Windows.Forms.TextBox Story_ID;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
@@ -283,5 +287,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Add_Button;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox Story_Dep;
+        private System.Windows.Forms.Label label14;
     }
 }

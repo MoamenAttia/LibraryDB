@@ -31,7 +31,15 @@ namespace Egypt_National_Library
                 MessageBox.Show("Failed To Add A new Book Section", "Informaion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("A new Book Section has been added Successfully", "Informaion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
+        private void Add_Story_Section_Click(object sender, EventArgs e)
+        {
+            int Success = Controller_OBJ.Add_StorySection(StorySecName.Text, int.Parse(No_Stories.Text), int.Parse(Lib_Dep_ID.Text));
+            if (Success == 0)
+                MessageBox.Show("Failed To Add A new Novel Section", "Informaion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("A New Novel Section has been added Successfully", "Informaion", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

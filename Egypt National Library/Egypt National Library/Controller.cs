@@ -70,5 +70,26 @@ namespace Egypt_National_Library
 
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
+        public int Add_StorySection(string Sec_Name,int No_Stories,int Lib_DepID )
+        {
+            string StoredProcedureName = StoredProcedures.AddStorySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Story_Sec_Name", Sec_Name);
+            Parameters.Add("@No_Of_Stories", No_Stories);
+            Parameters.Add("@Story_Lib_Dep_ID", Lib_DepID);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int Add_Story(int Story_ID,string Story_Name,int price,string Story_Type,int Story_Dep,byte[] Story_Image)
+        {
+            string StoredProcedureName = StoredProcedures.AddStory;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Story_ID", Story_ID);
+            Parameters.Add("@Story_Name", Story_Name);
+            Parameters.Add("@Sroty_Price", price);
+            Parameters.Add("@Story_Type", Story_Type);
+            Parameters.Add("@Story_Dep", Story_Dep);
+            Parameters.Add("@Story_Image", Story_Image);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
     }
 }

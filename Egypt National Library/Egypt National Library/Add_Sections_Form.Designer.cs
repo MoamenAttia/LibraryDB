@@ -129,6 +129,7 @@
             this.Add_Story_Section.TabIndex = 64;
             this.Add_Story_Section.Text = "Add Story Section";
             this.Add_Story_Section.UseVisualStyleBackColor = true;
+            this.Add_Story_Section.Click += new System.EventHandler(this.Add_Story_Section_Click);
             // 
             // label1
             // 
