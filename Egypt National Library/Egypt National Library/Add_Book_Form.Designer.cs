@@ -288,6 +288,7 @@
             this.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox.TabIndex = 33;
             this.PictureBox.TabStop = false;
+            this.PictureBox.Click += new System.EventHandler(this.PictureBox_Click);
             // 
             // Browse_Image
             // 

@@ -48,8 +48,11 @@
             this.Software = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Add_Software = new System.Windows.Forms.Button();
+            this.Browse_Image = new System.Windows.Forms.Button();
+            this.PictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // Return
@@ -194,6 +197,7 @@
             this.Add_Computer.TabIndex = 64;
             this.Add_Computer.Text = "Add Computer";
             this.Add_Computer.UseVisualStyleBackColor = true;
+            this.Add_Computer.Click += new System.EventHandler(this.Add_Computer_Click);
             // 
             // panel3
             // 
@@ -234,12 +238,35 @@
             this.Add_Software.Text = "Add Software";
             this.Add_Software.UseVisualStyleBackColor = true;
             // 
+            // Browse_Image
+            // 
+            this.Browse_Image.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Browse_Image.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.Browse_Image.Location = new System.Drawing.Point(22, 420);
+            this.Browse_Image.Name = "Browse_Image";
+            this.Browse_Image.Size = new System.Drawing.Size(184, 43);
+            this.Browse_Image.TabIndex = 84;
+            this.Browse_Image.Text = "Browse Image";
+            this.Browse_Image.UseVisualStyleBackColor = true;
+            this.Browse_Image.Click += new System.EventHandler(this.Browse_Image_Click);
+            // 
+            // PictureBox
+            // 
+            this.PictureBox.Location = new System.Drawing.Point(22, 238);
+            this.PictureBox.Name = "PictureBox";
+            this.PictureBox.Size = new System.Drawing.Size(184, 161);
+            this.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBox.TabIndex = 83;
+            this.PictureBox.TabStop = false;
+            // 
             // Add_Computer_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.ClientSize = new System.Drawing.Size(636, 509);
+            this.Controls.Add(this.Browse_Image);
+            this.Controls.Add(this.PictureBox);
             this.Controls.Add(this.Add_Software);
             this.Controls.Add(this.Software);
             this.Controls.Add(this.label2);
@@ -268,6 +295,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,5 +322,7 @@
         private System.Windows.Forms.TextBox Software;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Add_Software;
+        private System.Windows.Forms.Button Browse_Image;
+        private System.Windows.Forms.PictureBox PictureBox;
     }
 }

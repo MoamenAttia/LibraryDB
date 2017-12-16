@@ -24,6 +24,14 @@ namespace Egypt_National_Library
         public static string GetEmployee_Image = "spGetEmployee_Image";
         public static string Update_Instrument_Image = "spUpdate_Instrument_Image";
         public static string Add_Instrument = "spAdd_Instrument";
-
+        public static string GetBookAvSeats = "spGetBookDepAvailableSeats";
+        public static string GetStoryAvSeats = "spGetStoryDepAvailableSeats";
+        public static string GetMusicAvSeats = "spGetMusicDepAvailableSeates";
+        public static string GetCmpAvSeats = "spGetComputerDepAvailableSeates";
+        public static string GetSpecificBooks = "spGetSpecificBooks";
+        public static string GetSpecificStories = "spGetSpecificStories";
+        public static string GetSpecificInstruments = "spGetSpecificInstruments";
+        public static string GetSpecificComputers = "spGetSpecificComputers";
+        public static string UpdateComputerImage = "spUpdateComputerImage";
     }
 }

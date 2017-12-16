@@ -104,5 +104,10 @@ namespace Egypt_National_Library
             { MessageBox.Show("Please Sir , Add A valid Price", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
             return price;
         }
+
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

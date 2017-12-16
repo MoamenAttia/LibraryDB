@@ -60,13 +60,13 @@ namespace Egypt_National_Library
             Parameters.Add("@Book_Image", Book_Image);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
-        public DataTable GetBook_Image()
+        public DataTable GetBook_Image(int id , string type,int libdep)
         {
             string StoredProcedureName = StoredProcedures.GetBook_Image;
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
-            Parameters.Add("@Book_ID", 1);
-            Parameters.Add("@Book_Type", "History");
-            Parameters.Add("@Book_Dep", 1);
+            Parameters.Add("@Book_ID", id);
+            Parameters.Add("@Book_Type", type);
+            Parameters.Add("@Book_Dep", libdep);
 
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
@@ -112,11 +112,54 @@ namespace Egypt_National_Library
             Parameters.Add("@Musical_Ins_Type", Instrument_Type);
             Parameters.Add("@Musical_Ins_Dep", Instrument_Dep);
             Parameters.Add("@Instrument_Image", Instrument_Image);
-
-
-
-
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+        public DataTable GetSpecificBooks(string Type,int LibDepID)
+        {
+            string StoredProcedureName = StoredProcedures.GetSpecificBooks;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Book_Type", Type);
+            Parameters.Add("@Book_Dep", LibDepID);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetSpecificStories(string Type, int LibDepID)
+        {
+            string StoredProcedureName = StoredProcedures.GetSpecificStories;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Story_Type", Type);
+            Parameters.Add("@Story_Dep", LibDepID);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetSpecificInstruments(string Type, int LibDepID)
+        {
+            string StoredProcedureName = StoredProcedures.GetSpecificInstruments;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Musical_Ins_Type", Type);
+            Parameters.Add("@Musical_Ins_Dep", LibDepID);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetSpecificComputers(string Type, int LibDepID)
+        {
+            string StoredProcedureName = StoredProcedures.GetSpecificComputers;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Cmp_Type", Type);
+            Parameters.Add("@Cmp_Dep", LibDepID);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public int UpdateComputerImage(int Cmp_ID,int Cmp_Dep,string Cmp_Type,byte[] image)
+        {
+            string StoredProcedureName = StoredProcedures.UpdateComputerImage;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Computer_Image", image);
+            Parameters.Add("@CmpID", Cmp_ID);
+            Parameters.Add("@CmpDep", Cmp_Dep);
+            Parameters.Add("@CmpType", Cmp_Type);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public DataTable GetBookDepAvailableSeats() { string StoredProcedureName = StoredProcedures.GetBookAvSeats; return dbMan.ExecuteReader(StoredProcedureName, null);  }
+        public DataTable GetStoryDepAvailableSeats() { string StoredProcedureName = StoredProcedures.GetStoryAvSeats; return dbMan.ExecuteReader(StoredProcedureName, null); }
+        public DataTable GetMusicDepAvailableSeats() { string StoredProcedureName = StoredProcedures.GetMusicAvSeats; return dbMan.ExecuteReader(StoredProcedureName, null); }
+        public DataTable GetCmpDepAvailableSeats() { string StoredProcedureName = StoredProcedures.GetCmpAvSeats; return dbMan.ExecuteReader(StoredProcedureName, null); }
+        
     }
 }
