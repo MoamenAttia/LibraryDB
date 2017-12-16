@@ -88,15 +88,14 @@ foreign key(Story_Type,Story_Dep) references Story_Section(Story_Sec_Name,Story_
 Primary key (Story_ID,Story_Type,Story_Dep)
 );
 
-
 create table Musical_Instrument
 (
 Musical_Ins_ID int  not null,
-Musical_Ins_Name nvarchar(50) not null,	
+Musical_Ins_Name nvarchar(max) not null,	
 Musical_Ins_Status nvarchar(10) not null,
 Musical_Ins_price int not null,
 Musical_Ins_User_ID int foreign key references [User](User_ID),
-Musical_Ins_Type nvarchar(30) not null,
+Musical_Ins_Type nvarchar(100) not null,
 Musical_Ins_Dep int not null,
 Instrument_Image image,
 foreign key(Musical_Ins_Type,Musical_Ins_Dep) references Music_Section(Music_Sec_Name,Music_Lib_Dep_ID),

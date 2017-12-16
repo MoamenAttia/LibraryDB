@@ -32,11 +32,11 @@
             this.Return = new System.Windows.Forms.Button();
             this.Browse_Image = new System.Windows.Forms.Button();
             this.PictureBox = new System.Windows.Forms.PictureBox();
-            this.Book_Lib_Dep_ID = new System.Windows.Forms.TextBox();
-            this.Book_Sec_Name = new System.Windows.Forms.TextBox();
+            this.Instrument_Type = new System.Windows.Forms.TextBox();
+            this.Music_Lib_Dep_ID = new System.Windows.Forms.TextBox();
             this.Price = new System.Windows.Forms.TextBox();
-            this.Story_Name = new System.Windows.Forms.TextBox();
-            this.Story_ID = new System.Windows.Forms.TextBox();
+            this.Instrument_Name = new System.Windows.Forms.TextBox();
+            this.Instrument_ID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -85,45 +85,50 @@
             this.PictureBox.TabIndex = 75;
             this.PictureBox.TabStop = false;
             // 
-            // Book_Lib_Dep_ID
+            // Instrument_Type
             // 
-            this.Book_Lib_Dep_ID.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Book_Lib_Dep_ID.Location = new System.Drawing.Point(436, 253);
-            this.Book_Lib_Dep_ID.Name = "Book_Lib_Dep_ID";
-            this.Book_Lib_Dep_ID.Size = new System.Drawing.Size(161, 31);
-            this.Book_Lib_Dep_ID.TabIndex = 74;
+            this.Instrument_Type.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.Instrument_Type.Location = new System.Drawing.Point(436, 253);
+            this.Instrument_Type.Name = "Instrument_Type";
+            this.Instrument_Type.Size = new System.Drawing.Size(161, 37);
+            this.Instrument_Type.TabIndex = 74;
+            this.Instrument_Type.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Instrument_Type_KeyPress);
             // 
-            // Book_Sec_Name
+            // Music_Lib_Dep_ID
             // 
-            this.Book_Sec_Name.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Book_Sec_Name.Location = new System.Drawing.Point(436, 209);
-            this.Book_Sec_Name.Name = "Book_Sec_Name";
-            this.Book_Sec_Name.Size = new System.Drawing.Size(161, 31);
-            this.Book_Sec_Name.TabIndex = 73;
+            this.Music_Lib_Dep_ID.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.Music_Lib_Dep_ID.Location = new System.Drawing.Point(436, 209);
+            this.Music_Lib_Dep_ID.Name = "Music_Lib_Dep_ID";
+            this.Music_Lib_Dep_ID.Size = new System.Drawing.Size(161, 37);
+            this.Music_Lib_Dep_ID.TabIndex = 73;
+            this.Music_Lib_Dep_ID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Music_Lib_Dep_ID_KeyPress);
             // 
             // Price
             // 
             this.Price.ForeColor = System.Drawing.Color.DarkSalmon;
             this.Price.Location = new System.Drawing.Point(436, 163);
             this.Price.Name = "Price";
-            this.Price.Size = new System.Drawing.Size(161, 31);
+            this.Price.Size = new System.Drawing.Size(161, 37);
             this.Price.TabIndex = 72;
+            this.Price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Price_KeyPress);
             // 
-            // Story_Name
+            // Instrument_Name
             // 
-            this.Story_Name.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Story_Name.Location = new System.Drawing.Point(436, 121);
-            this.Story_Name.Name = "Story_Name";
-            this.Story_Name.Size = new System.Drawing.Size(161, 31);
-            this.Story_Name.TabIndex = 71;
+            this.Instrument_Name.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.Instrument_Name.Location = new System.Drawing.Point(436, 121);
+            this.Instrument_Name.Name = "Instrument_Name";
+            this.Instrument_Name.Size = new System.Drawing.Size(161, 37);
+            this.Instrument_Name.TabIndex = 71;
+            this.Instrument_Name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Instrument_Name_KeyPress_1);
             // 
-            // Story_ID
+            // Instrument_ID
             // 
-            this.Story_ID.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Story_ID.Location = new System.Drawing.Point(436, 74);
-            this.Story_ID.Name = "Story_ID";
-            this.Story_ID.Size = new System.Drawing.Size(161, 31);
-            this.Story_ID.TabIndex = 70;
+            this.Instrument_ID.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.Instrument_ID.Location = new System.Drawing.Point(436, 74);
+            this.Instrument_ID.Name = "Instrument_ID";
+            this.Instrument_ID.Size = new System.Drawing.Size(161, 37);
+            this.Instrument_ID.TabIndex = 70;
+            this.Instrument_ID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Instrument_ID_KeyPress);
             // 
             // label1
             // 
@@ -132,7 +137,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(26, 145);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 23);
+            this.label1.Size = new System.Drawing.Size(163, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Egypt Library";
             // 
@@ -152,7 +157,7 @@
             this.label13.ForeColor = System.Drawing.Color.DarkSalmon;
             this.label13.Location = new System.Drawing.Point(257, 256);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(151, 23);
+            this.label13.Size = new System.Drawing.Size(191, 28);
             this.label13.TabIndex = 69;
             this.label13.Text = "Music_Ins_Type";
             // 
@@ -162,7 +167,7 @@
             this.label14.ForeColor = System.Drawing.Color.DarkSalmon;
             this.label14.Location = new System.Drawing.Point(257, 209);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(145, 23);
+            this.label14.Size = new System.Drawing.Size(184, 28);
             this.label14.TabIndex = 68;
             this.label14.Text = "Music_Ins_Dep";
             // 
@@ -172,7 +177,7 @@
             this.label8.ForeColor = System.Drawing.Color.DarkSalmon;
             this.label8.Location = new System.Drawing.Point(257, 171);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 23);
+            this.label8.Size = new System.Drawing.Size(69, 28);
             this.label8.TabIndex = 67;
             this.label8.Text = "Price";
             // 
@@ -182,7 +187,7 @@
             this.label7.ForeColor = System.Drawing.Color.DarkSalmon;
             this.label7.Location = new System.Drawing.Point(257, 129);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(164, 23);
+            this.label7.Size = new System.Drawing.Size(208, 28);
             this.label7.TabIndex = 66;
             this.label7.Text = "Music_Ins_Name";
             // 
@@ -192,7 +197,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkSalmon;
             this.label5.Location = new System.Drawing.Point(257, 82);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 23);
+            this.label5.Size = new System.Drawing.Size(160, 28);
             this.label5.TabIndex = 65;
             this.label5.Text = "Music_Ins_ID";
             // 
@@ -215,6 +220,7 @@
             this.Add_Button.TabIndex = 64;
             this.Add_Button.Text = "Add Instrument";
             this.Add_Button.UseVisualStyleBackColor = true;
+            this.Add_Button.Click += new System.EventHandler(this.Add_Button_Click);
             // 
             // panel3
             // 
@@ -228,18 +234,18 @@
             // 
             // Add_Musical_Instrument_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.ClientSize = new System.Drawing.Size(661, 553);
             this.Controls.Add(this.Return);
             this.Controls.Add(this.Browse_Image);
             this.Controls.Add(this.PictureBox);
-            this.Controls.Add(this.Book_Lib_Dep_ID);
-            this.Controls.Add(this.Book_Sec_Name);
+            this.Controls.Add(this.Instrument_Type);
+            this.Controls.Add(this.Music_Lib_Dep_ID);
             this.Controls.Add(this.Price);
-            this.Controls.Add(this.Story_Name);
-            this.Controls.Add(this.Story_ID);
+            this.Controls.Add(this.Instrument_Name);
+            this.Controls.Add(this.Instrument_ID);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label8);
@@ -269,11 +275,11 @@
         private System.Windows.Forms.Button Return;
         private System.Windows.Forms.Button Browse_Image;
         private System.Windows.Forms.PictureBox PictureBox;
-        private System.Windows.Forms.TextBox Book_Lib_Dep_ID;
-        private System.Windows.Forms.TextBox Book_Sec_Name;
+        private System.Windows.Forms.TextBox Instrument_Type;
+        private System.Windows.Forms.TextBox Music_Lib_Dep_ID;
         private System.Windows.Forms.TextBox Price;
-        private System.Windows.Forms.TextBox Story_Name;
-        private System.Windows.Forms.TextBox Story_ID;
+        private System.Windows.Forms.TextBox Instrument_Name;
+        private System.Windows.Forms.TextBox Instrument_ID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label13;

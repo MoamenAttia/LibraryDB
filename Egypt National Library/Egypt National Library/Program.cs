@@ -16,7 +16,7 @@ namespace Egypt_National_Library
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Add_Story_Form());
+            Application.Run(new Add_Musical_Instrument_Form());
         }
     }
 }

@@ -22,6 +22,8 @@ namespace Egypt_National_Library
         public static string AddLibraryDepartment = "spAddLibDep";
         public static string GetBook_Image = "spGetBook_Image";
         public static string GetEmployee_Image = "spGetEmployee_Image";
-       
+        public static string Update_Instrument_Image = "spUpdate_Instrument_Image";
+        public static string Add_Instrument = "spAdd_Instrument";
+
     }
 }

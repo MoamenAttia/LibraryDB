@@ -36,3 +36,22 @@ C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National L
 C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.exe
 C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.pdb
 C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Library_Department_Form.resources
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\bin\Debug\Egypt National Library.exe.config
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.exe
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.pdb
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\bin\Debug\Egypt National Library.exe
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\bin\Debug\Egypt National Library.pdb
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.csprojResolveAssemblyReference.cache
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Book_Form.resources
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Computer_Form.resources
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Employee_Form.resources
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Library_Department_Form.resources
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Musical_Instrument_Form.resources
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Sections_Form.resources
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Story_Form.resources
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_User_Form.resources
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Login_Form.resources
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Properties.Resources.resources
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.SignUp_Form.resources
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.User_Form.resources
+E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.csproj.GenerateResource.Cache

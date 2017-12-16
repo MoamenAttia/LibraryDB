@@ -155,4 +155,17 @@ Begin
 	where Emp_ID = @Emp_ID
 End
 GO
+Create Procedure spUpdate_Instrument_Image
+@Ins_Image image,
+@Ins_ID int,
+@Ins_Dep int ,
+@Ins_Type nvarchar(30)
+
+As
+Begin
+	Update Musical_Instrument
+	set Instrument_Image=@Ins_Image
+	where Musical_Ins_ID=@Ins_ID   and Musical_Ins_Type=@Ins_Type   and Musical_Ins_Dep=@Ins_Dep
+End
+GO
 

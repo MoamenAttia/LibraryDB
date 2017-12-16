@@ -10,7 +10,8 @@ namespace Egypt_National_Library
 {
     public class DBManager
     {
-        static string DB_Connection_String = @"Data Source=MARSHAL-MOAMEN\MOAMENDB;Initial Catalog="+"Egypt National Library"+";Integrated Security=True";
+        //Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename="E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Database Files\Egypt National Library.mdf";Integrated Security = True; Connect Timeout = 30
+        static string DB_Connection_String = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Database Files\Egypt National Library.mdf;Integrated Security=True;Connect Timeout=30";
         SqlConnection myConnection;
 
         public DBManager()

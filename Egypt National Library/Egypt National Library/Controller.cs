@@ -91,5 +91,32 @@ namespace Egypt_National_Library
             Parameters.Add("@Story_Image", Story_Image);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+        public int Update_Instrument_Image(byte[] Instrument_Image,int Instrument_ID, int Instrument_Dep, string Instrument_Type )
+        {
+            string StoredProcedureName = StoredProcedures.Update_Instrument_Image;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Ins_Image", Instrument_Image);
+            Parameters.Add("@Ins_ID", Instrument_ID);
+            Parameters.Add("@Ins_Dep", Instrument_Dep);
+            Parameters.Add("@Ins_Type", Instrument_Type);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int Add_Instrument(int Instrument_ID, string Instrument_Name, int Instrument_Price, string Instrument_Type, int Instrument_Dep, byte[] Instrument_Image)
+        {
+            string StoredProcedureName = StoredProcedures.Add_Instrument;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+           
+            Parameters.Add("@Musical_Ins_ID", Instrument_ID);
+            Parameters.Add("@Musical_Ins_Name", Instrument_Name);
+            Parameters.Add("@Musical_Ins_Price", Instrument_Price);
+            Parameters.Add("@Musical_Ins_Type", Instrument_Type);
+            Parameters.Add("@Musical_Ins_Dep", Instrument_Dep);
+            Parameters.Add("@Instrument_Image", Instrument_Image);
+
+
+
+
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
     }
 }
