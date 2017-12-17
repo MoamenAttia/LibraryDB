@@ -33,5 +33,6 @@ namespace Egypt_National_Library
         public static string GetSpecificInstruments = "spGetSpecificInstruments";
         public static string GetSpecificComputers = "spGetSpecificComputers";
         public static string UpdateComputerImage = "spUpdateComputerImage";
+        public static string GetBookByName = "spGetBookByName";
     }
 }

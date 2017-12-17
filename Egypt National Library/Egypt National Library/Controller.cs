@@ -156,6 +156,16 @@ namespace Egypt_National_Library
             Parameters.Add("@CmpType", Cmp_Type);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+        public DataTable GetBookByName(int Book_ID,int LibDep,string Book_Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetBookByName;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Book_ID", Book_ID);
+            Parameters.Add("@Book_Type", Book_Type);
+            Parameters.Add("@Book_Dep", LibDep);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+
         public DataTable GetBookDepAvailableSeats() { string StoredProcedureName = StoredProcedures.GetBookAvSeats; return dbMan.ExecuteReader(StoredProcedureName, null);  }
         public DataTable GetStoryDepAvailableSeats() { string StoredProcedureName = StoredProcedures.GetStoryAvSeats; return dbMan.ExecuteReader(StoredProcedureName, null); }
         public DataTable GetMusicDepAvailableSeats() { string StoredProcedureName = StoredProcedures.GetMusicAvSeats; return dbMan.ExecuteReader(StoredProcedureName, null); }

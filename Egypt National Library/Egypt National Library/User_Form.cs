@@ -15,11 +15,14 @@ using System.Windows.Forms;
 /*Each panel has a location (225,60) size 214*260 has a pic box of size 214*192 has a label (1,200)*/
 namespace Egypt_National_Library
 {
+
     public partial class User_Form : Form
     {
         Panel ActivePanel = new Panel();
         DataTable dataTable = new DataTable();
         Controller Controller_OBJ;
+        PictureBox[] Bookpictureboxes, Storypictureboxes, Computerpictureboxes, Instrumentspictureboxes;
+        int NumofBookpictureboxes = 0, NumofStorypictureboxes = 0, NumofInstrumentspictureboxes = 0, NumofComputerpictureboxes = 0;
         public User_Form()
         {
             InitializeComponent();
@@ -46,10 +49,49 @@ namespace Egypt_National_Library
         private void MusicDepBtn_Click(object sender, EventArgs e) { ActivatePanel(MusicDepPanel); }
         private void CmpDepBtn_Click(object sender, EventArgs e) { ActivatePanel(CmpDepPanel); }
         private void ActivatePanel(Panel panel){ ActivePanel.Visible = false; ActivePanel = panel; ActivePanel.Show(); }
-        private void Label_Click(object sender,EventArgs e)
+        private void Label_Click(object sender,EventArgs e) { }
+        private void Book_PictureBox_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hello");
+           Book_Details_Form Form;
+           for (int i=0;i<NumofBookpictureboxes;++i)
+                if(sender.Equals(Bookpictureboxes[i]))
+                {
+                    string Temp = Bookpictureboxes[i].Name.ToString();
+                    string ID="", Section="";
+                    for (int k = 0; k < Temp.Length; ++k)
+                        if (Temp[k] == '/')
+                        {
+                            ID = Temp;
+                            ID = ID.Remove(0, k + 1);
+                            break;
+                        }
+
+                    for(int k = 0; k < ID.Length;++k)
+                        if (ID[k] == '/')
+                        {
+                            Section = ID;
+                            Section = Section.Remove(0, k + 1);
+                            ID = ID.Remove(k, Section.Length+1);
+                            break;
+                        }
+                 
+
+
+                    DataTable dt = Controller_OBJ.GetBookByName(int.Parse(ID), 1, Section);
+                    Form = new Book_Details_Form(dt.Rows[0].ItemArray[0].ToString(), dt.Rows[0].ItemArray[1].ToString(), dt.Rows[0].ItemArray[2].ToString()
+                        , dt.Rows[0].ItemArray[7].ToString(), dt.Rows[0].ItemArray[8].ToString(), dt.Rows[0].ItemArray[12].ToString(),dt.Rows[0].ItemArray[5].ToString(), 
+                        (byte[])dt.Rows[0].ItemArray[14]);
+                    Form.Show();
+                    return;
+                }
+
         }
+        private void Story_PictureBox_Click(object sender, EventArgs e)
+        {
+        }
+        private void Instrument_PictureBox_Click(object sender, EventArgs e) { }
+        private void Computer_PictureBox_Click(object sender, EventArgs e) { }
+
         //Book Department Buttons Click ,, showing panels of each Book Department//
         private void ProgrammingDepBtn_Click(object sender, EventArgs e){ Show_Book_Panels("Programming", 1); }
         private void BabyCareDepBtn_Click(object sender, EventArgs e) { Show_Book_Panels("Baby Care", 1); }
@@ -126,7 +168,6 @@ namespace Egypt_National_Library
             picturebox.Image = Image.FromStream(ms);
             picturebox.SizeMode = PictureBoxSizeMode.Zoom;
             picturebox.Refresh();
-            picturebox.Click += new System.EventHandler(this.Label_Click);
             return picturebox;
         }
 
@@ -134,9 +175,9 @@ namespace Egypt_National_Library
         {
             ActivePanel.Visible = false;
             dataTable = Controller_OBJ.GetSpecificBooks(type, libDepID);
-            int Num_OF_Panels = dataTable.Rows.Count;
+            int Num_OF_Panels = NumofBookpictureboxes = dataTable.Rows.Count;
             Panel[] Panels = new Panel[Num_OF_Panels];
-            PictureBox[] pictureboxes = new PictureBox[Num_OF_Panels];
+            Bookpictureboxes = new PictureBox[Num_OF_Panels];
             LinkLabel[] Labels = new LinkLabel[Num_OF_Panels];
             int incrementer = 1, rows = 1;
             for (int i = 0; i < Num_OF_Panels; ++i)
@@ -144,8 +185,10 @@ namespace Egypt_National_Library
                 if (incrementer == 5) { rows++; incrementer = 1; }
                 Panels[i] = CreatePanel(i, Color.Snow, 214, 260, 225 * (incrementer++), 75 + (rows - 1) * 300);
                 Labels[i] = CreateLabel(i, dataTable.Rows[i].ItemArray[6].ToString());
-                pictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[14]);
-                InesertControlToPanel(ref Panels[i], ref Labels[i], ref pictureboxes[i]);
+                Bookpictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[14]);
+                Bookpictureboxes[i].Name = Labels[i].Text + "/"+ dataTable.Rows[i].ItemArray[3].ToString()+"/"+ dataTable.Rows[i].ItemArray[12].ToString();
+                Bookpictureboxes[i].Click += new EventHandler(this.Book_PictureBox_Click);
+                InesertControlToPanel(ref Panels[i], ref Labels[i], ref Bookpictureboxes[i]);
                 Controls.Add(Panels[i]);
             }
         }
@@ -153,9 +196,9 @@ namespace Egypt_National_Library
         {
             ActivePanel.Visible = false;
             dataTable = Controller_OBJ.GetSpecificStories(type, libDepID);
-            int Num_OF_Panels = dataTable.Rows.Count;
+            int Num_OF_Panels = NumofStorypictureboxes = dataTable.Rows.Count;
             Panel[] Panels = new Panel[Num_OF_Panels];
-            PictureBox[] pictureboxes = new PictureBox[Num_OF_Panels];
+            Storypictureboxes = new PictureBox[Num_OF_Panels];
             LinkLabel[] Labels = new LinkLabel[Num_OF_Panels];
             int incrementer = 1, rows = 1;
             for (int i = 0; i < Num_OF_Panels; ++i)
@@ -163,8 +206,10 @@ namespace Egypt_National_Library
                 if (incrementer == 5) { rows++; incrementer = 1; }
                 Panels[i] = CreatePanel(i, Color.Snow, 214, 260, 225 * (incrementer++), 75 + (rows - 1) * 300);
                 Labels[i] = CreateLabel(i, dataTable.Rows[i].ItemArray[1].ToString());
-                pictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[7]);
-                InesertControlToPanel(ref Panels[i], ref Labels[i], ref pictureboxes[i]);
+                Storypictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[7]);
+                Storypictureboxes[i].Name = "Stories" + Labels[i].Text;
+                Storypictureboxes[i].Click += new System.EventHandler(this.Story_PictureBox_Click);
+                InesertControlToPanel(ref Panels[i], ref Labels[i], ref Storypictureboxes[i]);
                 Controls.Add(Panels[i]);
             }
         }
@@ -172,9 +217,9 @@ namespace Egypt_National_Library
         {
             ActivePanel.Visible = false;
             dataTable = Controller_OBJ.GetSpecificInstruments(type, libDepID);
-            int Num_OF_Panels = dataTable.Rows.Count;
+            int Num_OF_Panels = NumofInstrumentspictureboxes = dataTable.Rows.Count;
             Panel[] Panels = new Panel[Num_OF_Panels];
-            PictureBox[] pictureboxes = new PictureBox[Num_OF_Panels];
+            Instrumentspictureboxes = new PictureBox[Num_OF_Panels];
             LinkLabel[] Labels = new LinkLabel[Num_OF_Panels];
             int incrementer = 1, rows = 1;
             for (int i = 0; i < Num_OF_Panels; ++i)
@@ -182,8 +227,10 @@ namespace Egypt_National_Library
                 if (incrementer == 5) { rows++; incrementer = 1; }
                 Panels[i] = CreatePanel(i, Color.Snow, 214, 260, 225 * (incrementer++), 75 + (rows - 1) * 300);
                 Labels[i] = CreateLabel(i, dataTable.Rows[i].ItemArray[1].ToString());
-                pictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[7]);
-                InesertControlToPanel(ref Panels[i], ref Labels[i], ref pictureboxes[i]);
+                Instrumentspictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[7]);
+                Instrumentspictureboxes[i].Name = "Instruments" + Labels[i].Text;
+                Instrumentspictureboxes[i].Click += new System.EventHandler(this.Instrument_PictureBox_Click);
+                InesertControlToPanel(ref Panels[i], ref Labels[i], ref Instrumentspictureboxes[i]);
                 Controls.Add(Panels[i]);
             }
         }
@@ -191,9 +238,9 @@ namespace Egypt_National_Library
         {
             ActivePanel.Visible = false;
             dataTable = Controller_OBJ.GetSpecificComputers(type, libDepID);
-            int Num_OF_Panels = dataTable.Rows.Count;
+            int Num_OF_Panels = NumofComputerpictureboxes = dataTable.Rows.Count;
             Panel[] Panels = new Panel[Num_OF_Panels];
-            PictureBox[] pictureboxes = new PictureBox[Num_OF_Panels];
+            Computerpictureboxes = new PictureBox[Num_OF_Panels];
             LinkLabel[] Labels = new LinkLabel[Num_OF_Panels];
             int incrementer = 1, rows = 1;
             for (int i = 0; i < Num_OF_Panels; ++i)
@@ -201,12 +248,17 @@ namespace Egypt_National_Library
                 if (incrementer == 5) { rows++; incrementer = 1; }
                 Panels[i] = CreatePanel(i, Color.Snow, 214, 260, 225 * (incrementer++), 75 + (rows - 1) * 300);
                 Labels[i] = CreateLabel(i, dataTable.Rows[i].ItemArray[1].ToString());
-                pictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[7]);
-                InesertControlToPanel(ref Panels[i], ref Labels[i], ref pictureboxes[i]);
+                Computerpictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[7]);
+                Computerpictureboxes[i].Name = "Computers" + Labels[i].Text;
+                Computerpictureboxes[i].Click += new System.EventHandler(this.Computer_PictureBox_Click);
+                InesertControlToPanel(ref Panels[i], ref Labels[i], ref Computerpictureboxes[i]);
                 Controls.Add(Panels[i]);
             }
         }
-
+        private void show_msg(object sender, EventArgs e, string s)
+        {
+            MessageBox.Show(s);
+        }
 
     }
 }

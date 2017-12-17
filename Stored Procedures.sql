@@ -291,3 +291,14 @@ set Computer_Image=0x89504E470D0A1A0A0000000D49484452000007D0000009300806000000D
 where Cmp_ID=10   and Cmp_Type='SoftWare Engineering'   and Cmp_Dep=4
 Select * 
 From Computer
+
+Create Procedure spGetBookByName
+@Book_ID int,
+@Book_Type nvarchar(30),
+@Book_Dep int
+As
+Begin
+	Select * 
+	From Book
+	Where Book_ID=1 And Book_Type='Programming' and Book_Dep=1;
+End

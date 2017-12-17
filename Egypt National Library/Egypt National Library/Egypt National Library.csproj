@@ -93,6 +93,12 @@
     <Compile Include="Add_User_Form.Designer.cs">
       <DependentUpon>Add_User_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Book_Details_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Book_Details_Form.Designer.cs">
+      <DependentUpon>Book_Details_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Login_Form.cs">
@@ -110,6 +116,12 @@
       <DependentUpon>SignUp_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="StoredProcedures.cs" />
+    <Compile Include="Story_Details_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Story_Details_Form.Designer.cs">
+      <DependentUpon>Story_Details_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="User_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +152,9 @@
     <EmbeddedResource Include="Add_User_Form.resx">
       <DependentUpon>Add_User_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Book_Details_Form.resx">
+      <DependentUpon>Book_Details_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +169,9 @@
     </Compile>
     <EmbeddedResource Include="SignUp_Form.resx">
       <DependentUpon>SignUp_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Story_Details_Form.resx">
+      <DependentUpon>Story_Details_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Form.resx">
       <DependentUpon>User_Form.cs</DependentUpon>
