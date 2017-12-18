@@ -50,16 +50,19 @@
             this.Add_Software = new System.Windows.Forms.Button();
             this.Browse_Image = new System.Windows.Forms.Button();
             this.PictureBox = new System.Windows.Forms.PictureBox();
+            this.SoftwarePicturebox = new System.Windows.Forms.PictureBox();
+            this.BrowseSoftwareImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SoftwarePicturebox)).BeginInit();
             this.SuspendLayout();
             // 
             // Return
             // 
             this.Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Return.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Return.Location = new System.Drawing.Point(534, 452);
+            this.Return.Location = new System.Drawing.Point(576, 581);
             this.Return.Name = "Return";
             this.Return.Size = new System.Drawing.Size(85, 45);
             this.Return.TabIndex = 77;
@@ -69,42 +72,47 @@
             // 
             // Lib_Dep_ID
             // 
+            this.Lib_Dep_ID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Lib_Dep_ID.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Lib_Dep_ID.Location = new System.Drawing.Point(430, 224);
+            this.Lib_Dep_ID.Location = new System.Drawing.Point(444, 220);
             this.Lib_Dep_ID.Name = "Lib_Dep_ID";
-            this.Lib_Dep_ID.Size = new System.Drawing.Size(161, 31);
+            this.Lib_Dep_ID.Size = new System.Drawing.Size(217, 31);
             this.Lib_Dep_ID.TabIndex = 74;
             // 
             // Cmp_Sec_Name
             // 
+            this.Cmp_Sec_Name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Cmp_Sec_Name.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Cmp_Sec_Name.Location = new System.Drawing.Point(430, 180);
+            this.Cmp_Sec_Name.Location = new System.Drawing.Point(444, 176);
             this.Cmp_Sec_Name.Name = "Cmp_Sec_Name";
-            this.Cmp_Sec_Name.Size = new System.Drawing.Size(161, 31);
+            this.Cmp_Sec_Name.Size = new System.Drawing.Size(217, 31);
             this.Cmp_Sec_Name.TabIndex = 73;
             // 
             // Cmp_Price
             // 
+            this.Cmp_Price.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Cmp_Price.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Cmp_Price.Location = new System.Drawing.Point(430, 134);
+            this.Cmp_Price.Location = new System.Drawing.Point(444, 130);
             this.Cmp_Price.Name = "Cmp_Price";
-            this.Cmp_Price.Size = new System.Drawing.Size(161, 31);
+            this.Cmp_Price.Size = new System.Drawing.Size(217, 31);
             this.Cmp_Price.TabIndex = 72;
             // 
             // Operating_System
             // 
+            this.Operating_System.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Operating_System.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Operating_System.Location = new System.Drawing.Point(430, 92);
+            this.Operating_System.Location = new System.Drawing.Point(444, 88);
             this.Operating_System.Name = "Operating_System";
-            this.Operating_System.Size = new System.Drawing.Size(161, 31);
+            this.Operating_System.Size = new System.Drawing.Size(217, 31);
             this.Operating_System.TabIndex = 71;
             // 
             // Cmp_ID
             // 
+            this.Cmp_ID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Cmp_ID.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Cmp_ID.Location = new System.Drawing.Point(430, 45);
+            this.Cmp_ID.Location = new System.Drawing.Point(444, 41);
             this.Cmp_ID.Name = "Cmp_ID";
-            this.Cmp_ID.Size = new System.Drawing.Size(161, 31);
+            this.Cmp_ID.Size = new System.Drawing.Size(217, 31);
             this.Cmp_ID.TabIndex = 70;
             // 
             // label1
@@ -132,7 +140,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label13.Location = new System.Drawing.Point(243, 227);
+            this.label13.Location = new System.Drawing.Point(257, 223);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(112, 23);
             this.label13.TabIndex = 69;
@@ -142,7 +150,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label14.Location = new System.Drawing.Point(243, 184);
+            this.label14.Location = new System.Drawing.Point(257, 180);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(167, 23);
             this.label14.TabIndex = 68;
@@ -152,7 +160,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label8.Location = new System.Drawing.Point(243, 142);
+            this.label8.Location = new System.Drawing.Point(257, 138);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(112, 23);
             this.label8.TabIndex = 67;
@@ -162,7 +170,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label7.Location = new System.Drawing.Point(243, 100);
+            this.label7.Location = new System.Drawing.Point(257, 96);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(180, 23);
             this.label7.TabIndex = 66;
@@ -172,7 +180,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label5.Location = new System.Drawing.Point(243, 53);
+            this.label5.Location = new System.Drawing.Point(257, 49);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 23);
             this.label5.TabIndex = 65;
@@ -184,14 +192,14 @@
             this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelheader.Location = new System.Drawing.Point(0, 0);
             this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(636, 35);
+            this.panelheader.Size = new System.Drawing.Size(685, 35);
             this.panelheader.TabIndex = 62;
             // 
             // Add_Computer
             // 
             this.Add_Computer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_Computer.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Add_Computer.Location = new System.Drawing.Point(249, 343);
+            this.Add_Computer.Location = new System.Drawing.Point(354, 361);
             this.Add_Computer.Name = "Add_Computer";
             this.Add_Computer.Size = new System.Drawing.Size(174, 45);
             this.Add_Computer.TabIndex = 64;
@@ -211,17 +219,18 @@
             // 
             // Software
             // 
+            this.Software.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Software.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Software.Location = new System.Drawing.Point(430, 267);
+            this.Software.Location = new System.Drawing.Point(444, 263);
             this.Software.Name = "Software";
-            this.Software.Size = new System.Drawing.Size(161, 31);
+            this.Software.Size = new System.Drawing.Size(217, 31);
             this.Software.TabIndex = 81;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.label2.Location = new System.Drawing.Point(245, 275);
+            this.label2.Location = new System.Drawing.Point(259, 271);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 23);
             this.label2.TabIndex = 80;
@@ -231,18 +240,19 @@
             // 
             this.Add_Software.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_Software.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Add_Software.Location = new System.Drawing.Point(444, 343);
+            this.Add_Software.Location = new System.Drawing.Point(354, 445);
             this.Add_Software.Name = "Add_Software";
-            this.Add_Software.Size = new System.Drawing.Size(147, 45);
+            this.Add_Software.Size = new System.Drawing.Size(175, 45);
             this.Add_Software.TabIndex = 82;
             this.Add_Software.Text = "Add Software";
             this.Add_Software.UseVisualStyleBackColor = true;
+            this.Add_Software.Click += new System.EventHandler(this.Add_Software_Click);
             // 
             // Browse_Image
             // 
             this.Browse_Image.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Browse_Image.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Browse_Image.Location = new System.Drawing.Point(22, 420);
+            this.Browse_Image.Location = new System.Drawing.Point(22, 379);
             this.Browse_Image.Name = "Browse_Image";
             this.Browse_Image.Size = new System.Drawing.Size(184, 43);
             this.Browse_Image.TabIndex = 84;
@@ -254,17 +264,41 @@
             // 
             this.PictureBox.Location = new System.Drawing.Point(22, 238);
             this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Size = new System.Drawing.Size(184, 161);
+            this.PictureBox.Size = new System.Drawing.Size(184, 116);
             this.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox.TabIndex = 83;
             this.PictureBox.TabStop = false;
+            // 
+            // SoftwarePicturebox
+            // 
+            this.SoftwarePicturebox.Location = new System.Drawing.Point(22, 445);
+            this.SoftwarePicturebox.Name = "SoftwarePicturebox";
+            this.SoftwarePicturebox.Size = new System.Drawing.Size(184, 116);
+            this.SoftwarePicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SoftwarePicturebox.TabIndex = 85;
+            this.SoftwarePicturebox.TabStop = false;
+            this.SoftwarePicturebox.Click += new System.EventHandler(this.SoftwarePicturebox_Click);
+            // 
+            // BrowseSoftwareImage
+            // 
+            this.BrowseSoftwareImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BrowseSoftwareImage.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.BrowseSoftwareImage.Location = new System.Drawing.Point(22, 581);
+            this.BrowseSoftwareImage.Name = "BrowseSoftwareImage";
+            this.BrowseSoftwareImage.Size = new System.Drawing.Size(184, 43);
+            this.BrowseSoftwareImage.TabIndex = 86;
+            this.BrowseSoftwareImage.Text = "Browse Image";
+            this.BrowseSoftwareImage.UseVisualStyleBackColor = true;
+            this.BrowseSoftwareImage.Click += new System.EventHandler(this.BrowseSoftwareImage_Click);
             // 
             // Add_Computer_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.ClientSize = new System.Drawing.Size(636, 509);
+            this.ClientSize = new System.Drawing.Size(685, 638);
+            this.Controls.Add(this.BrowseSoftwareImage);
+            this.Controls.Add(this.SoftwarePicturebox);
             this.Controls.Add(this.Browse_Image);
             this.Controls.Add(this.PictureBox);
             this.Controls.Add(this.Add_Software);
@@ -296,6 +330,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SoftwarePicturebox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,5 +359,7 @@
         private System.Windows.Forms.Button Add_Software;
         private System.Windows.Forms.Button Browse_Image;
         private System.Windows.Forms.PictureBox PictureBox;
+        private System.Windows.Forms.PictureBox SoftwarePicturebox;
+        private System.Windows.Forms.Button BrowseSoftwareImage;
     }
 }

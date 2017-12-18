@@ -104,6 +104,7 @@
             this.Story_ImagePicturebox.Location = new System.Drawing.Point(49, 12);
             this.Story_ImagePicturebox.Name = "Story_ImagePicturebox";
             this.Story_ImagePicturebox.Size = new System.Drawing.Size(287, 402);
+            this.Story_ImagePicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Story_ImagePicturebox.TabIndex = 18;
             this.Story_ImagePicturebox.TabStop = false;
             // 
@@ -148,6 +149,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "Story_Details_Form";
             this.Text = "Story_Details_Form";
+            this.Load += new System.EventHandler(this.Story_Details_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Story_ImagePicturebox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

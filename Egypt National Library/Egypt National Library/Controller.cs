@@ -165,6 +165,57 @@ namespace Egypt_National_Library
             Parameters.Add("@Book_Dep", LibDep);
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
+        public DataTable GetStoryByName(int StoryID, int StoryDep, string StoryType)
+        {
+            string StoredProcedureName = StoredProcedures.GetStoryByName;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Story_ID", StoryID);
+            Parameters.Add("@Story_Type", StoryType);
+            Parameters.Add("@Story_Dep", StoryDep);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetMusical_InstrumentByName(int Musical_InstrumentID, int Musical_InstrumentDep, string Musical_InstrumentType)
+        {
+            string StoredProcedureName = StoredProcedures.GetMusical_InstrumentByName;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Musical_Ins_ID", Musical_InstrumentID);
+            Parameters.Add("@Musical_Ins_Type", Musical_InstrumentType);
+            Parameters.Add("@Musical_Ins_Dep", Musical_InstrumentDep);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetComputerByName(int CmpID, int CmpDep, string CmpType)
+        {
+            string StoredProcedureName = StoredProcedures.GetComputerByName;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Cmp_ID", CmpID);
+            Parameters.Add("@Cmp_Type", CmpType);
+            Parameters.Add("@Cmp_Dep", CmpDep);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public int UpdateSoftwareImage(byte[] image , string SoftwareName,int CmpDep ,string CmpType,int CmpID)
+        {
+            string StoredProcedureName = StoredProcedures.UpdateSoftwareImage;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Computer_Image", image);
+            Parameters.Add("@Software", SoftwareName);
+            Parameters.Add("@CmpDep", CmpDep);
+            Parameters.Add("@CmpType", CmpType);
+            Parameters.Add ("@CmpID", CmpID);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public DataTable GetComputerSoftwares(int CmpID,int CmpDep,string CmpType)
+        {
+            string StoredProcedureName = StoredProcedures.GetComputerSoftwares;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Cmp_ID", CmpID);
+            Parameters.Add("@Cmp_Dep", CmpDep);
+            Parameters.Add("@Cmp_Type", CmpType);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetAllBooks() { string StoredProcedureName = StoredProcedures.GetBooks; return dbMan.ExecuteReader(StoredProcedureName, null); }
+        public DataTable GetAllStories() { string StoredProcedureName = StoredProcedures.GetStories; return dbMan.ExecuteReader(StoredProcedureName, null); }
+        public DataTable GetAllMusicInstruments() { string StoredProcedureName = StoredProcedures.GetMusicInstruments; return dbMan.ExecuteReader(StoredProcedureName, null); }
+        public DataTable GetAllComputers() { string StoredProcedureName = StoredProcedures.GetComputers; return dbMan.ExecuteReader(StoredProcedureName, null); }
 
         public DataTable GetBookDepAvailableSeats() { string StoredProcedureName = StoredProcedures.GetBookAvSeats; return dbMan.ExecuteReader(StoredProcedureName, null);  }
         public DataTable GetStoryDepAvailableSeats() { string StoredProcedureName = StoredProcedures.GetStoryAvSeats; return dbMan.ExecuteReader(StoredProcedureName, null); }

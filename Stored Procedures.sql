@@ -272,7 +272,7 @@ Insert into Book_Section (Book_Sec_Name,No_Of_Books,Book_Lib_Dep_ID) values ('Hu
 Select * 
 From Computer
 
-ALTER TABLE Computer
+ALTER TABLE Cmp_Software
 ADD Computer_Image image NULL DEFAULT(NULL)
 GO
 
@@ -302,3 +302,90 @@ Begin
 	From Book
 	Where Book_ID=1 And Book_Type='Programming' and Book_Dep=1;
 End
+GO
+
+Create procedure spGetStoryByName
+@Story_ID int,
+@Story_Type nvarchar(30),
+@Story_Dep int
+As
+Begin
+	Select * 
+	From Story
+	Where Story_ID=@Story_ID And Story_Type=@Story_Type and Story_Dep=@Story_Dep;
+End
+Go
+
+Create procedure spGetMusicInstrumentByName
+@Musical_Ins_ID int,
+@Musical_Ins_Type nvarchar(30),
+@Musical_Ins_Dep int
+As
+Begin
+	Select * 
+	From Musical_Instrument
+	Where Musical_Ins_ID=@Musical_Ins_ID And Musical_Ins_Type=@Musical_Ins_Type and Musical_Ins_Dep=@Musical_Ins_Dep;
+End
+Go
+
+Create procedure spGetComputerByName
+@Cmp_ID int,
+@Cmp_Type nvarchar(30),
+@Cmp_Dep int
+As
+Begin
+	Select * 
+	From  Computer
+	Where Cmp_ID=@Cmp_ID And Cmp_Type=@Cmp_Type and Cmp_Dep=@Cmp_Dep;
+End
+Go
+Select Software,Sum(Cmp_ID)
+From Cmp_Software
+Group by Software
+
+Select * 
+From Cmp_Software
+
+Create Procedure spUpdateSoftwareImage
+@Computer_Image image,
+@Software nvarchar(30),
+@CmpDep int ,
+@CmpType nvarchar(30),
+@CmpID int
+As
+Begin
+	Update Cmp_Software
+	set Computer_Image=@Computer_Image
+	where Software=@Software   and Cmp_Type=@CmpType   and Cmp_Dep=@CmpDep and Cmp_ID = @CmpID;
+End
+GO
+
+
+
+Create Procedure spGetComputerSoftwares
+@Cmp_ID int,
+@Cmp_Dep int,
+@Cmp_Type nvarchar(30)
+As
+Begin
+	Select *
+	From Cmp_Software
+	Where Cmp_ID=1 And  Cmp_Dep=4 And  Cmp_Type='Power Engineering';
+End
+GO
+
+Create Procedure spGetMusicInstruments
+As
+Begin
+	Select *
+	From Musical_Instrument
+End
+GO
+
+Create Procedure spGetComputers
+As
+Begin
+	Select *
+	From Computer
+End
+GO

@@ -99,6 +99,12 @@
     <Compile Include="Book_Details_Form.Designer.cs">
       <DependentUpon>Book_Details_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Computer_Details_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Computer_Details_Form.Designer.cs">
+      <DependentUpon>Computer_Details_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Login_Form.cs">
@@ -106,6 +112,12 @@
     </Compile>
     <Compile Include="Login_Form.Designer.cs">
       <DependentUpon>Login_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Music_Instrument_Details_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Music_Instrument_Details_Form.Designer.cs">
+      <DependentUpon>Music_Instrument_Details_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -155,8 +167,14 @@
     <EmbeddedResource Include="Book_Details_Form.resx">
       <DependentUpon>Book_Details_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Computer_Details_Form.resx">
+      <DependentUpon>Computer_Details_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Music_Instrument_Details_Form.resx">
+      <DependentUpon>Music_Instrument_Details_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

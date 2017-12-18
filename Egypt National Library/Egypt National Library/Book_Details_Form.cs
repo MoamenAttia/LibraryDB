@@ -13,20 +13,19 @@ namespace Egypt_National_Library
 {
     public partial class Book_Details_Form : Form
     {
-        public Book_Details_Form(string AuthorFName, string AuthorMName, string AuthorLName, string Price, string Publisher,string SectionName,string ReleaseDate,byte[]image)
+        public Book_Details_Form(string Name,string AuthorFName, string AuthorMName, string AuthorLName, string Price, string Publisher,string SectionName,string ReleaseDate,byte[]image)
         {
             InitializeComponent();
             AuthorFNameLabel.Text = AuthorFName;
             AuthorMNameLabel.Text = AuthorMName;
             AuthorLNameLabel.Text = AuthorLName;
-            PriceLabel.Text = Price;
+            BookNameLabel.Text = Name;
+            PriceLabel.Text = Price + " LE";
             PublisherLabel.Text = Publisher;
             SectionNameLabel.Text = SectionName;
             ReleaseDateLabel.Text = ReleaseDate;
             MemoryStream ms = new MemoryStream(image);
             Book_ImagePicturebox.Image = Image.FromStream(ms);
-            
-
         }
 
         private void Return_Click(object sender, EventArgs e)

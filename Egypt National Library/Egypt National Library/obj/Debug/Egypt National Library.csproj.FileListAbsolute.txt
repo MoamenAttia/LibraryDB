@@ -57,3 +57,5 @@ E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt Na
 E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.csproj.GenerateResource.Cache
 C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Book_Details_Form.resources
 C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Story_Details_Form.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Music_Instrument_Details_Form.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Computer_Details_Form.resources

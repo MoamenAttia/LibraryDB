@@ -45,5 +45,27 @@ namespace Egypt_National_Library
             byte[] image = ms.ToArray();
             Controller_OBJ.UpdateComputerImage(int.Parse(Cmp_ID.Text), int.Parse(Lib_Dep_ID.Text), Cmp_Sec_Name.Text, image);
         }
+
+        private void Add_Software_Click(object sender, EventArgs e)
+        {
+            MemoryStream ms = new MemoryStream();
+            SoftwarePicturebox.Image.Save(ms, SoftwarePicturebox.Image.RawFormat);
+            byte[] image = ms.ToArray();
+
+            Controller_OBJ.UpdateSoftwareImage(image, Software.Text, int.Parse(Lib_Dep_ID.Text), Cmp_Sec_Name.Text, int.Parse(Cmp_ID.Text));
+        }
+
+        private void BrowseSoftwareImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OpenFileDialogobj = new OpenFileDialog();
+            OpenFileDialogobj.Filter = "Images | *.jpg; *.png; *.jpeg";
+            if (OpenFileDialogobj.ShowDialog() == DialogResult.OK)
+                SoftwarePicturebox.Image = Image.FromFile(OpenFileDialogobj.FileName);
+        }
+
+        private void SoftwarePicturebox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

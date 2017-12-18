@@ -46,39 +46,43 @@
             this.BookDepBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BookDepPanel = new System.Windows.Forms.Panel();
+            this.AvSeatsLabel = new System.Windows.Forms.Label();
+            this.Label111 = new System.Windows.Forms.Label();
+            this.MathsDepBtn = new System.Windows.Forms.Button();
+            this.HistoryDepBtn = new System.Windows.Forms.Button();
             this.ArabLitDepBtn = new System.Windows.Forms.Button();
             this.NutritionDepBtn = new System.Windows.Forms.Button();
             this.BabyCareDepBtn = new System.Windows.Forms.Button();
             this.HealthDepBtn = new System.Windows.Forms.Button();
             this.GeographyDepBtn = new System.Windows.Forms.Button();
             this.ReligiousDepBtn = new System.Windows.Forms.Button();
-            this.ScienceDepBtn = new System.Windows.Forms.Button();
             this.HumanDevDepBtn = new System.Windows.Forms.Button();
+            this.ScienceDepBtn = new System.Windows.Forms.Button();
             this.ProgrammingDepBtn = new System.Windows.Forms.Button();
             this.StoryDepPanel = new System.Windows.Forms.Panel();
+            this.StoryDepAvailableSeats = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.LearningDepBtn = new System.Windows.Forms.Button();
             this.DramaDepBtn = new System.Windows.Forms.Button();
             this.RomanticDepBtn = new System.Windows.Forms.Button();
             this.HorrorDepBtn = new System.Windows.Forms.Button();
-            this.HistoryDepBtn = new System.Windows.Forms.Button();
-            this.MathsDepBtn = new System.Windows.Forms.Button();
-            this.Label111 = new System.Windows.Forms.Label();
             this.MusicDepPanel = new System.Windows.Forms.Panel();
+            this.MusicDepAvSeats = new System.Windows.Forms.Label();
             this.PianoDepBtn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.MicrophonesDepBtn = new System.Windows.Forms.Button();
             this.GuitarDepBtn = new System.Windows.Forms.Button();
             this.DrumsDepBtn = new System.Windows.Forms.Button();
             this.CmpDepPanel = new System.Windows.Forms.Panel();
+            this.CmpDepAvSeats = new System.Windows.Forms.Label();
             this.SoftwareDepBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.PowerEngineeringDepBtn = new System.Windows.Forms.Button();
             this.ArchitectureDepBtn = new System.Windows.Forms.Button();
-            this.AvSeatsLabel = new System.Windows.Forms.Label();
-            this.StoryDepAvailableSeats = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.CmpDepAvSeats = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.MusicDepAvSeats = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.ShowAll_IstrumentBtn = new System.Windows.Forms.Button();
+            this.ShowAll_CmpBtn = new System.Windows.Forms.Button();
+            this.ShowAll_BooksBtn = new System.Windows.Forms.Button();
+            this.ShowAll_StoriesBtn = new System.Windows.Forms.Button();
             this.panelheader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsePicturebox)).BeginInit();
@@ -134,6 +138,7 @@
             this.panel1.Controls.Add(this.NameLabel);
             this.panel1.Controls.Add(this.UsePicturebox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(175, 582);
@@ -282,6 +287,7 @@
             // BookDepPanel
             // 
             this.BookDepPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.BookDepPanel.Controls.Add(this.ShowAll_BooksBtn);
             this.BookDepPanel.Controls.Add(this.AvSeatsLabel);
             this.BookDepPanel.Controls.Add(this.Label111);
             this.BookDepPanel.Controls.Add(this.MathsDepBtn);
@@ -300,6 +306,51 @@
             this.BookDepPanel.Size = new System.Drawing.Size(969, 70);
             this.BookDepPanel.TabIndex = 26;
             this.BookDepPanel.Visible = false;
+            // 
+            // AvSeatsLabel
+            // 
+            this.AvSeatsLabel.Location = new System.Drawing.Point(921, 35);
+            this.AvSeatsLabel.Name = "AvSeatsLabel";
+            this.AvSeatsLabel.Size = new System.Drawing.Size(48, 35);
+            this.AvSeatsLabel.TabIndex = 30;
+            this.AvSeatsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Label111
+            // 
+            this.Label111.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.Label111.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Label111.Location = new System.Drawing.Point(884, 35);
+            this.Label111.Name = "Label111";
+            this.Label111.Size = new System.Drawing.Size(45, 35);
+            this.Label111.TabIndex = 28;
+            this.Label111.Text = "AS :";
+            this.Label111.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // MathsDepBtn
+            // 
+            this.MathsDepBtn.FlatAppearance.BorderSize = 0;
+            this.MathsDepBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MathsDepBtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.MathsDepBtn.Location = new System.Drawing.Point(445, 35);
+            this.MathsDepBtn.Name = "MathsDepBtn";
+            this.MathsDepBtn.Size = new System.Drawing.Size(103, 35);
+            this.MathsDepBtn.TabIndex = 32;
+            this.MathsDepBtn.Text = "Maths";
+            this.MathsDepBtn.UseVisualStyleBackColor = true;
+            this.MathsDepBtn.Click += new System.EventHandler(this.MathsDepBtn_Click);
+            // 
+            // HistoryDepBtn
+            // 
+            this.HistoryDepBtn.FlatAppearance.BorderSize = 0;
+            this.HistoryDepBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HistoryDepBtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.HistoryDepBtn.Location = new System.Drawing.Point(352, 35);
+            this.HistoryDepBtn.Name = "HistoryDepBtn";
+            this.HistoryDepBtn.Size = new System.Drawing.Size(95, 35);
+            this.HistoryDepBtn.TabIndex = 31;
+            this.HistoryDepBtn.Text = "History";
+            this.HistoryDepBtn.UseVisualStyleBackColor = true;
+            this.HistoryDepBtn.Click += new System.EventHandler(this.HistoryDepBtn_Click);
             // 
             // ArabLitDepBtn
             // 
@@ -379,19 +430,6 @@
             this.ReligiousDepBtn.UseVisualStyleBackColor = true;
             this.ReligiousDepBtn.Click += new System.EventHandler(this.ReligiousDepBtn_Click);
             // 
-            // ScienceDepBtn
-            // 
-            this.ScienceDepBtn.FlatAppearance.BorderSize = 0;
-            this.ScienceDepBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ScienceDepBtn.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.ScienceDepBtn.Location = new System.Drawing.Point(338, 0);
-            this.ScienceDepBtn.Name = "ScienceDepBtn";
-            this.ScienceDepBtn.Size = new System.Drawing.Size(95, 35);
-            this.ScienceDepBtn.TabIndex = 30;
-            this.ScienceDepBtn.Text = "Science";
-            this.ScienceDepBtn.UseVisualStyleBackColor = true;
-            this.ScienceDepBtn.Click += new System.EventHandler(this.ScienceDepBtn_Click);
-            // 
             // HumanDevDepBtn
             // 
             this.HumanDevDepBtn.FlatAppearance.BorderSize = 0;
@@ -404,6 +442,19 @@
             this.HumanDevDepBtn.Text = "Human Develpment";
             this.HumanDevDepBtn.UseVisualStyleBackColor = true;
             this.HumanDevDepBtn.Click += new System.EventHandler(this.HumanDevDepBtn_Click);
+            // 
+            // ScienceDepBtn
+            // 
+            this.ScienceDepBtn.FlatAppearance.BorderSize = 0;
+            this.ScienceDepBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ScienceDepBtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.ScienceDepBtn.Location = new System.Drawing.Point(338, 0);
+            this.ScienceDepBtn.Name = "ScienceDepBtn";
+            this.ScienceDepBtn.Size = new System.Drawing.Size(95, 35);
+            this.ScienceDepBtn.TabIndex = 30;
+            this.ScienceDepBtn.Text = "Science";
+            this.ScienceDepBtn.UseVisualStyleBackColor = true;
+            this.ScienceDepBtn.Click += new System.EventHandler(this.ScienceDepBtn_Click);
             // 
             // ProgrammingDepBtn
             // 
@@ -421,6 +472,7 @@
             // StoryDepPanel
             // 
             this.StoryDepPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.StoryDepPanel.Controls.Add(this.ShowAll_StoriesBtn);
             this.StoryDepPanel.Controls.Add(this.StoryDepAvailableSeats);
             this.StoryDepPanel.Controls.Add(this.label2);
             this.StoryDepPanel.Controls.Add(this.LearningDepBtn);
@@ -432,6 +484,25 @@
             this.StoryDepPanel.Size = new System.Drawing.Size(762, 35);
             this.StoryDepPanel.TabIndex = 27;
             this.StoryDepPanel.Visible = false;
+            // 
+            // StoryDepAvailableSeats
+            // 
+            this.StoryDepAvailableSeats.Location = new System.Drawing.Point(726, 0);
+            this.StoryDepAvailableSeats.Name = "StoryDepAvailableSeats";
+            this.StoryDepAvailableSeats.Size = new System.Drawing.Size(36, 35);
+            this.StoryDepAvailableSeats.TabIndex = 32;
+            this.StoryDepAvailableSeats.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Location = new System.Drawing.Point(663, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 35);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "AS :";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LearningDepBtn
             // 
@@ -485,46 +556,10 @@
             this.HorrorDepBtn.UseVisualStyleBackColor = true;
             this.HorrorDepBtn.Click += new System.EventHandler(this.HorrorDepBtn_Click);
             // 
-            // HistoryDepBtn
-            // 
-            this.HistoryDepBtn.FlatAppearance.BorderSize = 0;
-            this.HistoryDepBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HistoryDepBtn.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.HistoryDepBtn.Location = new System.Drawing.Point(352, 35);
-            this.HistoryDepBtn.Name = "HistoryDepBtn";
-            this.HistoryDepBtn.Size = new System.Drawing.Size(95, 35);
-            this.HistoryDepBtn.TabIndex = 31;
-            this.HistoryDepBtn.Text = "History";
-            this.HistoryDepBtn.UseVisualStyleBackColor = true;
-            this.HistoryDepBtn.Click += new System.EventHandler(this.HistoryDepBtn_Click);
-            // 
-            // MathsDepBtn
-            // 
-            this.MathsDepBtn.FlatAppearance.BorderSize = 0;
-            this.MathsDepBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MathsDepBtn.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.MathsDepBtn.Location = new System.Drawing.Point(445, 35);
-            this.MathsDepBtn.Name = "MathsDepBtn";
-            this.MathsDepBtn.Size = new System.Drawing.Size(103, 35);
-            this.MathsDepBtn.TabIndex = 32;
-            this.MathsDepBtn.Text = "Maths";
-            this.MathsDepBtn.UseVisualStyleBackColor = true;
-            this.MathsDepBtn.Click += new System.EventHandler(this.MathsDepBtn_Click);
-            // 
-            // Label111
-            // 
-            this.Label111.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.Label111.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Label111.Location = new System.Drawing.Point(755, 35);
-            this.Label111.Name = "Label111";
-            this.Label111.Size = new System.Drawing.Size(176, 35);
-            this.Label111.TabIndex = 28;
-            this.Label111.Text = "Available Seats : ";
-            this.Label111.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // MusicDepPanel
             // 
             this.MusicDepPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.MusicDepPanel.Controls.Add(this.ShowAll_IstrumentBtn);
             this.MusicDepPanel.Controls.Add(this.MusicDepAvSeats);
             this.MusicDepPanel.Controls.Add(this.PianoDepBtn);
             this.MusicDepPanel.Controls.Add(this.label5);
@@ -536,6 +571,14 @@
             this.MusicDepPanel.Size = new System.Drawing.Size(689, 35);
             this.MusicDepPanel.TabIndex = 28;
             this.MusicDepPanel.Visible = false;
+            // 
+            // MusicDepAvSeats
+            // 
+            this.MusicDepAvSeats.Location = new System.Drawing.Point(649, 0);
+            this.MusicDepAvSeats.Name = "MusicDepAvSeats";
+            this.MusicDepAvSeats.Size = new System.Drawing.Size(32, 35);
+            this.MusicDepAvSeats.TabIndex = 38;
+            this.MusicDepAvSeats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PianoDepBtn
             // 
@@ -549,6 +592,17 @@
             this.PianoDepBtn.Text = "Piano";
             this.PianoDepBtn.UseVisualStyleBackColor = true;
             this.PianoDepBtn.Click += new System.EventHandler(this.PianoDepBtn_Click);
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Location = new System.Drawing.Point(608, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 35);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "AS :";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MicrophonesDepBtn
             // 
@@ -592,6 +646,7 @@
             // CmpDepPanel
             // 
             this.CmpDepPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.CmpDepPanel.Controls.Add(this.ShowAll_CmpBtn);
             this.CmpDepPanel.Controls.Add(this.CmpDepAvSeats);
             this.CmpDepPanel.Controls.Add(this.SoftwareDepBtn);
             this.CmpDepPanel.Controls.Add(this.label3);
@@ -602,6 +657,14 @@
             this.CmpDepPanel.Size = new System.Drawing.Size(782, 35);
             this.CmpDepPanel.TabIndex = 29;
             this.CmpDepPanel.Visible = false;
+            // 
+            // CmpDepAvSeats
+            // 
+            this.CmpDepAvSeats.Location = new System.Drawing.Point(733, 0);
+            this.CmpDepAvSeats.Name = "CmpDepAvSeats";
+            this.CmpDepAvSeats.Size = new System.Drawing.Size(49, 35);
+            this.CmpDepAvSeats.TabIndex = 34;
+            this.CmpDepAvSeats.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SoftwareDepBtn
             // 
@@ -615,6 +678,17 @@
             this.SoftwareDepBtn.Text = "Software Engineering";
             this.SoftwareDepBtn.UseVisualStyleBackColor = true;
             this.SoftwareDepBtn.Click += new System.EventHandler(this.SoftwareDepBtn_Click);
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Location = new System.Drawing.Point(687, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 35);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "AS :";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PowerEngineeringDepBtn
             // 
@@ -642,70 +716,57 @@
             this.ArchitectureDepBtn.UseVisualStyleBackColor = true;
             this.ArchitectureDepBtn.Click += new System.EventHandler(this.ArchitectureDepBtn_Click);
             // 
-            // AvSeatsLabel
+            // ShowAll_IstrumentBtn
             // 
-            this.AvSeatsLabel.Location = new System.Drawing.Point(921, 35);
-            this.AvSeatsLabel.Name = "AvSeatsLabel";
-            this.AvSeatsLabel.Size = new System.Drawing.Size(48, 35);
-            this.AvSeatsLabel.TabIndex = 30;
-            this.AvSeatsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ShowAll_IstrumentBtn.FlatAppearance.BorderSize = 0;
+            this.ShowAll_IstrumentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowAll_IstrumentBtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.ShowAll_IstrumentBtn.Location = new System.Drawing.Point(469, 0);
+            this.ShowAll_IstrumentBtn.Name = "ShowAll_IstrumentBtn";
+            this.ShowAll_IstrumentBtn.Size = new System.Drawing.Size(133, 35);
+            this.ShowAll_IstrumentBtn.TabIndex = 30;
+            this.ShowAll_IstrumentBtn.Text = "Show All";
+            this.ShowAll_IstrumentBtn.UseVisualStyleBackColor = true;
+            this.ShowAll_IstrumentBtn.Click += new System.EventHandler(this.ShowAll_IstrumentBtn_Click);
             // 
-            // StoryDepAvailableSeats
+            // ShowAll_CmpBtn
             // 
-            this.StoryDepAvailableSeats.Location = new System.Drawing.Point(705, 0);
-            this.StoryDepAvailableSeats.Name = "StoryDepAvailableSeats";
-            this.StoryDepAvailableSeats.Size = new System.Drawing.Size(57, 35);
-            this.StoryDepAvailableSeats.TabIndex = 32;
-            this.StoryDepAvailableSeats.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ShowAll_CmpBtn.FlatAppearance.BorderSize = 0;
+            this.ShowAll_CmpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowAll_CmpBtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.ShowAll_CmpBtn.Location = new System.Drawing.Point(548, 0);
+            this.ShowAll_CmpBtn.Name = "ShowAll_CmpBtn";
+            this.ShowAll_CmpBtn.Size = new System.Drawing.Size(133, 35);
+            this.ShowAll_CmpBtn.TabIndex = 31;
+            this.ShowAll_CmpBtn.Text = "Show All";
+            this.ShowAll_CmpBtn.UseVisualStyleBackColor = true;
+            this.ShowAll_CmpBtn.Click += new System.EventHandler(this.ShowAll_CmpBtn_Click);
             // 
-            // label2
+            // ShowAll_BooksBtn
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Location = new System.Drawing.Point(534, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 35);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Available Seats : ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ShowAll_BooksBtn.FlatAppearance.BorderSize = 0;
+            this.ShowAll_BooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowAll_BooksBtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.ShowAll_BooksBtn.Location = new System.Drawing.Point(536, 35);
+            this.ShowAll_BooksBtn.Name = "ShowAll_BooksBtn";
+            this.ShowAll_BooksBtn.Size = new System.Drawing.Size(133, 35);
+            this.ShowAll_BooksBtn.TabIndex = 31;
+            this.ShowAll_BooksBtn.Text = "Show All";
+            this.ShowAll_BooksBtn.UseVisualStyleBackColor = true;
+            this.ShowAll_BooksBtn.Click += new System.EventHandler(this.ShowAll_BooksBtn_Click);
             // 
-            // CmpDepAvSeats
+            // ShowAll_StoriesBtn
             // 
-            this.CmpDepAvSeats.Location = new System.Drawing.Point(733, 0);
-            this.CmpDepAvSeats.Name = "CmpDepAvSeats";
-            this.CmpDepAvSeats.Size = new System.Drawing.Size(49, 35);
-            this.CmpDepAvSeats.TabIndex = 34;
-            this.CmpDepAvSeats.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Location = new System.Drawing.Point(560, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(176, 35);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Available Seats : ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // MusicDepAvSeats
-            // 
-            this.MusicDepAvSeats.Location = new System.Drawing.Point(649, 0);
-            this.MusicDepAvSeats.Name = "MusicDepAvSeats";
-            this.MusicDepAvSeats.Size = new System.Drawing.Size(32, 35);
-            this.MusicDepAvSeats.TabIndex = 38;
-            this.MusicDepAvSeats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Location = new System.Drawing.Point(477, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(176, 35);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "Available Seats : ";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ShowAll_StoriesBtn.FlatAppearance.BorderSize = 0;
+            this.ShowAll_StoriesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowAll_StoriesBtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.ShowAll_StoriesBtn.Location = new System.Drawing.Point(536, 0);
+            this.ShowAll_StoriesBtn.Name = "ShowAll_StoriesBtn";
+            this.ShowAll_StoriesBtn.Size = new System.Drawing.Size(121, 35);
+            this.ShowAll_StoriesBtn.TabIndex = 32;
+            this.ShowAll_StoriesBtn.Text = "Show All";
+            this.ShowAll_StoriesBtn.UseVisualStyleBackColor = true;
+            this.ShowAll_StoriesBtn.Click += new System.EventHandler(this.ShowAll_StoriesBtn_Click);
             // 
             // User_Form
             // 
@@ -797,5 +858,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label MusicDepAvSeats;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button ShowAll_IstrumentBtn;
+        private System.Windows.Forms.Button ShowAll_CmpBtn;
+        private System.Windows.Forms.Button ShowAll_BooksBtn;
+        private System.Windows.Forms.Button ShowAll_StoriesBtn;
     }
 }
