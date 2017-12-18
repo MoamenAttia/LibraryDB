@@ -322,7 +322,7 @@
         RK5CYII=
 </value>
   </data>
-  <data name="UsePicturebox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="UserPicturebox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAH6CAYAAABxmfQYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         EwAACxMBAJqcGAAAcXtJREFUeF7t3Qd4FEeaN/DbvHu7l/Zuv73b29tdG5OMMdiAc8Q54RxwwAkHHDAY

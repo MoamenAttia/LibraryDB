@@ -144,6 +144,7 @@
             this.Exit_Button.Text = "Exit";
             this.Exit_Button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Exit_Button.UseVisualStyleBackColor = true;
+            this.Exit_Button.Click += new System.EventHandler(this.Exit_Button_Click);
             // 
             // SignUp_Button
             // 
@@ -167,6 +168,7 @@
             this.LogIN_Button.TabIndex = 24;
             this.LogIN_Button.Text = "Log In";
             this.LogIN_Button.UseVisualStyleBackColor = true;
+            this.LogIN_Button.Click += new System.EventHandler(this.LogIN_Button_Click);
             // 
             // label6
             // 

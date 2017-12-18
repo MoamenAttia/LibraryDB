@@ -44,7 +44,7 @@
             this.Browse_Image = new System.Windows.Forms.Button();
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.Price = new System.Windows.Forms.TextBox();
-            this.Story_ID = new System.Windows.Forms.TextBox();
+            this.User_ID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panelheader = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
@@ -138,6 +138,7 @@
             this.Add_Button.TabIndex = 92;
             this.Add_Button.Text = "Add User";
             this.Add_Button.UseVisualStyleBackColor = true;
+            this.Add_Button.Click += new System.EventHandler(this.Add_Button_Click);
             // 
             // panel3
             // 
@@ -199,13 +200,13 @@
             this.Price.Size = new System.Drawing.Size(161, 31);
             this.Price.TabIndex = 98;
             // 
-            // Story_ID
+            // User_ID
             // 
-            this.Story_ID.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Story_ID.Location = new System.Drawing.Point(426, 168);
-            this.Story_ID.Name = "Story_ID";
-            this.Story_ID.Size = new System.Drawing.Size(161, 31);
-            this.Story_ID.TabIndex = 97;
+            this.User_ID.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.User_ID.Location = new System.Drawing.Point(426, 168);
+            this.User_ID.Name = "User_ID";
+            this.User_ID.Size = new System.Drawing.Size(161, 31);
+            this.User_ID.TabIndex = 97;
             // 
             // label5
             // 
@@ -245,7 +246,7 @@
             this.Controls.Add(this.Browse_Image);
             this.Controls.Add(this.PictureBox);
             this.Controls.Add(this.Price);
-            this.Controls.Add(this.Story_ID);
+            this.Controls.Add(this.User_ID);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panelheader);
             this.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -280,7 +281,7 @@
         private System.Windows.Forms.Button Browse_Image;
         private System.Windows.Forms.PictureBox PictureBox;
         private System.Windows.Forms.TextBox Price;
-        private System.Windows.Forms.TextBox Story_ID;
+        private System.Windows.Forms.TextBox User_ID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panelheader;
     }

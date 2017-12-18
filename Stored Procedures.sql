@@ -130,6 +130,22 @@ Begin
 	Select * From Employee;
 End
 GO
+Create Procedure spGetUsers
+As
+Begin
+	Select * From [User]
+End
+Go
+
+Create Procedure GetUserByUserID
+@User_ID int
+As
+Begin
+	Select *
+	From [User]
+	where User_ID = @User_ID
+End
+Go
 
 Create Procedure spGetBook_Image
 @Book_ID int,
@@ -389,3 +405,14 @@ Begin
 	From Computer
 End
 GO
+
+Create Procedure spUpdateUserImage
+@User_Image image,
+@User_ID int
+As
+Begin
+	Update [User]
+	set User_Image= @User_Image
+	where User_ID = @User_ID
+End
+Go

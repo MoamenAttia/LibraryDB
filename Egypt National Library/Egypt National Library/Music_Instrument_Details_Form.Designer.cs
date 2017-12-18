@@ -50,6 +50,7 @@
             this.Return.TabIndex = 39;
             this.Return.Text = "Return";
             this.Return.UseVisualStyleBackColor = true;
+            this.Return.Click += new System.EventHandler(this.Return_Click);
             // 
             // panel1
             // 
@@ -65,7 +66,7 @@
             this.SectionNameLabel.ForeColor = System.Drawing.Color.DarkSalmon;
             this.SectionNameLabel.Location = new System.Drawing.Point(551, 138);
             this.SectionNameLabel.Name = "SectionNameLabel";
-            this.SectionNameLabel.Size = new System.Drawing.Size(206, 35);
+            this.SectionNameLabel.Size = new System.Drawing.Size(225, 35);
             this.SectionNameLabel.TabIndex = 34;
             this.SectionNameLabel.Text = "Section Name";
             this.SectionNameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -75,7 +76,7 @@
             this.PriceLabel.ForeColor = System.Drawing.Color.DarkSalmon;
             this.PriceLabel.Location = new System.Drawing.Point(551, 75);
             this.PriceLabel.Name = "PriceLabel";
-            this.PriceLabel.Size = new System.Drawing.Size(206, 35);
+            this.PriceLabel.Size = new System.Drawing.Size(225, 35);
             this.PriceLabel.TabIndex = 32;
             this.PriceLabel.Text = "Price";
             this.PriceLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -83,7 +84,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.label6.Location = new System.Drawing.Point(356, 138);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(140, 23);
@@ -93,7 +94,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.label4.Location = new System.Drawing.Point(356, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 23);
@@ -123,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(788, 639);
             this.Controls.Add(this.Return);
             this.Controls.Add(this.panel1);

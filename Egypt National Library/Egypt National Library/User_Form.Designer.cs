@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Form));
             this.panelheader = new System.Windows.Forms.Panel();
+            this.DiscoverBtn = new System.Windows.Forms.Button();
             this.LibDepBtn = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.RateLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.UsePicturebox = new System.Windows.Forms.PictureBox();
+            this.UserPicturebox = new System.Windows.Forms.PictureBox();
             this.button9 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@
             this.BookDepBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BookDepPanel = new System.Windows.Forms.Panel();
+            this.ShowAll_BooksBtn = new System.Windows.Forms.Button();
             this.AvSeatsLabel = new System.Windows.Forms.Label();
             this.Label111 = new System.Windows.Forms.Label();
             this.MathsDepBtn = new System.Windows.Forms.Button();
@@ -60,6 +62,7 @@
             this.ScienceDepBtn = new System.Windows.Forms.Button();
             this.ProgrammingDepBtn = new System.Windows.Forms.Button();
             this.StoryDepPanel = new System.Windows.Forms.Panel();
+            this.ShowAll_StoriesBtn = new System.Windows.Forms.Button();
             this.StoryDepAvailableSeats = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LearningDepBtn = new System.Windows.Forms.Button();
@@ -67,6 +70,7 @@
             this.RomanticDepBtn = new System.Windows.Forms.Button();
             this.HorrorDepBtn = new System.Windows.Forms.Button();
             this.MusicDepPanel = new System.Windows.Forms.Panel();
+            this.ShowAll_IstrumentBtn = new System.Windows.Forms.Button();
             this.MusicDepAvSeats = new System.Windows.Forms.Label();
             this.PianoDepBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -74,18 +78,15 @@
             this.GuitarDepBtn = new System.Windows.Forms.Button();
             this.DrumsDepBtn = new System.Windows.Forms.Button();
             this.CmpDepPanel = new System.Windows.Forms.Panel();
+            this.ShowAll_CmpBtn = new System.Windows.Forms.Button();
             this.CmpDepAvSeats = new System.Windows.Forms.Label();
             this.SoftwareDepBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.PowerEngineeringDepBtn = new System.Windows.Forms.Button();
             this.ArchitectureDepBtn = new System.Windows.Forms.Button();
-            this.ShowAll_IstrumentBtn = new System.Windows.Forms.Button();
-            this.ShowAll_CmpBtn = new System.Windows.Forms.Button();
-            this.ShowAll_BooksBtn = new System.Windows.Forms.Button();
-            this.ShowAll_StoriesBtn = new System.Windows.Forms.Button();
             this.panelheader.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UsePicturebox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturebox)).BeginInit();
             this.LibDepsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BookDepPanel.SuspendLayout();
@@ -97,6 +98,7 @@
             // panelheader
             // 
             this.panelheader.BackColor = System.Drawing.Color.DarkSalmon;
+            this.panelheader.Controls.Add(this.DiscoverBtn);
             this.panelheader.Controls.Add(this.LibDepBtn);
             this.panelheader.Controls.Add(this.closeButton);
             this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -104,6 +106,19 @@
             this.panelheader.Name = "panelheader";
             this.panelheader.Size = new System.Drawing.Size(1019, 35);
             this.panelheader.TabIndex = 4;
+            // 
+            // DiscoverBtn
+            // 
+            this.DiscoverBtn.FlatAppearance.BorderSize = 0;
+            this.DiscoverBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DiscoverBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.DiscoverBtn.Location = new System.Drawing.Point(259, 0);
+            this.DiscoverBtn.Name = "DiscoverBtn";
+            this.DiscoverBtn.Size = new System.Drawing.Size(102, 35);
+            this.DiscoverBtn.TabIndex = 30;
+            this.DiscoverBtn.Text = "Discover";
+            this.DiscoverBtn.UseVisualStyleBackColor = true;
+            this.DiscoverBtn.Click += new System.EventHandler(this.DiscoverBtn_Click);
             // 
             // LibDepBtn
             // 
@@ -136,7 +151,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.panel1.Controls.Add(this.RateLabel);
             this.panel1.Controls.Add(this.NameLabel);
-            this.panel1.Controls.Add(this.UsePicturebox);
+            this.panel1.Controls.Add(this.UserPicturebox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -146,31 +161,32 @@
             // 
             // RateLabel
             // 
-            this.RateLabel.Location = new System.Drawing.Point(3, 176);
+            this.RateLabel.Location = new System.Drawing.Point(7, 189);
             this.RateLabel.Name = "RateLabel";
-            this.RateLabel.Size = new System.Drawing.Size(172, 31);
-            this.RateLabel.TabIndex = 25;
-            this.RateLabel.Text = " Rate : ";
-            this.RateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RateLabel.Size = new System.Drawing.Size(165, 31);
+            this.RateLabel.TabIndex = 30;
+            this.RateLabel.Text = "RateNum";
+            this.RateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NameLabel
             // 
+            this.NameLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameLabel.Location = new System.Drawing.Point(3, 134);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(172, 31);
+            this.NameLabel.Size = new System.Drawing.Size(172, 55);
             this.NameLabel.TabIndex = 24;
             this.NameLabel.Text = "Moamen Hassan";
-            this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // UsePicturebox
+            // UserPicturebox
             // 
-            this.UsePicturebox.Image = ((System.Drawing.Image)(resources.GetObject("UsePicturebox.Image")));
-            this.UsePicturebox.Location = new System.Drawing.Point(0, 5);
-            this.UsePicturebox.Name = "UsePicturebox";
-            this.UsePicturebox.Size = new System.Drawing.Size(175, 122);
-            this.UsePicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.UsePicturebox.TabIndex = 24;
-            this.UsePicturebox.TabStop = false;
+            this.UserPicturebox.Image = ((System.Drawing.Image)(resources.GetObject("UserPicturebox.Image")));
+            this.UserPicturebox.Location = new System.Drawing.Point(0, 5);
+            this.UserPicturebox.Name = "UserPicturebox";
+            this.UserPicturebox.Size = new System.Drawing.Size(175, 122);
+            this.UserPicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.UserPicturebox.TabIndex = 24;
+            this.UserPicturebox.TabStop = false;
             // 
             // button9
             // 
@@ -190,7 +206,7 @@
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 241);
+            this.button3.Location = new System.Drawing.Point(3, 297);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(172, 49);
             this.button3.TabIndex = 17;
@@ -202,7 +218,7 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(3, 288);
+            this.button4.Location = new System.Drawing.Point(3, 344);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(172, 49);
             this.button4.TabIndex = 18;
@@ -306,6 +322,19 @@
             this.BookDepPanel.Size = new System.Drawing.Size(969, 70);
             this.BookDepPanel.TabIndex = 26;
             this.BookDepPanel.Visible = false;
+            // 
+            // ShowAll_BooksBtn
+            // 
+            this.ShowAll_BooksBtn.FlatAppearance.BorderSize = 0;
+            this.ShowAll_BooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowAll_BooksBtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.ShowAll_BooksBtn.Location = new System.Drawing.Point(536, 35);
+            this.ShowAll_BooksBtn.Name = "ShowAll_BooksBtn";
+            this.ShowAll_BooksBtn.Size = new System.Drawing.Size(133, 35);
+            this.ShowAll_BooksBtn.TabIndex = 31;
+            this.ShowAll_BooksBtn.Text = "Show All";
+            this.ShowAll_BooksBtn.UseVisualStyleBackColor = true;
+            this.ShowAll_BooksBtn.Click += new System.EventHandler(this.ShowAll_BooksBtn_Click);
             // 
             // AvSeatsLabel
             // 
@@ -485,6 +514,19 @@
             this.StoryDepPanel.TabIndex = 27;
             this.StoryDepPanel.Visible = false;
             // 
+            // ShowAll_StoriesBtn
+            // 
+            this.ShowAll_StoriesBtn.FlatAppearance.BorderSize = 0;
+            this.ShowAll_StoriesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowAll_StoriesBtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.ShowAll_StoriesBtn.Location = new System.Drawing.Point(536, 0);
+            this.ShowAll_StoriesBtn.Name = "ShowAll_StoriesBtn";
+            this.ShowAll_StoriesBtn.Size = new System.Drawing.Size(121, 35);
+            this.ShowAll_StoriesBtn.TabIndex = 32;
+            this.ShowAll_StoriesBtn.Text = "Show All";
+            this.ShowAll_StoriesBtn.UseVisualStyleBackColor = true;
+            this.ShowAll_StoriesBtn.Click += new System.EventHandler(this.ShowAll_StoriesBtn_Click);
+            // 
             // StoryDepAvailableSeats
             // 
             this.StoryDepAvailableSeats.Location = new System.Drawing.Point(726, 0);
@@ -572,6 +614,19 @@
             this.MusicDepPanel.TabIndex = 28;
             this.MusicDepPanel.Visible = false;
             // 
+            // ShowAll_IstrumentBtn
+            // 
+            this.ShowAll_IstrumentBtn.FlatAppearance.BorderSize = 0;
+            this.ShowAll_IstrumentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowAll_IstrumentBtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.ShowAll_IstrumentBtn.Location = new System.Drawing.Point(469, 0);
+            this.ShowAll_IstrumentBtn.Name = "ShowAll_IstrumentBtn";
+            this.ShowAll_IstrumentBtn.Size = new System.Drawing.Size(133, 35);
+            this.ShowAll_IstrumentBtn.TabIndex = 30;
+            this.ShowAll_IstrumentBtn.Text = "Show All";
+            this.ShowAll_IstrumentBtn.UseVisualStyleBackColor = true;
+            this.ShowAll_IstrumentBtn.Click += new System.EventHandler(this.ShowAll_IstrumentBtn_Click);
+            // 
             // MusicDepAvSeats
             // 
             this.MusicDepAvSeats.Location = new System.Drawing.Point(649, 0);
@@ -658,6 +713,19 @@
             this.CmpDepPanel.TabIndex = 29;
             this.CmpDepPanel.Visible = false;
             // 
+            // ShowAll_CmpBtn
+            // 
+            this.ShowAll_CmpBtn.FlatAppearance.BorderSize = 0;
+            this.ShowAll_CmpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowAll_CmpBtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.ShowAll_CmpBtn.Location = new System.Drawing.Point(548, 0);
+            this.ShowAll_CmpBtn.Name = "ShowAll_CmpBtn";
+            this.ShowAll_CmpBtn.Size = new System.Drawing.Size(133, 35);
+            this.ShowAll_CmpBtn.TabIndex = 31;
+            this.ShowAll_CmpBtn.Text = "Show All";
+            this.ShowAll_CmpBtn.UseVisualStyleBackColor = true;
+            this.ShowAll_CmpBtn.Click += new System.EventHandler(this.ShowAll_CmpBtn_Click);
+            // 
             // CmpDepAvSeats
             // 
             this.CmpDepAvSeats.Location = new System.Drawing.Point(733, 0);
@@ -716,64 +784,12 @@
             this.ArchitectureDepBtn.UseVisualStyleBackColor = true;
             this.ArchitectureDepBtn.Click += new System.EventHandler(this.ArchitectureDepBtn_Click);
             // 
-            // ShowAll_IstrumentBtn
-            // 
-            this.ShowAll_IstrumentBtn.FlatAppearance.BorderSize = 0;
-            this.ShowAll_IstrumentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ShowAll_IstrumentBtn.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.ShowAll_IstrumentBtn.Location = new System.Drawing.Point(469, 0);
-            this.ShowAll_IstrumentBtn.Name = "ShowAll_IstrumentBtn";
-            this.ShowAll_IstrumentBtn.Size = new System.Drawing.Size(133, 35);
-            this.ShowAll_IstrumentBtn.TabIndex = 30;
-            this.ShowAll_IstrumentBtn.Text = "Show All";
-            this.ShowAll_IstrumentBtn.UseVisualStyleBackColor = true;
-            this.ShowAll_IstrumentBtn.Click += new System.EventHandler(this.ShowAll_IstrumentBtn_Click);
-            // 
-            // ShowAll_CmpBtn
-            // 
-            this.ShowAll_CmpBtn.FlatAppearance.BorderSize = 0;
-            this.ShowAll_CmpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ShowAll_CmpBtn.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.ShowAll_CmpBtn.Location = new System.Drawing.Point(548, 0);
-            this.ShowAll_CmpBtn.Name = "ShowAll_CmpBtn";
-            this.ShowAll_CmpBtn.Size = new System.Drawing.Size(133, 35);
-            this.ShowAll_CmpBtn.TabIndex = 31;
-            this.ShowAll_CmpBtn.Text = "Show All";
-            this.ShowAll_CmpBtn.UseVisualStyleBackColor = true;
-            this.ShowAll_CmpBtn.Click += new System.EventHandler(this.ShowAll_CmpBtn_Click);
-            // 
-            // ShowAll_BooksBtn
-            // 
-            this.ShowAll_BooksBtn.FlatAppearance.BorderSize = 0;
-            this.ShowAll_BooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ShowAll_BooksBtn.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.ShowAll_BooksBtn.Location = new System.Drawing.Point(536, 35);
-            this.ShowAll_BooksBtn.Name = "ShowAll_BooksBtn";
-            this.ShowAll_BooksBtn.Size = new System.Drawing.Size(133, 35);
-            this.ShowAll_BooksBtn.TabIndex = 31;
-            this.ShowAll_BooksBtn.Text = "Show All";
-            this.ShowAll_BooksBtn.UseVisualStyleBackColor = true;
-            this.ShowAll_BooksBtn.Click += new System.EventHandler(this.ShowAll_BooksBtn_Click);
-            // 
-            // ShowAll_StoriesBtn
-            // 
-            this.ShowAll_StoriesBtn.FlatAppearance.BorderSize = 0;
-            this.ShowAll_StoriesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ShowAll_StoriesBtn.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.ShowAll_StoriesBtn.Location = new System.Drawing.Point(536, 0);
-            this.ShowAll_StoriesBtn.Name = "ShowAll_StoriesBtn";
-            this.ShowAll_StoriesBtn.Size = new System.Drawing.Size(121, 35);
-            this.ShowAll_StoriesBtn.TabIndex = 32;
-            this.ShowAll_StoriesBtn.Text = "Show All";
-            this.ShowAll_StoriesBtn.UseVisualStyleBackColor = true;
-            this.ShowAll_StoriesBtn.Click += new System.EventHandler(this.ShowAll_StoriesBtn_Click);
-            // 
             // User_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.Snow;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1194, 582);
             this.Controls.Add(this.CmpDepPanel);
             this.Controls.Add(this.MusicDepPanel);
@@ -796,7 +812,7 @@
             this.Load += new System.EventHandler(this.User_Form_Load);
             this.panelheader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.UsePicturebox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPicturebox)).EndInit();
             this.LibDepsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.BookDepPanel.ResumeLayout(false);
@@ -810,13 +826,12 @@
         #endregion
         private System.Windows.Forms.Panel panelheader;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox UsePicturebox;
+        private System.Windows.Forms.PictureBox UserPicturebox;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Label RateLabel;
         private System.Windows.Forms.Button LibDepBtn;
         private System.Windows.Forms.Panel LibDepsPanel;
         private System.Windows.Forms.Button MusicDepBtn;
@@ -862,5 +877,7 @@
         private System.Windows.Forms.Button ShowAll_CmpBtn;
         private System.Windows.Forms.Button ShowAll_BooksBtn;
         private System.Windows.Forms.Button ShowAll_StoriesBtn;
+        private System.Windows.Forms.Button DiscoverBtn;
+        private System.Windows.Forms.Label RateLabel;
     }
 }

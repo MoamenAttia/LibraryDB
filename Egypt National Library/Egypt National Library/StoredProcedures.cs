@@ -45,6 +45,11 @@ namespace Egypt_National_Library
         public static string GetComputerSoftwares = "spGetComputerSoftwares";
         public static string GetComputers = "spGetComputers";
 
+        // User Stored Procedure //
+        public static string UpdateUserImage = "spUpdateUserImage";
+        public static string GetUserByID = "GetUserByUserID";
+
+
 
         public static string AddEmp = "spAddEmployee";
         public static string AddUser = "";
