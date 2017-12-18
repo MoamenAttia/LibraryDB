@@ -48,6 +48,10 @@ namespace Egypt_National_Library
         // User Stored Procedure //
         public static string UpdateUserImage = "spUpdateUserImage";
         public static string GetUserByID = "GetUserByUserID";
+        public static string GetMyBooks = "spGetMyBooks";
+        public static string GetMyStories = "spGetMyStories";
+        public static string GetMyInstruments = "spGetMyInstruments";
+        public static string GetMyComputers = "spGetMyComputers";
 
 
 

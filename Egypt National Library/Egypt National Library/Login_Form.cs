@@ -19,11 +19,7 @@ namespace Egypt_National_Library
             Controller_OBJ = new Controller();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        private void Form1_Load(object sender, EventArgs e) { }
         private void Exit_Button_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -41,7 +37,7 @@ namespace Egypt_National_Library
                 if (Password == dt.Rows[0].ItemArray[5].ToString())
                 {
                     MessageBox.Show("Welcome " + dt.Rows[0].ItemArray[0].ToString() , "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    User_Form Form = new User_Form(dt.Rows[0].ItemArray[0].ToString() + " " + dt.Rows[0].ItemArray[1].ToString() + " " + dt.Rows[0].ItemArray[2].ToString(), "Rate : " + dt.Rows[0].ItemArray[3].ToString(), (byte[])dt.Rows[0].ItemArray[6]);
+                    User_Form Form = new User_Form(dt.Rows[0].ItemArray[0].ToString() + " " + dt.Rows[0].ItemArray[1].ToString() + " " + dt.Rows[0].ItemArray[2].ToString(), "Rate : " + dt.Rows[0].ItemArray[3].ToString(), (byte[])dt.Rows[0].ItemArray[6], ID);
                     Form.Show();
                     this.Hide();
                 }

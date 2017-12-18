@@ -34,12 +34,14 @@
             this.LibDepBtn = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AddComputersBtn = new System.Windows.Forms.Button();
+            this.MyInstrumentsBtn = new System.Windows.Forms.Button();
             this.RateLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.UserPicturebox = new System.Windows.Forms.PictureBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.AboutLibraryBtn = new System.Windows.Forms.Button();
+            this.MyBooksBtn = new System.Windows.Forms.Button();
+            this.MyStoriesBtn = new System.Windows.Forms.Button();
             this.LibDepsPanel = new System.Windows.Forms.Panel();
             this.CmpDepBtn = new System.Windows.Forms.Button();
             this.MusicDepBtn = new System.Windows.Forms.Button();
@@ -84,6 +86,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.PowerEngineeringDepBtn = new System.Windows.Forms.Button();
             this.ArchitectureDepBtn = new System.Windows.Forms.Button();
+            this.FilterPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.FilterBtn = new System.Windows.Forms.Button();
             this.panelheader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserPicturebox)).BeginInit();
@@ -93,11 +103,13 @@
             this.StoryDepPanel.SuspendLayout();
             this.MusicDepPanel.SuspendLayout();
             this.CmpDepPanel.SuspendLayout();
+            this.FilterPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelheader
             // 
             this.panelheader.BackColor = System.Drawing.Color.DarkSalmon;
+            this.panelheader.Controls.Add(this.FilterBtn);
             this.panelheader.Controls.Add(this.DiscoverBtn);
             this.panelheader.Controls.Add(this.LibDepBtn);
             this.panelheader.Controls.Add(this.closeButton);
@@ -149,6 +161,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.panel1.Controls.Add(this.AddComputersBtn);
+            this.panel1.Controls.Add(this.MyInstrumentsBtn);
             this.panel1.Controls.Add(this.RateLabel);
             this.panel1.Controls.Add(this.NameLabel);
             this.panel1.Controls.Add(this.UserPicturebox);
@@ -158,6 +172,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(175, 582);
             this.panel1.TabIndex = 3;
+            // 
+            // AddComputersBtn
+            // 
+            this.AddComputersBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.AddComputersBtn.FlatAppearance.BorderSize = 0;
+            this.AddComputersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddComputersBtn.Location = new System.Drawing.Point(2, 449);
+            this.AddComputersBtn.Name = "AddComputersBtn";
+            this.AddComputersBtn.Size = new System.Drawing.Size(172, 49);
+            this.AddComputersBtn.TabIndex = 30;
+            this.AddComputersBtn.Text = "My Computers";
+            this.AddComputersBtn.UseVisualStyleBackColor = false;
+            this.AddComputersBtn.Click += new System.EventHandler(this.AddComputersBtn_Click);
+            // 
+            // MyInstrumentsBtn
+            // 
+            this.MyInstrumentsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.MyInstrumentsBtn.FlatAppearance.BorderSize = 0;
+            this.MyInstrumentsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MyInstrumentsBtn.Location = new System.Drawing.Point(2, 394);
+            this.MyInstrumentsBtn.Name = "MyInstrumentsBtn";
+            this.MyInstrumentsBtn.Size = new System.Drawing.Size(172, 49);
+            this.MyInstrumentsBtn.TabIndex = 31;
+            this.MyInstrumentsBtn.Text = "My Instruments";
+            this.MyInstrumentsBtn.UseVisualStyleBackColor = false;
+            this.MyInstrumentsBtn.Click += new System.EventHandler(this.MyInstrumentsBtn_Click);
             // 
             // RateLabel
             // 
@@ -188,42 +228,45 @@
             this.UserPicturebox.TabIndex = 24;
             this.UserPicturebox.TabStop = false;
             // 
-            // button9
+            // AboutLibraryBtn
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(3, 533);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(172, 49);
-            this.button9.TabIndex = 23;
-            this.button9.Text = "About";
-            this.button9.UseVisualStyleBackColor = false;
+            this.AboutLibraryBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.AboutLibraryBtn.FlatAppearance.BorderSize = 0;
+            this.AboutLibraryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AboutLibraryBtn.Location = new System.Drawing.Point(3, 533);
+            this.AboutLibraryBtn.Name = "AboutLibraryBtn";
+            this.AboutLibraryBtn.Size = new System.Drawing.Size(172, 49);
+            this.AboutLibraryBtn.TabIndex = 23;
+            this.AboutLibraryBtn.Text = "About Library";
+            this.AboutLibraryBtn.UseVisualStyleBackColor = false;
+            this.AboutLibraryBtn.Click += new System.EventHandler(this.AboutLibraryBtn_Click);
             // 
-            // button3
+            // MyBooksBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 297);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(172, 49);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Books";
-            this.button3.UseVisualStyleBackColor = false;
+            this.MyBooksBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.MyBooksBtn.FlatAppearance.BorderSize = 0;
+            this.MyBooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MyBooksBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MyBooksBtn.Location = new System.Drawing.Point(3, 297);
+            this.MyBooksBtn.Name = "MyBooksBtn";
+            this.MyBooksBtn.Size = new System.Drawing.Size(172, 49);
+            this.MyBooksBtn.TabIndex = 17;
+            this.MyBooksBtn.Text = "My Books";
+            this.MyBooksBtn.UseVisualStyleBackColor = false;
+            this.MyBooksBtn.Click += new System.EventHandler(this.MyBooksBtn_Click);
             // 
-            // button4
+            // MyStoriesBtn
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(3, 344);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(172, 49);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Reservations";
-            this.button4.UseVisualStyleBackColor = false;
+            this.MyStoriesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.MyStoriesBtn.FlatAppearance.BorderSize = 0;
+            this.MyStoriesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MyStoriesBtn.Location = new System.Drawing.Point(2, 344);
+            this.MyStoriesBtn.Name = "MyStoriesBtn";
+            this.MyStoriesBtn.Size = new System.Drawing.Size(172, 49);
+            this.MyStoriesBtn.TabIndex = 18;
+            this.MyStoriesBtn.Text = "My Stories";
+            this.MyStoriesBtn.UseVisualStyleBackColor = false;
+            this.MyStoriesBtn.Click += new System.EventHandler(this.MyStoriesBtn_Click);
             // 
             // LibDepsPanel
             // 
@@ -784,6 +827,106 @@
             this.ArchitectureDepBtn.UseVisualStyleBackColor = true;
             this.ArchitectureDepBtn.Click += new System.EventHandler(this.ArchitectureDepBtn_Click);
             // 
+            // FilterPanel
+            // 
+            this.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.FilterPanel.Controls.Add(this.button5);
+            this.FilterPanel.Controls.Add(this.button6);
+            this.FilterPanel.Controls.Add(this.button1);
+            this.FilterPanel.Controls.Add(this.button2);
+            this.FilterPanel.Controls.Add(this.button3);
+            this.FilterPanel.Controls.Add(this.button4);
+            this.FilterPanel.Location = new System.Drawing.Point(182, 268);
+            this.FilterPanel.Name = "FilterPanel";
+            this.FilterPanel.Size = new System.Drawing.Size(708, 35);
+            this.FilterPanel.TabIndex = 30;
+            this.FilterPanel.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.button1.Location = new System.Drawing.Point(337, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 35);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Low Rated";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.button2.Location = new System.Drawing.Point(220, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(112, 35);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "Top Rated";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.button3.Location = new System.Drawing.Point(111, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(108, 35);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "Low Price";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.button4.Location = new System.Drawing.Point(3, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(102, 35);
+            this.button4.TabIndex = 25;
+            this.button4.Text = "Top Price";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.button5.Location = new System.Drawing.Point(604, 0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(109, 35);
+            this.button5.TabIndex = 33;
+            this.button5.Text = "Reserved";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.button6.Location = new System.Drawing.Point(468, 0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(130, 35);
+            this.button6.TabIndex = 32;
+            this.button6.Text = "Available";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // FilterBtn
+            // 
+            this.FilterBtn.FlatAppearance.BorderSize = 0;
+            this.FilterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FilterBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.FilterBtn.Location = new System.Drawing.Point(865, 0);
+            this.FilterBtn.Name = "FilterBtn";
+            this.FilterBtn.Size = new System.Drawing.Size(71, 35);
+            this.FilterBtn.TabIndex = 31;
+            this.FilterBtn.Text = "Filter";
+            this.FilterBtn.UseVisualStyleBackColor = true;
+            this.FilterBtn.Visible = false;
+            // 
             // User_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -791,15 +934,16 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1194, 582);
+            this.Controls.Add(this.FilterPanel);
             this.Controls.Add(this.CmpDepPanel);
             this.Controls.Add(this.MusicDepPanel);
             this.Controls.Add(this.StoryDepPanel);
             this.Controls.Add(this.BookDepPanel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LibDepsPanel);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.AboutLibraryBtn);
+            this.Controls.Add(this.MyBooksBtn);
+            this.Controls.Add(this.MyStoriesBtn);
             this.Controls.Add(this.panelheader);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -819,6 +963,7 @@
             this.StoryDepPanel.ResumeLayout(false);
             this.MusicDepPanel.ResumeLayout(false);
             this.CmpDepPanel.ResumeLayout(false);
+            this.FilterPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -827,9 +972,9 @@
         private System.Windows.Forms.Panel panelheader;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox UserPicturebox;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button AboutLibraryBtn;
+        private System.Windows.Forms.Button MyBooksBtn;
+        private System.Windows.Forms.Button MyStoriesBtn;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Button LibDepBtn;
@@ -879,5 +1024,15 @@
         private System.Windows.Forms.Button ShowAll_StoriesBtn;
         private System.Windows.Forms.Button DiscoverBtn;
         private System.Windows.Forms.Label RateLabel;
+        private System.Windows.Forms.Button MyInstrumentsBtn;
+        private System.Windows.Forms.Button AddComputersBtn;
+        private System.Windows.Forms.Panel FilterPanel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button FilterBtn;
     }
 }

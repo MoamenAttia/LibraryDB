@@ -227,6 +227,35 @@ namespace Egypt_National_Library
             Parameters.Add("@User_ID", User_ID);
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
+        public DataTable GetMyBooks(int User_ID)
+        {
+            string StoredProcedureName = StoredProcedures.GetMyBooks;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@User_ID", User_ID);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetMyStories(int User_ID)
+        {
+            string StoredProcedureName = StoredProcedures.GetMyStories;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@User_ID", User_ID);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetMyInstruments(int User_ID)
+        {
+            string StoredProcedureName = StoredProcedures.GetMyInstruments;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@User_ID", User_ID);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetMyComputers(int User_ID)
+        {
+            string StoredProcedureName = StoredProcedures.GetMyComputers;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@User_ID", User_ID);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+
         public DataTable GetAllBooks() { string StoredProcedureName = StoredProcedures.GetBooks; return dbMan.ExecuteReader(StoredProcedureName, null); }
         public DataTable GetAllStories() { string StoredProcedureName = StoredProcedures.GetStories; return dbMan.ExecuteReader(StoredProcedureName, null); }
         public DataTable GetAllMusicInstruments() { string StoredProcedureName = StoredProcedures.GetMusicInstruments; return dbMan.ExecuteReader(StoredProcedureName, null); }

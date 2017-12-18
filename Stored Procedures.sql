@@ -416,3 +416,45 @@ Begin
 	where User_ID = @User_ID
 End
 Go
+
+
+Create Procedure spGetMyBooks
+@User_ID int
+As
+Begin
+	Select *
+	From Book
+	where Book_User_ID = @User_ID
+End
+Go
+
+Create Procedure spGetMyStories
+@User_ID int
+As
+Begin
+	Select *
+	From Story
+	where Story_User_ID = @User_ID
+End
+Go
+
+Create Procedure spGetMyInstruments
+@User_ID int
+As
+Begin
+	Select *
+	From Musical_Instrument
+	where Musical_Ins_User_ID = 1
+End
+Go
+
+Create Procedure spGetMyComputers
+@User_ID int
+As
+Begin
+	Select *
+	From Computer
+	where Cmp_User_ID = @User_ID
+End
+Go
+
