@@ -77,17 +77,43 @@ namespace Egypt_National_Library
         private void BorrowBtn_Click(object sender, EventArgs e)
         {
            int Success= Controller_OBJ.UpdateBookStatusAndBookUserID(userid, BookIDvar, Book_Typevar, 1, "InUse");
-           if (Success == 1) MessageBox.Show("AyKalam");
+           if (Success == 1) MessageBox.Show("This Book has been added to your Books");
         }
 
         private void ReturnBtn_Click(object sender, EventArgs e)
         {
             int Success = Controller_OBJ.UpdateBookStatusAndBookUserID_NULL(BookIDvar, Book_Typevar, 1, "Available");
-            if (Success == 1) MessageBox.Show("AyKalam");
+            if (Success == 1) MessageBox.Show("This Book has been removed from your Books");
         }
 
-   
+        private void RateBtn_Click(object sender, EventArgs e)
+        {
+            if (VeryPoor.Checked)
+            {
+                int Success = Controller_OBJ.RateBook(BookIDvar, Book_Typevar, 1, 1);
+                if (Success == 1) MessageBox.Show("You rated this as Verypoor");
+            }
+            else if (Poor.Checked)
+            {
+                int Success = Controller_OBJ.RateBook(BookIDvar, Book_Typevar, 1, 2);
+                if (Success == 1) MessageBox.Show("You rated this as poor");
+            }
+            else if (Good.Checked)
+            {
+                int Success = Controller_OBJ.RateBook(BookIDvar, Book_Typevar, 1, 3);
+                if (Success == 1) MessageBox.Show("You rated this as Good");
+            }
+            else if (VeryGood.Checked)
+            {
+                int Success = Controller_OBJ.RateBook(BookIDvar, Book_Typevar, 1, 4);
+                if (Success == 1) MessageBox.Show("You rated this as VeryGood");
+            }
+            else if (Excellent.Checked)
+            {
+                int Success = Controller_OBJ.RateBook(BookIDvar, Book_Typevar, 1, 5);
+                if (Success == 1) MessageBox.Show("You rated this as Excellent");
+            }
 
-       
+        }
     }
 }

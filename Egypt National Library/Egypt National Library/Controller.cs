@@ -286,11 +286,127 @@ namespace Egypt_National_Library
             Parameters.Add("@Status", Status);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
+        /// 
+        public int UpdateStoryStatusAndStoryUserID(int Story_User_ID, int Story_ID, string Story_Type, int Story_Dep, string Status)
+        {
+            string StoredProcedureName = StoredProcedures.UpdateStoryStatusAndStoryUserID;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@User_ID", Story_User_ID);
+            Parameters.Add("@Story_ID", Story_ID);
+            Parameters.Add("@Story_Type", Story_Type);
+            Parameters.Add("@Story_Dep", Story_Dep);
+            Parameters.Add("@Status", Status);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int UpdateStoryStatusAndStoryUserID_NULL(int Story_ID, string Story_Type, int Story_Dep, string Status)
+        {
+            string StoredProcedureName = StoredProcedures.UpdateStoryStatusAndStoryUserID_NULL;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Story_ID", Story_ID);
+            Parameters.Add("@Story_Type", Story_Type);
+            Parameters.Add("@Story_Dep", Story_Dep);
+            Parameters.Add("@Status", Status);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        /// 
+        /// 
+        public int UpdateInstrumentStatusAndInstrumentUserID(int Instrument_User_ID, int Instrument_ID, string Instrument_Type, int Instrument_Dep, string Status)
+        {
+            string StoredProcedureName = StoredProcedures.UpdateInstrumentStatusAndInstrumentUserID;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@User_ID", Instrument_User_ID);
+            Parameters.Add("@Instrument_ID", Instrument_ID);
+            Parameters.Add("@Instrument_Type", Instrument_Type);
+            Parameters.Add("@Instrument_Dep", Instrument_Dep);
+            Parameters.Add("@Status", Status);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int UpdateInstrumentStatusAndInstrumentUserID_NULL(int Instrument_ID, string Instrument_Type, int Instrument_Dep, string Status)
+        {
+            string StoredProcedureName = StoredProcedures.UpdateInstrumentStatusAndInstrumentUserID_NULL;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Instrument_ID", Instrument_ID);
+            Parameters.Add("@Instrument_Type", Instrument_Type);
+            Parameters.Add("@Instrument_Dep", Instrument_Dep);
+            Parameters.Add("@Status", Status);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        /// 
+        /// 
+        public int UpdateCmpStatusAndCmpUserID(int Cmp_User_ID, int Cmp_ID, string Cmp_Type, int Cmp_Dep, string Status)
+        {
+            string StoredProcedureName = StoredProcedures.UpdateCmpStatusAndCmpUserID;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@User_ID", Cmp_User_ID);
+            Parameters.Add("@Cmp_ID", Cmp_ID);
+            Parameters.Add("@Cmp_Type", Cmp_Type);
+            Parameters.Add("@Cmp_Dep", Cmp_Dep);
+            Parameters.Add("@Status", Status);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int UpdateCmpStatusAndCmpUserID_NULL(int Cmp_ID, string Cmp_Type, int Cmp_Dep, string Status)
+        {
+            string StoredProcedureName = StoredProcedures.UpdateCmpStatusAndCmpUserID_NULL;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Cmp_ID", Cmp_ID);
+            Parameters.Add("@Cmp_Type", Cmp_Type);
+            Parameters.Add("@Cmp_Dep", Cmp_Dep);
+            Parameters.Add("@Status", Status);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        /// 
+        public int RateBook(int Book_ID, string Book_Type, int Book_Dep, int Rate)
+        {
+            string StoredProcedureName = StoredProcedures.RateBook;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Book_ID", Book_ID);
+            Parameters.Add("@Book_Type", Book_Type);
+            Parameters.Add("@Book_Dep", Book_Dep);
+            Parameters.Add("@Rate", Rate);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        ///
+ 
+        public int RateStory(int Story_ID, string Story_Type, int Story_Dep, int Rate)
+        {
+            string StoredProcedureName = StoredProcedures.RateStory;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Story_ID", Story_ID);
+            Parameters.Add("@Story_Type", Story_Type);
+            Parameters.Add("@Story_Dep", Story_Dep);
+            Parameters.Add("@Rate", Rate);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        ///
+        public int RateCmp(int Cmp_ID, string Cmp_Type, int Cmp_Dep, int Rate)
+        {
+            string StoredProcedureName = StoredProcedures.RateCmp;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Cmp_ID", Cmp_ID);
+            Parameters.Add("@Cmp_Type", Cmp_Type);
+            Parameters.Add("@Cmp_Dep", Cmp_Dep);
+            Parameters.Add("@Rate", Rate);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int RateInstrument(int Instrument_ID, string Instrument_Type, int Instrument_Dep, int Rate)
+        {
+            string StoredProcedureName = StoredProcedures.RateInstrument;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Instrumentp_ID", Instrument_ID);
+            Parameters.Add("@Instrument_Type", Instrument_Type);
+            Parameters.Add("@Instrument_Dep", Instrument_Dep);
+            Parameters.Add("@Rate", Rate);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+    ///
+    /// 
 
-        /*Aziz Part*/
-        //emp
-        //Employee
-        public int Add_Employee
+
+
+    /*Aziz Part*/
+    //emp
+    //Employee
+    public int Add_Employee
             (string Fname, string Mname, string Lname,
              int Salary, int ID, string Pass
             , int Age, string Job, string Needs, string Address,

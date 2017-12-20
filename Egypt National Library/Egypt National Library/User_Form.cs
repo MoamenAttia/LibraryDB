@@ -127,6 +127,7 @@ namespace Egypt_National_Library
         private void Story_PictureBox_Click(object sender, EventArgs e)
         {
             Story_Details_Form Form;
+            int StoryUserID = 0;
             for (int i = 0; i < NumofStorypictureboxes; ++i)
                 if (sender.Equals(Storypictureboxes[i]))
                 {
@@ -135,8 +136,26 @@ namespace Egypt_National_Library
                     for (int k = 0; k < Temp.Length; ++k) if (Temp[k] == '/') { ID = Temp; ID = ID.Remove(0, k + 1); break; }
                     for (int k = 0; k < ID.Length; ++k) if (ID[k] == '/') { Section = ID; Section = Section.Remove(0, k + 1); ID = ID.Remove(k, Section.Length + 1); break; }
                     DataTable dt = Controller_OBJ.GetStoryByName(int.Parse(ID), 2, Section);
+
+                    if (!DBNull.Value.Equals(dt.Rows[0].ItemArray[6]))
+                    {
+                        StoryUserID = int.Parse(dt.Rows[0].ItemArray[6].ToString());
+                        //not null
+                    }
+                    else
+                    {
+                        StoryUserID = 0;
+                        //null
+                    }
+
+
+
+
+
                     Form = new Story_Details_Form(dt.Rows[0].ItemArray[1].ToString(),dt.Rows[0].ItemArray[2].ToString(),
-                        dt.Rows[0].ItemArray[4].ToString(), (byte[])dt.Rows[0].ItemArray[7], User_ID);
+                        dt.Rows[0].ItemArray[4].ToString(), (byte[])dt.Rows[0].ItemArray[7], User_ID, dt.Rows[0].ItemArray[9].ToString(),
+                        StoryUserID,
+                        int.Parse(dt.Rows[0].ItemArray[0].ToString()));
                     Form.Show();
                     return;
                 }
@@ -145,6 +164,7 @@ namespace Egypt_National_Library
         {
            Music_Instrument_Details_Form Form;
             string ID = "", Section = "";
+            int InstrumentUserID = 0;
             for (int i = 0; i < NumofInstrumentspictureboxes; ++i)
                 if (sender.Equals(Instrumentspictureboxes[i]))
                 {
@@ -152,7 +172,21 @@ namespace Egypt_National_Library
                     for (int k = 0; k < Temp.Length; ++k) if (Temp[k] == '/') { ID = Temp; ID = ID.Remove(0, k + 1); break; }
                     for (int k = 0; k < ID.Length; ++k) if (ID[k] == '/') { Section = ID; Section = Section.Remove(0, k + 1); ID = ID.Remove(k, Section.Length + 1); break; }
                     DataTable dt = Controller_OBJ.GetMusical_InstrumentByName(int.Parse(ID), 3, Section);
-                    Form = new Music_Instrument_Details_Form(dt.Rows[0].ItemArray[1].ToString(), dt.Rows[0].ItemArray[3].ToString(), dt.Rows[0].ItemArray[5].ToString(), (byte[])dt.Rows[0].ItemArray[7], User_ID);
+                    if (!DBNull.Value.Equals(dt.Rows[0].ItemArray[4]))
+                    {
+                       InstrumentUserID = int.Parse(dt.Rows[0].ItemArray[4].ToString());
+                        //not null
+                    }
+                    else
+                    {
+                        InstrumentUserID = 0;
+                        //null
+                    }
+
+                    Form = new Music_Instrument_Details_Form(dt.Rows[0].ItemArray[1].ToString(), dt.Rows[0].ItemArray[3].ToString(), dt.Rows[0].ItemArray[5].ToString(), (byte[])dt.Rows[0].ItemArray[7], User_ID,
+                        dt.Rows[0].ItemArray[2].ToString(),
+                        InstrumentUserID,
+                        int.Parse(dt.Rows[0].ItemArray[0].ToString()));
                     Form.Show();
                     return;
                 }
@@ -160,6 +194,7 @@ namespace Egypt_National_Library
         private void Computer_PictureBox_Click(object sender, EventArgs e)
         {
             Computer_Details_Form Form; string ID = "", Section = "";
+            int CmpUserID = 0;
             for (int i = 0; i < NumofComputerpictureboxes; ++i)
                 if (sender.Equals(Computerpictureboxes[i]))
                 {
@@ -168,8 +203,22 @@ namespace Egypt_National_Library
                     for (int k = 0; k < ID.Length; ++k) if (ID[k] == '/') { Section = ID; Section = Section.Remove(0, k + 1); ID = ID.Remove(k, Section.Length + 1); break; }
                     DataTable dt = Controller_OBJ.GetComputerSoftwares(int.Parse(ID), 4, Section);
                     DataTable dt1 = Controller_OBJ.GetComputerByName(int.Parse(ID), 4, Section);
+                    if (!DBNull.Value.Equals(dt1.Rows[0].ItemArray[4]))
+                    {
+                        CmpUserID = int.Parse(dt1.Rows[0].ItemArray[4].ToString());
+                        //not null
+                    }
+                    else
+                    {
+                        CmpUserID = 0;
+                        //null
+                    }
+
                     Panel[] Panels = GetSoftwares_Panels(ID, Section);
-                    Form = new Computer_Details_Form(Panels, Panels.Length, dt1.Rows[0].ItemArray[3].ToString(), dt1.Rows[0].ItemArray[5].ToString(), (byte[])dt1.Rows[0].ItemArray[7], dt1.Rows[0].ItemArray[1].ToString(), User_ID);
+                    Form = new Computer_Details_Form(Panels, Panels.Length, dt1.Rows[0].ItemArray[3].ToString(), dt1.Rows[0].ItemArray[5].ToString(), (byte[])dt1.Rows[0].ItemArray[7], dt1.Rows[0].ItemArray[1].ToString(), User_ID
+                        ,dt1.Rows[0].ItemArray[2].ToString(),
+                        CmpUserID,
+                        int.Parse(dt1.Rows[0].ItemArray[0].ToString()));
                     Form.Show();
                     return;
                 }

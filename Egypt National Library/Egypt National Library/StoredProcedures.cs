@@ -18,6 +18,7 @@ namespace Egypt_National_Library
         public static string GetBooks = "spGetBooks";
         public static string UpdateBookStatusAndBookUserID = "spUpdateBookStatusAndBookUserID";
         public static string UpdateBookStatusAndBookUserID_NULL = "spUpdateBookStatusAndBookUserID_NULL";
+        public static string RateBook = "RateBook";
 
 
 
@@ -28,6 +29,9 @@ namespace Egypt_National_Library
         public static string GetSpecificStories = "spGetSpecificStories";
         public static string GetStoryByName = "spGetStoryByName";
         public static string GetStories = "spGetStories";
+        public static string UpdateStoryStatusAndStoryUserID = "spUpdateStoryStatusAndStoryUserID";
+        public static string UpdateStoryStatusAndStoryUserID_NULL = "spUpdateStoryStatusAndStoryUserID_NULL";
+        public static string RateStory = "RateStory";
 
         // Stored Procedures About Music_Instruments //
         public static string AddMusicSection = "";
@@ -37,7 +41,9 @@ namespace Egypt_National_Library
         public static string GetMusical_InstrumentByName = "spGetMusicInstrumentByName";
         public static string Update_Instrument_Image = "spUpdate_Instrument_Image";
         public static string GetMusicInstruments = "spGetMusicInstruments";
-
+        public static string UpdateInstrumentStatusAndInstrumentUserID = "spUpdateInstrumentStatusAndInstrumentUserID";
+        public static string UpdateInstrumentStatusAndInstrumentUserID_NULL = "spUpdateInstrumentStatusAndInstrumentUserID_NULL";
+        public static string RateInstrument = "RateInstrument";
         // Stored Procedures About Computers //
         public static string AddComputerSection = "";
         public static string AddComputer = "";
@@ -48,7 +54,9 @@ namespace Egypt_National_Library
         public static string UpdateSoftwareImage = "spUpdateSoftwareImage";
         public static string GetComputerSoftwares = "spGetComputerSoftwares";
         public static string GetComputers = "spGetComputers";
-
+        public static string UpdateCmpStatusAndCmpUserID = "spUpdateCmpStatusAndCmpUserID";
+        public static string UpdateCmpStatusAndCmpUserID_NULL = "spUpdateCmpStatusAndCmpUserID_NULL";
+        public static string RateCmp = "RateCmp";
         // User Stored Procedure //
         public static string UpdateUserImage = "spUpdateUserImage";
         public static string GetUserByID = "GetUserByUserID";
