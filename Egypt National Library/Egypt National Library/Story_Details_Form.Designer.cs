@@ -37,6 +37,14 @@
             this.Story_ImagePicturebox = new System.Windows.Forms.PictureBox();
             this.Return = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BorrowBtn = new System.Windows.Forms.Button();
+            this.ReturnBtn = new System.Windows.Forms.Button();
+            this.RateBtn = new System.Windows.Forms.Button();
+            this.VeryPoor = new System.Windows.Forms.RadioButton();
+            this.Poor = new System.Windows.Forms.RadioButton();
+            this.Good = new System.Windows.Forms.RadioButton();
+            this.VeryGood = new System.Windows.Forms.RadioButton();
+            this.Excellent = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.Story_ImagePicturebox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,12 +136,102 @@
             this.panel1.Size = new System.Drawing.Size(20, 552);
             this.panel1.TabIndex = 34;
             // 
+            // BorrowBtn
+            // 
+            this.BorrowBtn.Location = new System.Drawing.Point(364, 148);
+            this.BorrowBtn.Name = "BorrowBtn";
+            this.BorrowBtn.Size = new System.Drawing.Size(120, 43);
+            this.BorrowBtn.TabIndex = 35;
+            this.BorrowBtn.Text = "Borrow";
+            this.BorrowBtn.UseVisualStyleBackColor = true;
+            // 
+            // ReturnBtn
+            // 
+            this.ReturnBtn.Location = new System.Drawing.Point(611, 148);
+            this.ReturnBtn.Name = "ReturnBtn";
+            this.ReturnBtn.Size = new System.Drawing.Size(120, 43);
+            this.ReturnBtn.TabIndex = 36;
+            this.ReturnBtn.Text = "Return";
+            this.ReturnBtn.UseVisualStyleBackColor = true;
+            // 
+            // RateBtn
+            // 
+            this.RateBtn.Location = new System.Drawing.Point(611, 266);
+            this.RateBtn.Name = "RateBtn";
+            this.RateBtn.Size = new System.Drawing.Size(120, 43);
+            this.RateBtn.TabIndex = 37;
+            this.RateBtn.Text = "Rate it!";
+            this.RateBtn.UseVisualStyleBackColor = true;
+            // 
+            // VeryPoor
+            // 
+            this.VeryPoor.AutoSize = true;
+            this.VeryPoor.Location = new System.Drawing.Point(355, 234);
+            this.VeryPoor.Name = "VeryPoor";
+            this.VeryPoor.Size = new System.Drawing.Size(111, 27);
+            this.VeryPoor.TabIndex = 38;
+            this.VeryPoor.TabStop = true;
+            this.VeryPoor.Text = "VeryPoor";
+            this.VeryPoor.UseVisualStyleBackColor = true;
+            // 
+            // Poor
+            // 
+            this.Poor.AutoSize = true;
+            this.Poor.Location = new System.Drawing.Point(355, 266);
+            this.Poor.Name = "Poor";
+            this.Poor.Size = new System.Drawing.Size(69, 27);
+            this.Poor.TabIndex = 39;
+            this.Poor.TabStop = true;
+            this.Poor.Text = "Poor";
+            this.Poor.UseVisualStyleBackColor = true;
+            // 
+            // Good
+            // 
+            this.Good.AutoSize = true;
+            this.Good.Location = new System.Drawing.Point(355, 299);
+            this.Good.Name = "Good";
+            this.Good.Size = new System.Drawing.Size(81, 27);
+            this.Good.TabIndex = 40;
+            this.Good.TabStop = true;
+            this.Good.Text = "Good";
+            this.Good.UseVisualStyleBackColor = true;
+            // 
+            // VeryGood
+            // 
+            this.VeryGood.AutoSize = true;
+            this.VeryGood.Location = new System.Drawing.Point(355, 332);
+            this.VeryGood.Name = "VeryGood";
+            this.VeryGood.Size = new System.Drawing.Size(123, 27);
+            this.VeryGood.TabIndex = 41;
+            this.VeryGood.TabStop = true;
+            this.VeryGood.Text = "VeryGood";
+            this.VeryGood.UseVisualStyleBackColor = true;
+            // 
+            // Excellent
+            // 
+            this.Excellent.AutoSize = true;
+            this.Excellent.Location = new System.Drawing.Point(355, 365);
+            this.Excellent.Name = "Excellent";
+            this.Excellent.Size = new System.Drawing.Size(112, 27);
+            this.Excellent.TabIndex = 42;
+            this.Excellent.TabStop = true;
+            this.Excellent.Text = "Excellent";
+            this.Excellent.UseVisualStyleBackColor = true;
+            // 
             // Story_Details_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(830, 552);
+            this.Controls.Add(this.Excellent);
+            this.Controls.Add(this.VeryGood);
+            this.Controls.Add(this.Good);
+            this.Controls.Add(this.Poor);
+            this.Controls.Add(this.VeryPoor);
+            this.Controls.Add(this.RateBtn);
+            this.Controls.Add(this.ReturnBtn);
+            this.Controls.Add(this.BorrowBtn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Return);
             this.Controls.Add(this.SectionNameLabel);
@@ -166,5 +264,13 @@
         private System.Windows.Forms.PictureBox Story_ImagePicturebox;
         private System.Windows.Forms.Button Return;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button BorrowBtn;
+        private System.Windows.Forms.Button ReturnBtn;
+        private System.Windows.Forms.Button RateBtn;
+        private System.Windows.Forms.RadioButton VeryPoor;
+        private System.Windows.Forms.RadioButton Poor;
+        private System.Windows.Forms.RadioButton Good;
+        private System.Windows.Forms.RadioButton VeryGood;
+        private System.Windows.Forms.RadioButton Excellent;
     }
 }

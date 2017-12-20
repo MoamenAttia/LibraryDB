@@ -12,7 +12,7 @@ namespace Egypt_National_Library
 {
     public partial class Music_Instrument_Details_Form : Form
     {
-        public Music_Instrument_Details_Form(string Music_InsName, string Music_InsPrice, string Music_IncSeciton, byte[] image)
+        public Music_Instrument_Details_Form(string Music_InsName, string Music_InsPrice, string Music_IncSeciton, byte[] image,int UserID)
         {
             InitializeComponent();
             Music_Name.Text = Music_InsName;
@@ -21,6 +21,7 @@ namespace Egypt_National_Library
             MemoryStream ms = new MemoryStream(image);
             MusicIns_ImagePicturebox.Image = Image.FromStream(ms);
             MusicIns_ImagePicturebox.Refresh();
+            int userid = UserID;
         }
 
         private void Music_Instrument_Details_Form_Load(object sender, EventArgs e)

@@ -11,7 +11,7 @@ namespace Egypt_National_Library
     public class DBManager
     {
         //Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename="E:\2nd Year\DataBase\Project\LibraryDB\LibraryDB\Egypt National Library\Database Files\Egypt National Library.mdf";Integrated Security = True; Connect Timeout = 30
-        static string DB_Connection_String = @"Data Source=MARSHAL-MOAMEN\SQLEXPRESS;Initial Catalog="+"Egypt National Library"+";Integrated Security=True";
+        static string DB_Connection_String = @"Data Source=DESKTOP-EQIS6BT\SQLEXPRESS;Initial Catalog=Egypt National Library;Integrated Security=True";
         SqlConnection myConnection;
 
         public DBManager()

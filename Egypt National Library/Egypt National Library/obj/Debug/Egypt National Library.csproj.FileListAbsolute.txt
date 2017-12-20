@@ -59,3 +59,70 @@ C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National L
 C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Story_Details_Form.resources
 C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Music_Instrument_Details_Form.resources
 C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Computer_Details_Form.resources
+C:\Users\Lenovo\Desktop\Moamen\LibraryDB\Egypt National Library\Egypt National Library\bin\Debug\Egypt National Library.exe.config
+C:\Users\Lenovo\Desktop\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.exe
+C:\Users\Lenovo\Desktop\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.pdb
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\bin\Debug\Egypt National Library.exe.config
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.exe
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.pdb
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\bin\Debug\Egypt National Library.exe
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\bin\Debug\Egypt National Library.pdb
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.csprojResolveAssemblyReference.cache
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Book_Form.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Computer_Form.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Employee_Form.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Library_Department_Form.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Musical_Instrument_Form.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Sections_Form.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_Story_Form.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Add_User_Form.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Book_Details_Form.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Computer_Details_Form.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Login_Form.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Music_Instrument_Details_Form.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Properties.Resources.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.SignUp_Form.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Story_Details_Form.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.User_Form.resources
+C:\Users\Moamen Hassan\Desktop\Salama\Moamen\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt National Library.csproj.GenerateResource.Cache
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.ChairmanForm.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.editaddress.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.EditemSalarypchmode.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.editimage.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Editmyprofile_emp.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.editneeds.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.editpass.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.EmployeeForm.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.FireEmployee.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getaddress.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getage.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.GetEmpBy.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getempbyaddress.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getempbyage.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getempbychmode.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getempbyid.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getempbyjob.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getempbymid.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getempbysal.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getempbyf.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getempbyfl.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getempbyfn.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getempinfochmode.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Getempinfo_empmode.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getfn.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getid.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getimage.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.GetInfoofEmp.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getjob.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getmid.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getmname.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getneeds.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getsalary.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.getstateschmode.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.GetStatistics.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.ManagerForm.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.MsgShow.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.promote.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.Showmyemp.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.ShowmyM_J.resources
+C:\Users\Moamen Hassan\Desktop\LibraryDB\Egypt National Library\Egypt National Library\obj\Debug\Egypt_National_Library.statisticsveiwer.resources

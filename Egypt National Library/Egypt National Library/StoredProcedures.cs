@@ -16,6 +16,10 @@ namespace Egypt_National_Library
         public static string GetSpecificBooks = "spGetSpecificBooks";
         public static string GetBookByName = "spGetBookByName";
         public static string GetBooks = "spGetBooks";
+        public static string UpdateBookStatusAndBookUserID = "spUpdateBookStatusAndBookUserID";
+        public static string UpdateBookStatusAndBookUserID_NULL = "spUpdateBookStatusAndBookUserID_NULL";
+
+
 
         // Stored Procedures About Stories //
         public static string AddStory = "spAddStory";
@@ -60,5 +64,90 @@ namespace Egypt_National_Library
         public static string AddSoftware = "";
         public static string AddLibraryDepartment = "spAddLibDep";
         public static string GetEmployee_Image = "spGetEmployee_Image";
+    
+    
+        //Zizo//
+        public static string GetAllEmployees = "spGetEmployees";
+        public static string GetEmloyeebyID = "spGetEmployeesbyID";
+        public static string GetEmpbyfirstname = "spGetEmployeesbyfname";
+        public static string GetEmpbyFandLname = "spGetEmployeesbyflname";
+        public static string GetEmpbyFullname = "spGetEmployeesbyfullname";
+        public static string GetEmpbyJobtitle = "spGetEmployeesbyjobtitle";
+        public static string GetEmpbyManager = "spGetEmployeesbymanagerid";
+        public static string GetEmpbyAddress = "spGetEmployeesbyaddress";
+        public static string GetEmpbelowSal = "spGetEmployeesbelowsal";
+        public static string GetEmpequalSal = "spGetEmployeesequalsal";
+        public static string GetEmpaboveSal = "spGetEmployeesabovesal";
+        public static string GetEmpbelowAge = "spGetEmployeesbelowage";
+        public static string GetEmpequalAge = "spGetEmployeesequalage";
+        public static string GetEmpaboveAge = "spGetEmployeesaboveage";
+        public static string GetAVGSalary = "spGetAvgSalary";
+        public static string GetTotalSalaries = "spGetTotalSalaries";
+        public static string GetAVGAge = "spGetAvgAge";
+        public static string CountEmployees = "spcountallemp";
+        public static string CountEmpUnderManager = "spcountempunderman";
+        public static string CountEmpUnderJob = "spcountempunderjob";
+        public static string AVGSalUnderJob = "spgetAvgsalariesunderJob";
+        public static string AvgSalUnderManager = "spgetAvgsalariesunderManager";
+        public static string TotalSalUnderManager = "spGetTotalSalariesundermanager";
+        public static string AvgAgeUnderManager = "spGetAvgAgeundermanager";
+        public static string TotalSalUnderJob = "spGetTotalSalariesunderJob";
+        public static string AvgAgeUnderJob = "spGetAvgAgeunderJob";
+        public static string GetFullNameofEmp = "spGetempfullname";
+        public static string GetAddressofEmp = "spGetempAddress";
+        public static string GetSalaryofEmp = "spGetempSal";
+        public static string GetJobTitleofEmp = "spGetempjobtitle";
+        public static string GetNeedsofEmp = "spGetempneeds";
+        public static string GetAgeofEmp = "spGetempage";
+        public static string GetImageofEmp = "spGetEmployee_Image";
+        public static string GetManagerIDofEmp = "spGetempManagerID";
+        public static string GetInfoofEmp = "spGetempinfo";
+        public static string GetAllManagers = "spGetallManager";
+        public static string GetAllJobs = "spGetJobs";
+        public static string GetEmpIDbyname = "spGetIDbyname";
+        public static string EditSalofEmloyee = "spupdateempsal";
+        public static string EditPasswordofEmloyee = "spupdateemppass";
+        public static string EditJobofEmloyee = "spupdateempjob";
+        public static string EditAgeofEmloyee = "spupdateempage";
+        public static string EditNeedsofEmloyee = "spupdateempneed";
+        public static string EditAddressofEmloyee = "spupdateempAddress";
+        public static string EditManagerofEmloyee = "spupdateempMID";
+        public static string EditImageofEmloyee = "spupdateempimage";
+        public static string Getempbyjobbelowsal = "spGetempbyjobbelowsal";
+        public static string Getempbyjobabovesal = "spGetempbyjobabovesal";
+        public static string Getempbyagebelowsal = "spGetempbyagebelowsal";
+        public static string Getempbyageabovesal = "spGetempbyageabovesal";
+        public static string SetSalaryforAge = "spSetempSalforage";
+        public static string SetSalaryforJob = "spSetempSalforjob";
+        public static string GetManagerName = "spGetempManagerName";
+        public static string Getempbyidforlog = "spGetempbyidforlog";
+        public static string FireEmp = "spFireEmp";
+        //by
+        public static string GetEmloyeebyIDmn = "spGetEmployeesbyIDmn";
+        public static string GetEmpbyfirstnamemn = "spGetEmployeesbyfnamemn";
+        public static string GetEmpbyFandLnamemn = "spGetEmployeesbyflnamemn";
+        public static string GetEmpbyFullnamemn = "spGetEmployeesbyfullnamemn";
+        public static string GetEmpbyJobtitlemn = "spGetEmployeesbyjobtitlemn";
+        public static string GetEmpbyAddressmn = "spGetEmployeesbyaddressmn";
+        public static string GetEmpbelowSalmn = "spGetEmployeesbelowsalmn";
+        public static string GetEmpequalSalmn = "spGetEmployeesequalsalmn";
+        public static string GetEmpaboveSalmn = "spGetEmployeesabovesalmn";
+        public static string GetEmpbelowAgemn = "spGetEmployeesbelowagemn";
+        public static string GetEmpequalAgemn = "spGetEmployeesequalagemn";
+        public static string GetEmpaboveAgemn = "spGetEmployeesaboveagemn";
+        //
+
+        public static string GetFullNameofEmpmn = "spGetempfullnamemn";
+        public static string GetAddressofEmpmn = "spGetempAddressmn";
+        public static string GetSalaryofEmpmn = "spGetempSalmn";
+        public static string GetJobTitleofEmpmn = "spGetempjobtitlemn";
+        public static string GetNeedsofEmpmn = "spGetempneedsmn";
+        public static string GetAgeofEmpmn = "spGetempagemn";
+        public static string GetInfoofEmpmn = "spGetempinfomn";
+        public static string GetEmployee_Imagemnmn = "spGetEmployee_Imagemn";
+
+        //
+        public static string GetEmpIDbynamemn = "spGetIDbynamemn";
+
     }
 }

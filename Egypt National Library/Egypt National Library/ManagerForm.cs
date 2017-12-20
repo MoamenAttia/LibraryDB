@@ -1,0 +1,90 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Egypt_National_Library
+{
+    public partial class ManagerForm : Form
+    {
+        string nme;
+        string id;
+        Login_Form lf;
+        Controller cobj;
+        DataTable Dt;
+        public ManagerForm(Login_Form l,string n,int i)
+        {
+            cobj = new Controller();
+            nme = n;
+            id = Convert.ToString(i);
+            lf = l;
+            InitializeComponent();
+        }
+
+        private void GET_Stat_BT_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GetStatistics f = new GetStatistics(this, nme, id);
+            f.Show();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Get_Emp_By_BT_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GetEmpBy f = new GetEmpBy(this,nme,id);
+            f.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Dt = cobj.Get_Employee_by_Manager(Convert.ToInt32(id));
+            if (Dt != null)
+            {
+                this.Hide();
+                Showmyemp f = new Showmyemp(this, null,Dt);
+                f.Show();
+            }
+            else
+            {
+                MsgShow mm = new MsgShow("No Emp For You!");
+                mm.ShowDialog();
+            }
+        }
+
+        private void Get_Info_By_ID_BT_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GetInfoofEmp f = new GetInfoofEmp(this,nme,id);
+            f.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Environment.Exit(1);
+        }
+
+        private void ManagerForm_Load(object sender, EventArgs e)
+        {
+            name.Text = nme;
+            id_num.Text = id;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Editmyprofile_emp f = new Editmyprofile_emp(this, null, null, nme, id);
+            f.Show();
+        }
+    }
+}

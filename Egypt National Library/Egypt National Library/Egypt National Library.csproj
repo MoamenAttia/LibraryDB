@@ -99,6 +99,12 @@
     <Compile Include="Book_Details_Form.Designer.cs">
       <DependentUpon>Book_Details_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChairmanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChairmanForm.designer.cs">
+      <DependentUpon>ChairmanForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Computer_Details_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,11 +113,227 @@
     </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
+    <Compile Include="editaddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editaddress.designer.cs">
+      <DependentUpon>editaddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditemSalarypchmode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditemSalarypchmode.designer.cs">
+      <DependentUpon>EditemSalarypchmode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editimage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editimage.designer.cs">
+      <DependentUpon>editimage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editmyprofile_emp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editmyprofile_emp.designer.cs">
+      <DependentUpon>Editmyprofile_emp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editneeds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editneeds.designer.cs">
+      <DependentUpon>editneeds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editpass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editpass.designer.cs">
+      <DependentUpon>editpass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeForm.designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FireEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FireEmployee.designer.cs">
+      <DependentUpon>FireEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getaddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getaddress.designer.cs">
+      <DependentUpon>getaddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getage.designer.cs">
+      <DependentUpon>getage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetEmpBy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetEmpBy.designer.cs">
+      <DependentUpon>GetEmpBy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getempbyaddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getempbyaddress.designer.cs">
+      <DependentUpon>getempbyaddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getempbyage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getempbyage.designer.cs">
+      <DependentUpon>getempbyage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getempbychmode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getempbychmode.designer.cs">
+      <DependentUpon>getempbychmode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getempbyid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getempbyid.designer.cs">
+      <DependentUpon>getempbyid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getempbyjob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getempbyjob.designer.cs">
+      <DependentUpon>getempbyjob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getempbymid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getempbymid.designer.cs">
+      <DependentUpon>getempbymid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getempbysal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getempbysal.designer.cs">
+      <DependentUpon>getempbysal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getempf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getempf.designer.cs">
+      <DependentUpon>getempf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getempfl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getempfl.designer.cs">
+      <DependentUpon>getempfl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getempfn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getempfn.designer.cs">
+      <DependentUpon>getempfn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getempinfochmode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getempinfochmode.designer.cs">
+      <DependentUpon>getempinfochmode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Getempinfo_empmode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Getempinfo_empmode.designer.cs">
+      <DependentUpon>Getempinfo_empmode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getfn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getfn.designer.cs">
+      <DependentUpon>getfn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getid.designer.cs">
+      <DependentUpon>getid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getimage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getimage.designer.cs">
+      <DependentUpon>getimage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetInfoofEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetInfoofEmp.designer.cs">
+      <DependentUpon>GetInfoofEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getjob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getjob.designer.cs">
+      <DependentUpon>getjob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getmid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getmid.designer.cs">
+      <DependentUpon>getmid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getmname.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getmname.designer.cs">
+      <DependentUpon>getmname.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getneeds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getneeds.designer.cs">
+      <DependentUpon>getneeds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getsalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getsalary.designer.cs">
+      <DependentUpon>getsalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getstateschmode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getstateschmode.designer.cs">
+      <DependentUpon>getstateschmode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetStatistics.designer.cs">
+      <DependentUpon>GetStatistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login_Form.Designer.cs">
       <DependentUpon>Login_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForm.designer.cs">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MsgShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgShow.designer.cs">
+      <DependentUpon>MsgShow.cs</DependentUpon>
     </Compile>
     <Compile Include="Music_Instrument_Details_Form.cs">
       <SubType>Form</SubType>
@@ -120,12 +342,36 @@
       <DependentUpon>Music_Instrument_Details_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="promote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="promote.designer.cs">
+      <DependentUpon>promote.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Showmyemp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Showmyemp.designer.cs">
+      <DependentUpon>Showmyemp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowmyM_J.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowmyM_J.designer.cs">
+      <DependentUpon>ShowmyM_J.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignUp_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SignUp_Form.Designer.cs">
       <DependentUpon>SignUp_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="statisticsveiwer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="statisticsveiwer.designer.cs">
+      <DependentUpon>statisticsveiwer.cs</DependentUpon>
     </Compile>
     <Compile Include="StoredProcedures.cs" />
     <Compile Include="Story_Details_Form.cs">
@@ -167,14 +413,128 @@
     <EmbeddedResource Include="Book_Details_Form.resx">
       <DependentUpon>Book_Details_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChairmanForm.resx">
+      <DependentUpon>ChairmanForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Computer_Details_Form.resx">
       <DependentUpon>Computer_Details_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editaddress.resx">
+      <DependentUpon>editaddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditemSalarypchmode.resx">
+      <DependentUpon>EditemSalarypchmode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editimage.resx">
+      <DependentUpon>editimage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editmyprofile_emp.resx">
+      <DependentUpon>Editmyprofile_emp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editneeds.resx">
+      <DependentUpon>editneeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editpass.resx">
+      <DependentUpon>editpass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FireEmployee.resx">
+      <DependentUpon>FireEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getaddress.resx">
+      <DependentUpon>getaddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getage.resx">
+      <DependentUpon>getage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetEmpBy.resx">
+      <DependentUpon>GetEmpBy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getempbyaddress.resx">
+      <DependentUpon>getempbyaddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getempbyage.resx">
+      <DependentUpon>getempbyage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getempbychmode.resx">
+      <DependentUpon>getempbychmode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getempbyid.resx">
+      <DependentUpon>getempbyid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getempbyjob.resx">
+      <DependentUpon>getempbyjob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getempbymid.resx">
+      <DependentUpon>getempbymid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getempbysal.resx">
+      <DependentUpon>getempbysal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getempf.resx">
+      <DependentUpon>getempf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getempfl.resx">
+      <DependentUpon>getempfl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getempfn.resx">
+      <DependentUpon>getempfn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getempinfochmode.resx">
+      <DependentUpon>getempinfochmode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Getempinfo_empmode.resx">
+      <DependentUpon>Getempinfo_empmode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getfn.resx">
+      <DependentUpon>getfn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getid.resx">
+      <DependentUpon>getid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getimage.resx">
+      <DependentUpon>getimage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetInfoofEmp.resx">
+      <DependentUpon>GetInfoofEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getjob.resx">
+      <DependentUpon>getjob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getmid.resx">
+      <DependentUpon>getmid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getmname.resx">
+      <DependentUpon>getmname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getneeds.resx">
+      <DependentUpon>getneeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getsalary.resx">
+      <DependentUpon>getsalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="getstateschmode.resx">
+      <DependentUpon>getstateschmode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetStatistics.resx">
+      <DependentUpon>GetStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForm.resx">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgShow.resx">
+      <DependentUpon>MsgShow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Music_Instrument_Details_Form.resx">
       <DependentUpon>Music_Instrument_Details_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="promote.resx">
+      <DependentUpon>promote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -185,8 +545,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Showmyemp.resx">
+      <DependentUpon>Showmyemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowmyM_J.resx">
+      <DependentUpon>ShowmyM_J.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignUp_Form.resx">
       <DependentUpon>SignUp_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="statisticsveiwer.resx">
+      <DependentUpon>statisticsveiwer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Story_Details_Form.resx">
       <DependentUpon>Story_Details_Form.cs</DependentUpon>

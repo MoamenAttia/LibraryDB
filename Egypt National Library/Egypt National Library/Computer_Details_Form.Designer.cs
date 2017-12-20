@@ -37,6 +37,14 @@
             this.OperationSystemName = new System.Windows.Forms.Label();
             this.CmpPicturebox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ReserveBtn = new System.Windows.Forms.Button();
+            this.ReturnBtn = new System.Windows.Forms.Button();
+            this.RateBtn = new System.Windows.Forms.Button();
+            this.VeryPoor = new System.Windows.Forms.RadioButton();
+            this.Poor = new System.Windows.Forms.RadioButton();
+            this.Good = new System.Windows.Forms.RadioButton();
+            this.VeryGood = new System.Windows.Forms.RadioButton();
+            this.Excellent = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.CmpPicturebox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +53,7 @@
             this.Return.FlatAppearance.BorderSize = 2;
             this.Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Return.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Return.Location = new System.Drawing.Point(860, 611);
+            this.Return.Location = new System.Drawing.Point(894, 654);
             this.Return.Name = "Return";
             this.Return.Size = new System.Drawing.Size(80, 36);
             this.Return.TabIndex = 47;
@@ -59,7 +67,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(20, 659);
+            this.panel1.Size = new System.Drawing.Size(20, 690);
             this.panel1.TabIndex = 46;
             // 
             // SectionNameLabel
@@ -134,13 +142,103 @@
             this.label1.TabIndex = 48;
             this.label1.Text = "Programs";
             // 
+            // ReserveBtn
+            // 
+            this.ReserveBtn.Location = new System.Drawing.Point(656, 504);
+            this.ReserveBtn.Name = "ReserveBtn";
+            this.ReserveBtn.Size = new System.Drawing.Size(111, 42);
+            this.ReserveBtn.TabIndex = 49;
+            this.ReserveBtn.Text = "Reserve";
+            this.ReserveBtn.UseVisualStyleBackColor = true;
+            // 
+            // ReturnBtn
+            // 
+            this.ReturnBtn.Location = new System.Drawing.Point(656, 578);
+            this.ReturnBtn.Name = "ReturnBtn";
+            this.ReturnBtn.Size = new System.Drawing.Size(111, 42);
+            this.ReturnBtn.TabIndex = 50;
+            this.ReturnBtn.Text = "Return";
+            this.ReturnBtn.UseVisualStyleBackColor = true;
+            // 
+            // RateBtn
+            // 
+            this.RateBtn.Location = new System.Drawing.Point(467, 545);
+            this.RateBtn.Name = "RateBtn";
+            this.RateBtn.Size = new System.Drawing.Size(111, 42);
+            this.RateBtn.TabIndex = 51;
+            this.RateBtn.Text = "Rate it!";
+            this.RateBtn.UseVisualStyleBackColor = true;
+            // 
+            // VeryPoor
+            // 
+            this.VeryPoor.AutoSize = true;
+            this.VeryPoor.Location = new System.Drawing.Point(249, 512);
+            this.VeryPoor.Name = "VeryPoor";
+            this.VeryPoor.Size = new System.Drawing.Size(111, 27);
+            this.VeryPoor.TabIndex = 52;
+            this.VeryPoor.TabStop = true;
+            this.VeryPoor.Text = "VeryPoor";
+            this.VeryPoor.UseVisualStyleBackColor = true;
+            // 
+            // Poor
+            // 
+            this.Poor.AutoSize = true;
+            this.Poor.Location = new System.Drawing.Point(249, 545);
+            this.Poor.Name = "Poor";
+            this.Poor.Size = new System.Drawing.Size(69, 27);
+            this.Poor.TabIndex = 53;
+            this.Poor.TabStop = true;
+            this.Poor.Text = "Poor";
+            this.Poor.UseVisualStyleBackColor = true;
+            // 
+            // Good
+            // 
+            this.Good.AutoSize = true;
+            this.Good.Location = new System.Drawing.Point(249, 578);
+            this.Good.Name = "Good";
+            this.Good.Size = new System.Drawing.Size(81, 27);
+            this.Good.TabIndex = 54;
+            this.Good.TabStop = true;
+            this.Good.Text = "Good";
+            this.Good.UseVisualStyleBackColor = true;
+            // 
+            // VeryGood
+            // 
+            this.VeryGood.AutoSize = true;
+            this.VeryGood.Location = new System.Drawing.Point(249, 611);
+            this.VeryGood.Name = "VeryGood";
+            this.VeryGood.Size = new System.Drawing.Size(123, 27);
+            this.VeryGood.TabIndex = 55;
+            this.VeryGood.TabStop = true;
+            this.VeryGood.Text = "VeryGood";
+            this.VeryGood.UseVisualStyleBackColor = true;
+            // 
+            // Excellent
+            // 
+            this.Excellent.AutoSize = true;
+            this.Excellent.Location = new System.Drawing.Point(249, 651);
+            this.Excellent.Name = "Excellent";
+            this.Excellent.Size = new System.Drawing.Size(112, 27);
+            this.Excellent.TabIndex = 56;
+            this.Excellent.TabStop = true;
+            this.Excellent.Text = "Excellent";
+            this.Excellent.UseVisualStyleBackColor = true;
+            // 
             // Computer_Details_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(952, 659);
+            this.ClientSize = new System.Drawing.Size(971, 690);
+            this.Controls.Add(this.Excellent);
+            this.Controls.Add(this.VeryGood);
+            this.Controls.Add(this.Good);
+            this.Controls.Add(this.Poor);
+            this.Controls.Add(this.VeryPoor);
+            this.Controls.Add(this.RateBtn);
+            this.Controls.Add(this.ReturnBtn);
+            this.Controls.Add(this.ReserveBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Return);
             this.Controls.Add(this.panel1);
@@ -174,5 +272,13 @@
         private System.Windows.Forms.Label OperationSystemName;
         private System.Windows.Forms.PictureBox CmpPicturebox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ReserveBtn;
+        private System.Windows.Forms.Button ReturnBtn;
+        private System.Windows.Forms.Button RateBtn;
+        private System.Windows.Forms.RadioButton VeryPoor;
+        private System.Windows.Forms.RadioButton Poor;
+        private System.Windows.Forms.RadioButton Good;
+        private System.Windows.Forms.RadioButton VeryGood;
+        private System.Windows.Forms.RadioButton Excellent;
     }
 }

@@ -32,7 +32,7 @@ namespace Egypt_National_Library
             string Password = Password_Textbox.Text;
             DataTable dt = Controller_OBJ.GetUserByID(ID);
             if (dt == null) { MessageBox.Show("The Id You have Entered does not match any ID in the library", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
-            if (dt.Rows[0].ItemArray[5].ToString().Contains("User"))
+            if (Password.Contains("User"))
             {
                 if (Password == dt.Rows[0].ItemArray[5].ToString())
                 {
@@ -46,6 +46,52 @@ namespace Egypt_National_Library
                     MessageBox.Show("Wrong Password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+            dt = Controller_OBJ.Get_Employee_by_ID_forlog(ID);
+            if (Password.Contains("Man"))
+            {
+                if (Password ==  dt.Rows[0]["Password"].ToString())
+                {
+                    MessageBox.Show("Welcome " + dt.Rows[0].ItemArray[0].ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ChairmanForm Form = new ChairmanForm(this, dt.Rows[0].ItemArray[0].ToString()+" "+ dt.Rows[0].ItemArray[1].ToString()+" "+ dt.Rows[0].ItemArray[2].ToString());
+                    Form.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong Password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+            if (Password.Contains("SPR"))
+            {
+                if (Password == dt.Rows[0]["Password"].ToString())
+                {
+                    MessageBox.Show("Welcome " + dt.Rows[0].ItemArray[0].ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ManagerForm Form = new ManagerForm(this, dt.Rows[0].ItemArray[0].ToString() + " " + dt.Rows[0].ItemArray[1].ToString() + " " + dt.Rows[0].ItemArray[2].ToString(), ID);
+                    Form.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong Password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+            if (Password.Contains("EMP"))
+            {
+                if (Password == dt.Rows[0]["Password"].ToString())
+                {
+                    MessageBox.Show("Welcome " + dt.Rows[0].ItemArray[0].ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    EmployeeForm Form = new EmployeeForm(this, dt.Rows[0].ItemArray[0].ToString() + " " + dt.Rows[0].ItemArray[1].ToString() + " " + dt.Rows[0].ItemArray[2].ToString(), ID);
+                    Form.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong Password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
         }
         private int Check_IDValidation(string Text, string type)
         {

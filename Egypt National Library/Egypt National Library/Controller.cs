@@ -265,6 +265,633 @@ namespace Egypt_National_Library
         public DataTable GetStoryDepAvailableSeats() { string StoredProcedureName = StoredProcedures.GetStoryAvSeats; return dbMan.ExecuteReader(StoredProcedureName, null); }
         public DataTable GetMusicDepAvailableSeats() { string StoredProcedureName = StoredProcedures.GetMusicAvSeats; return dbMan.ExecuteReader(StoredProcedureName, null); }
         public DataTable GetCmpDepAvailableSeats() { string StoredProcedureName = StoredProcedures.GetCmpAvSeats; return dbMan.ExecuteReader(StoredProcedureName, null); }
-        
+        public int UpdateBookStatusAndBookUserID(int Book_User_ID, int Book_ID, string Book_Type, int Book_Dep,string Status)
+        {
+            string StoredProcedureName = StoredProcedures.UpdateBookStatusAndBookUserID;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@User_ID",Book_User_ID);
+            Parameters.Add("@Book_ID",Book_ID);
+            Parameters.Add("@Book_Type",Book_Type);
+            Parameters.Add("@Book_Dep",Book_Dep);
+            Parameters.Add("@Status",Status);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int UpdateBookStatusAndBookUserID_NULL( int Book_ID, string Book_Type, int Book_Dep, string Status)
+        {
+            string StoredProcedureName = StoredProcedures.UpdateBookStatusAndBookUserID_NULL;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Book_ID", Book_ID);
+            Parameters.Add("@Book_Type", Book_Type);
+            Parameters.Add("@Book_Dep", Book_Dep);
+            Parameters.Add("@Status", Status);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+
+        /*Aziz Part*/
+        //emp
+        //Employee
+        public int Add_Employee
+            (string Fname, string Mname, string Lname,
+             int Salary, int ID, string Pass
+            , int Age, string Job, string Needs, string Address,
+            int ManagerId, byte[] Emp_Image)
+        {
+            string StoredProcedureName = StoredProcedures.AddEmp;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Fname", Fname);
+            Parameters.Add("@MName", Mname);
+            Parameters.Add("@LName", Lname);
+            Parameters.Add("@Salary", Salary);
+            Parameters.Add("@Emp_ID", ID);
+            Parameters.Add("@Password", Pass);
+            Parameters.Add("@Age", Age);
+            Parameters.Add("@JobTitle", Job);
+            Parameters.Add("@Needs", Needs);
+            Parameters.Add("@Address", Address);
+            Parameters.Add("@Manager_ID", ManagerId);
+            Parameters.Add("@Employee_Image", Emp_Image);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+
+        public DataTable Get_All_Emp()
+        {
+            string StoredProcedureName = StoredProcedures.GetAllEmployees;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_by_ID(int ID)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmloyeebyID;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", ID);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+
+        public DataTable Get_Employee_by_fname(string fname)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpbyfirstname;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@fn", fname);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_by_flname(string fname, string lname)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpbyFandLname;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@fn", fname);
+            Parameters.Add("@ln", lname);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_by_fullname(string fname, string mname, string lname)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpbyFullname;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@fn", fname);
+            Parameters.Add("@mn", mname);
+            Parameters.Add("@ln", lname);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+
+
+        public DataTable Get_Employee_by_Job(string job)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpbyJobtitle;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@jti", job);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_by_Manager(int mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpbyManager;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_by_Address(string address)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpbyAddress;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ad", address);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_below_sal(int sal)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpbelowSal;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Sal", sal);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_equal_sal(int sal)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpequalSal;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Sal", sal);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_above_sal(int sal)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpaboveSal;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Sal", sal);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_below_age(int age)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpbelowAge;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@a", age);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_equal_age(int age)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpequalAge;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@a", age);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_above_age(int age)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpaboveAge;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@a", age);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_AVG_Sal()
+        {
+            string StoredProcedureName = StoredProcedures.GetAVGSalary;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Total_Sal()
+        {
+            string StoredProcedureName = StoredProcedures.GetTotalSalaries;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_AVG_Age()
+        {
+            string StoredProcedureName = StoredProcedures.GetAVGAge;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Count_Employees()
+        {
+            string StoredProcedureName = StoredProcedures.CountEmployees;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Count_Employees_under_Manager(int mid)
+        {
+            string StoredProcedureName = StoredProcedures.CountEmpUnderManager;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Count_Employees_under_Job(string jti)
+        {
+            string StoredProcedureName = StoredProcedures.CountEmpUnderJob;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@jti", jti);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable AVG_Sal_Under_Manager(int mid)
+        {
+            string StoredProcedureName = StoredProcedures.AvgSalUnderManager;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Total_Sal_Under_Manager(int mid)
+        {
+            string StoredProcedureName = StoredProcedures.TotalSalUnderManager;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable AVG_Age_Under_Manager(int mid)
+        {
+            string StoredProcedureName = StoredProcedures.AvgAgeUnderManager;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Total_Sal_Under_Job(string job)
+        {
+            string StoredProcedureName = StoredProcedures.TotalSalUnderJob;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@jti", job);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable AVG_Age_Under_Job(string job)
+        {
+            string StoredProcedureName = StoredProcedures.AvgAgeUnderJob;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@jti", job);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable AVG_Sal_Under_Job(string jti)
+        {
+            string StoredProcedureName = StoredProcedures.AVGSalUnderJob;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@jti", jti);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+
+
+        public DataTable Get_Emp_Name(int id)
+        {
+            string StoredProcedureName = StoredProcedures.GetFullNameofEmp;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_Address(int id)
+        {
+            string StoredProcedureName = StoredProcedures.GetAddressofEmp;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_Salary(int id)
+        {
+            string StoredProcedureName = StoredProcedures.GetSalaryofEmp;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_Job(int id)
+        {
+            string StoredProcedureName = StoredProcedures.GetJobTitleofEmp;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_Needs(int id)
+        {
+            string StoredProcedureName = StoredProcedures.GetNeedsofEmp;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_Age(int id)
+        {
+            string StoredProcedureName = StoredProcedures.GetAgeofEmp;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_Image(int id)
+        {
+            string StoredProcedureName = StoredProcedures.GetImageofEmp;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_ManagerID(int id)
+        {
+            string StoredProcedureName = StoredProcedures.GetManagerIDofEmp;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_Info(int id)
+        {
+            string StoredProcedureName = StoredProcedures.GetInfoofEmp;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_All_Managers()
+        {
+            string StoredProcedureName = StoredProcedures.GetAllManagers;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_All_Jobs()
+        {
+            string StoredProcedureName = StoredProcedures.GetAllJobs;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_ID_byname(string fname, string mname, string lname)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpIDbyname;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@fname", fname);
+            Parameters.Add("@mname", mname);
+            Parameters.Add("@lname", lname);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Edit_Emp_Sal(int id, int sal)
+        {
+            string StoredProcedureName = StoredProcedures.EditSalofEmloyee;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@sal", sal);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Edit_Emp_Pass(int id, string pass)
+        {
+            string StoredProcedureName = StoredProcedures.EditPasswordofEmloyee;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@Pass", pass);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Edit_Emp_Job(int id, string job)
+        {
+            string StoredProcedureName = StoredProcedures.EditJobofEmloyee;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@j", job);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Edit_Emp_Age()//updates all ages of imp at 1/1
+        {
+            string StoredProcedureName = StoredProcedures.EditAgeofEmloyee;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Edit_Emp_Needs(int id, string need)
+        {
+            string StoredProcedureName = StoredProcedures.EditNeedsofEmloyee;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@n", need);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Edit_Emp_Address(int id, string adres)
+        {
+            string StoredProcedureName = StoredProcedures.EditAddressofEmloyee;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@ad", adres);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Edit_Emp_Manager(int id, int mid)
+        {
+            string StoredProcedureName = StoredProcedures.EditManagerofEmloyee;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Edit_Emp_Image(int id, byte[] Emp_Image)
+        {
+            string StoredProcedureName = StoredProcedures.EditImageofEmloyee;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@im", Emp_Image);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_by_Job_below_Sal(string job, int sal)
+        {
+            string StoredProcedureName = StoredProcedures.Getempbyjobbelowsal;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@j", job);
+            Parameters.Add("@sal", sal);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_by_Job_above_Sal(string job, int sal)
+        {
+            string StoredProcedureName = StoredProcedures.Getempbyjobabovesal;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@j", job);
+            Parameters.Add("@sal", sal);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_by_Age_below_Sal(int age, int sal)
+        {
+            string StoredProcedureName = StoredProcedures.Getempbyagebelowsal;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@age", age);
+            Parameters.Add("@sal", sal);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_by_Age_above_Sal(int age, int sal)
+        {
+            string StoredProcedureName = StoredProcedures.Getempbyageabovesal;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@age", age);
+            Parameters.Add("@sal", sal);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Set_Salary_for_Age(int age, int sal)
+        {
+            string StoredProcedureName = StoredProcedures.SetSalaryforAge;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@age", age);
+            Parameters.Add("@sal", sal);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Set_Salary_for_Job(string job, int sal)
+        {
+            string StoredProcedureName = StoredProcedures.SetSalaryforJob;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@j", job);
+            Parameters.Add("@sal", sal);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Manager_Name(int id)
+        {
+            string StoredProcedureName = StoredProcedures.GetManagerName;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_by_ID_forlog(int id)
+        {
+            string StoredProcedureName = StoredProcedures.Getempbyidforlog;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Fire_Emp(int id)
+        {
+            string StoredProcedureName = StoredProcedures.FireEmp;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        //by
+        public DataTable Get_Employee_by_IDmn(int ID, int Mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmloyeebyIDmn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", ID);
+            Parameters.Add("@mid", Mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+
+        public DataTable Get_Employee_by_fnamemn(string fname, int Mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpbyfirstnamemn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@fn", fname);
+            Parameters.Add("@mid", Mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_by_flnamemn(string fname, string lname, int Mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpbyFandLnamemn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@fn", fname);
+            Parameters.Add("@ln", lname);
+            Parameters.Add("@mid", Mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_by_fullnamemn(string fname, string mname, string lname, int Mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpbyFullnamemn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@fn", fname);
+            Parameters.Add("@mn", mname);
+            Parameters.Add("@ln", lname);
+            Parameters.Add("@mid", Mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+
+
+        public DataTable Get_Employee_by_Jobmn(string job, int Mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpbyJobtitlemn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@jti", job);
+            Parameters.Add("@mid", Mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_by_Addressmn(string address, int Mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpbyAddressmn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@ad", address);
+            Parameters.Add("@mid", Mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_below_salmn(int sal, int Mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpbelowSalmn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Sal", sal);
+            Parameters.Add("@mid", Mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_equal_salmn(int sal, int Mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpequalSalmn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Sal", sal);
+            Parameters.Add("@mid", Mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_above_salmn(int sal, int Mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpaboveSalmn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Sal", sal);
+            Parameters.Add("@mid", Mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_below_agemn(int age, int Mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpbelowAgemn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@a", age);
+            Parameters.Add("@mid", Mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_equal_agemn(int age, int Mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpequalAgemn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@a", age);
+            Parameters.Add("@mid", Mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Employee_above_agemn(int age, int Mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpaboveAgemn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@a", age);
+            Parameters.Add("@mid", Mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_ID_bynamemn(string fname, string mname, string lname, int mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmpIDbynamemn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@fname", fname);
+            Parameters.Add("@mname", mname);
+            Parameters.Add("@lname", lname);
+            Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        //
+
+        public DataTable Get_Emp_Namemn(int id, int mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetFullNameofEmpmn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_Addressmn(int id, int mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetAddressofEmpmn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_Salarymn(int id, int mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetSalaryofEmpmn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_Jobmn(int id, int mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetJobTitleofEmpmn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_Needsmn(int id, int mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetNeedsofEmpmn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_Agemn(int id, int mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetAgeofEmpmn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_Imagemn(int id, int mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetEmployee_Imagemnmn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable Get_Emp_Infomn(int id, int mid)
+        {
+            string StoredProcedureName = StoredProcedures.GetInfoofEmpmn;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@id", id);
+            Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+
     }
 }

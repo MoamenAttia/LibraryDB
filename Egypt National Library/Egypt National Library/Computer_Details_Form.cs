@@ -12,7 +12,7 @@ namespace Egypt_National_Library
 {
     public partial class Computer_Details_Form : Form
     {
-        public Computer_Details_Form(Panel[] SoftwarePanels,int NumOfPictureboxes,string price,string Cmp_Type,byte[] OperatingSystemImage,string OpSys)
+        public Computer_Details_Form(Panel[] SoftwarePanels,int NumOfPictureboxes,string price,string Cmp_Type,byte[] OperatingSystemImage,string OpSys,int UserID)
         {
             
             InitializeComponent();
@@ -25,6 +25,7 @@ namespace Egypt_National_Library
             CmpPicturebox.Image = Image.FromStream(ms);
             CmpPicturebox.Refresh();
             OperationSystemName.Text = OpSys;
+            int userid = UserID;
         }
 
         private void Computer_Details_Form_Load(object sender, EventArgs e)

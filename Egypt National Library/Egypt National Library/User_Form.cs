@@ -63,6 +63,7 @@ namespace Egypt_National_Library
         {
            Book_Details_Form Form;
             string ID = "", Section = "";
+            int BookUserID=0;
             for (int i=0;i<NumofBookpictureboxes;++i)
                 if(sender.Equals(Bookpictureboxes[i]))
                 {
@@ -70,7 +71,31 @@ namespace Egypt_National_Library
                     for (int k = 0; k < Temp.Length; ++k) if (Temp[k] == '/') { ID = Temp; ID = ID.Remove(0, k + 1); break; }
                     for(int k = 0; k < ID.Length;++k) if (ID[k] == '/') { Section = ID; Section = Section.Remove(0, k + 1); ID = ID.Remove(k, Section.Length + 1); break; }
                     DataTable dt = Controller_OBJ.GetBookByName(int.Parse(ID), 1, Section);
-                    Form = new Book_Details_Form(dt.Rows[0].ItemArray[6].ToString(), dt.Rows[0].ItemArray[0].ToString(), dt.Rows[0].ItemArray[1].ToString(), dt.Rows[0].ItemArray[2].ToString(), dt.Rows[0].ItemArray[7].ToString(), dt.Rows[0].ItemArray[8].ToString(), dt.Rows[0].ItemArray[12].ToString(), dt.Rows[0].ItemArray[5].ToString(), (byte[])dt.Rows[0].ItemArray[14]);
+
+                    
+                    if (!DBNull.Value.Equals(dt.Rows[0].ItemArray[11]))
+                    {
+                        BookUserID = int.Parse(dt.Rows[0].ItemArray[11].ToString());
+                        //not null
+                    }
+                    else
+                    {
+                            BookUserID = 0;
+                            //null
+                    }
+
+                    Form = new Book_Details_Form(dt.Rows[0].ItemArray[6].ToString(),
+                        dt.Rows[0].ItemArray[0].ToString(),
+                        dt.Rows[0].ItemArray[1].ToString(),
+                        dt.Rows[0].ItemArray[2].ToString(),
+                        dt.Rows[0].ItemArray[7].ToString(),
+                        dt.Rows[0].ItemArray[8].ToString(),
+                        dt.Rows[0].ItemArray[12].ToString(),
+                        dt.Rows[0].ItemArray[5].ToString(),
+                        (byte[])dt.Rows[0].ItemArray[14],
+                        User_ID, dt.Rows[0].ItemArray[9].ToString(),
+                        BookUserID,
+                        int.Parse(dt.Rows[0].ItemArray[3].ToString()));
                     Form.Show();
                     return;
                 }
@@ -111,7 +136,7 @@ namespace Egypt_National_Library
                     for (int k = 0; k < ID.Length; ++k) if (ID[k] == '/') { Section = ID; Section = Section.Remove(0, k + 1); ID = ID.Remove(k, Section.Length + 1); break; }
                     DataTable dt = Controller_OBJ.GetStoryByName(int.Parse(ID), 2, Section);
                     Form = new Story_Details_Form(dt.Rows[0].ItemArray[1].ToString(),dt.Rows[0].ItemArray[2].ToString(),
-                        dt.Rows[0].ItemArray[4].ToString(),(byte[])dt.Rows[0].ItemArray[7]);
+                        dt.Rows[0].ItemArray[4].ToString(), (byte[])dt.Rows[0].ItemArray[7], User_ID);
                     Form.Show();
                     return;
                 }
@@ -127,7 +152,7 @@ namespace Egypt_National_Library
                     for (int k = 0; k < Temp.Length; ++k) if (Temp[k] == '/') { ID = Temp; ID = ID.Remove(0, k + 1); break; }
                     for (int k = 0; k < ID.Length; ++k) if (ID[k] == '/') { Section = ID; Section = Section.Remove(0, k + 1); ID = ID.Remove(k, Section.Length + 1); break; }
                     DataTable dt = Controller_OBJ.GetMusical_InstrumentByName(int.Parse(ID), 3, Section);
-                    Form = new Music_Instrument_Details_Form(dt.Rows[0].ItemArray[1].ToString(), dt.Rows[0].ItemArray[3].ToString(), dt.Rows[0].ItemArray[5].ToString(), (byte[])dt.Rows[0].ItemArray[7]);
+                    Form = new Music_Instrument_Details_Form(dt.Rows[0].ItemArray[1].ToString(), dt.Rows[0].ItemArray[3].ToString(), dt.Rows[0].ItemArray[5].ToString(), (byte[])dt.Rows[0].ItemArray[7], User_ID);
                     Form.Show();
                     return;
                 }
@@ -144,7 +169,7 @@ namespace Egypt_National_Library
                     DataTable dt = Controller_OBJ.GetComputerSoftwares(int.Parse(ID), 4, Section);
                     DataTable dt1 = Controller_OBJ.GetComputerByName(int.Parse(ID), 4, Section);
                     Panel[] Panels = GetSoftwares_Panels(ID, Section);
-                    Form = new Computer_Details_Form(Panels, Panels.Length, dt1.Rows[0].ItemArray[3].ToString(), dt1.Rows[0].ItemArray[5].ToString(),(byte[])dt1.Rows[0].ItemArray[7], dt1.Rows[0].ItemArray[1].ToString());
+                    Form = new Computer_Details_Form(Panels, Panels.Length, dt1.Rows[0].ItemArray[3].ToString(), dt1.Rows[0].ItemArray[5].ToString(), (byte[])dt1.Rows[0].ItemArray[7], dt1.Rows[0].ItemArray[1].ToString(), User_ID);
                     Form.Show();
                     return;
                 }

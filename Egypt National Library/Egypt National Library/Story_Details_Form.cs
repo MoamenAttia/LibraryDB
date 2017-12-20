@@ -13,7 +13,7 @@ namespace Egypt_National_Library
 {
     public partial class Story_Details_Form : Form
     {
-        public Story_Details_Form(string StroyName,string StoryPrice,string SectionName,byte[] image)
+        public Story_Details_Form(string StroyName,string StoryPrice,string SectionName,byte[] image,int UserID)
         {
             InitializeComponent();
             StoryNameLabel.Text = StroyName;
@@ -22,6 +22,7 @@ namespace Egypt_National_Library
             MemoryStream ms = new MemoryStream(image);
             Story_ImagePicturebox.Image = Image.FromStream(ms);
             Story_ImagePicturebox.Refresh();
+            int userid = UserID;
         }
 
         private void Return_Click(object sender, EventArgs e)

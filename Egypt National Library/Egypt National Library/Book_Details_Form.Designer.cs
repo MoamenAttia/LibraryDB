@@ -45,9 +45,16 @@
             this.AuthorMNameLabel = new System.Windows.Forms.Label();
             this.AuthorFNameLabel = new System.Windows.Forms.Label();
             this.BorrowBtn = new System.Windows.Forms.Button();
-            this.RecieveBtn = new System.Windows.Forms.Button();
+            this.ReturnBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Return = new System.Windows.Forms.Button();
+            this.RateBtn = new System.Windows.Forms.Button();
+            this.VeryPoor = new System.Windows.Forms.RadioButton();
+            this.Poor = new System.Windows.Forms.RadioButton();
+            this.Good = new System.Windows.Forms.RadioButton();
+            this.VerryGood = new System.Windows.Forms.RadioButton();
+            this.Excellent = new System.Windows.Forms.RadioButton();
+            this.InUse = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Book_ImagePicturebox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,25 +219,31 @@
             // 
             // BorrowBtn
             // 
+            this.BorrowBtn.Enabled = false;
             this.BorrowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BorrowBtn.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.BorrowBtn.Location = new System.Drawing.Point(390, 460);
+            this.BorrowBtn.Location = new System.Drawing.Point(384, 397);
             this.BorrowBtn.Name = "BorrowBtn";
             this.BorrowBtn.Size = new System.Drawing.Size(142, 36);
             this.BorrowBtn.TabIndex = 16;
             this.BorrowBtn.Text = "Borrow";
             this.BorrowBtn.UseVisualStyleBackColor = true;
+            this.BorrowBtn.Visible = false;
+            this.BorrowBtn.Click += new System.EventHandler(this.BorrowBtn_Click);
             // 
-            // RecieveBtn
+            // ReturnBtn
             // 
-            this.RecieveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RecieveBtn.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.RecieveBtn.Location = new System.Drawing.Point(566, 460);
-            this.RecieveBtn.Name = "RecieveBtn";
-            this.RecieveBtn.Size = new System.Drawing.Size(142, 36);
-            this.RecieveBtn.TabIndex = 17;
-            this.RecieveBtn.Text = "Recieve";
-            this.RecieveBtn.UseVisualStyleBackColor = true;
+            this.ReturnBtn.Enabled = false;
+            this.ReturnBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReturnBtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.ReturnBtn.Location = new System.Drawing.Point(566, 397);
+            this.ReturnBtn.Name = "ReturnBtn";
+            this.ReturnBtn.Size = new System.Drawing.Size(142, 36);
+            this.ReturnBtn.TabIndex = 17;
+            this.ReturnBtn.Text = "Return";
+            this.ReturnBtn.UseVisualStyleBackColor = true;
+            this.ReturnBtn.Visible = false;
+            this.ReturnBtn.Click += new System.EventHandler(this.ReturnBtn_Click);
             // 
             // panel1
             // 
@@ -238,7 +251,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(20, 619);
+            this.panel1.Size = new System.Drawing.Size(20, 656);
             this.panel1.TabIndex = 18;
             // 
             // Return
@@ -246,7 +259,7 @@
             this.Return.FlatAppearance.BorderSize = 2;
             this.Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Return.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Return.Location = new System.Drawing.Point(705, 571);
+            this.Return.Location = new System.Drawing.Point(738, 608);
             this.Return.Name = "Return";
             this.Return.Size = new System.Drawing.Size(80, 36);
             this.Return.TabIndex = 19;
@@ -254,15 +267,103 @@
             this.Return.UseVisualStyleBackColor = true;
             this.Return.Click += new System.EventHandler(this.Return_Click);
             // 
+            // RateBtn
+            // 
+            this.RateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RateBtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.RateBtn.Location = new System.Drawing.Point(566, 511);
+            this.RateBtn.Name = "RateBtn";
+            this.RateBtn.Size = new System.Drawing.Size(142, 36);
+            this.RateBtn.TabIndex = 20;
+            this.RateBtn.Text = "Rate it!";
+            this.RateBtn.UseVisualStyleBackColor = true;
+            // 
+            // VeryPoor
+            // 
+            this.VeryPoor.AutoSize = true;
+            this.VeryPoor.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.VeryPoor.Location = new System.Drawing.Point(371, 467);
+            this.VeryPoor.Name = "VeryPoor";
+            this.VeryPoor.Size = new System.Drawing.Size(111, 27);
+            this.VeryPoor.TabIndex = 21;
+            this.VeryPoor.TabStop = true;
+            this.VeryPoor.Text = "VeryPoor";
+            this.VeryPoor.UseVisualStyleBackColor = true;
+            // 
+            // Poor
+            // 
+            this.Poor.AutoSize = true;
+            this.Poor.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.Poor.Location = new System.Drawing.Point(371, 500);
+            this.Poor.Name = "Poor";
+            this.Poor.Size = new System.Drawing.Size(69, 27);
+            this.Poor.TabIndex = 22;
+            this.Poor.TabStop = true;
+            this.Poor.Text = "Poor";
+            this.Poor.UseVisualStyleBackColor = true;
+            // 
+            // Good
+            // 
+            this.Good.AutoSize = true;
+            this.Good.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.Good.Location = new System.Drawing.Point(371, 533);
+            this.Good.Name = "Good";
+            this.Good.Size = new System.Drawing.Size(81, 27);
+            this.Good.TabIndex = 23;
+            this.Good.TabStop = true;
+            this.Good.Text = "Good";
+            this.Good.UseVisualStyleBackColor = true;
+            // 
+            // VerryGood
+            // 
+            this.VerryGood.AutoSize = true;
+            this.VerryGood.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.VerryGood.Location = new System.Drawing.Point(371, 566);
+            this.VerryGood.Name = "VerryGood";
+            this.VerryGood.Size = new System.Drawing.Size(129, 27);
+            this.VerryGood.TabIndex = 24;
+            this.VerryGood.TabStop = true;
+            this.VerryGood.Text = "VerryGood";
+            this.VerryGood.UseVisualStyleBackColor = true;
+            // 
+            // Excellent
+            // 
+            this.Excellent.AutoSize = true;
+            this.Excellent.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.Excellent.Location = new System.Drawing.Point(371, 599);
+            this.Excellent.Name = "Excellent";
+            this.Excellent.Size = new System.Drawing.Size(112, 27);
+            this.Excellent.TabIndex = 25;
+            this.Excellent.TabStop = true;
+            this.Excellent.Text = "Excellent";
+            this.Excellent.UseVisualStyleBackColor = true;
+            // 
+            // InUse
+            // 
+            this.InUse.AutoSize = true;
+            this.InUse.Location = new System.Drawing.Point(517, 436);
+            this.InUse.Name = "InUse";
+            this.InUse.Size = new System.Drawing.Size(59, 23);
+            this.InUse.TabIndex = 27;
+            this.InUse.Text = "InUse";
+            this.InUse.Visible = false;
+            // 
             // Book_Details_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(797, 619);
+            this.ClientSize = new System.Drawing.Size(830, 656);
+            this.Controls.Add(this.InUse);
+            this.Controls.Add(this.Excellent);
+            this.Controls.Add(this.VerryGood);
+            this.Controls.Add(this.Good);
+            this.Controls.Add(this.Poor);
+            this.Controls.Add(this.VeryPoor);
+            this.Controls.Add(this.RateBtn);
             this.Controls.Add(this.Return);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.RecieveBtn);
+            this.Controls.Add(this.ReturnBtn);
             this.Controls.Add(this.BorrowBtn);
             this.Controls.Add(this.ReleaseDateLabel);
             this.Controls.Add(this.SectionNameLabel);
@@ -312,8 +413,15 @@
         private System.Windows.Forms.Label AuthorMNameLabel;
         private System.Windows.Forms.Label AuthorFNameLabel;
         private System.Windows.Forms.Button BorrowBtn;
-        private System.Windows.Forms.Button RecieveBtn;
+        private System.Windows.Forms.Button ReturnBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Return;
+        private System.Windows.Forms.Button RateBtn;
+        private System.Windows.Forms.RadioButton VeryPoor;
+        private System.Windows.Forms.RadioButton Poor;
+        private System.Windows.Forms.RadioButton Good;
+        private System.Windows.Forms.RadioButton VerryGood;
+        private System.Windows.Forms.RadioButton Excellent;
+        private System.Windows.Forms.Label InUse;
     }
 }
