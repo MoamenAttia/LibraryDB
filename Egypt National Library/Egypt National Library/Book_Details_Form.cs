@@ -101,7 +101,7 @@ namespace Egypt_National_Library
             else if (Good.Checked)
             {
                 int Success = Controller_OBJ.RateBook(BookIDvar, Book_Typevar, 1, 3);
-                if (Success == 1) MessageBox.Show("You rated this as Good");
+                 if (Success == 1) MessageBox.Show("You rated this as Good");
             }
             else if (VeryGood.Checked)
             {
