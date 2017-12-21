@@ -260,6 +260,7 @@
             this.Name = "Add_Story_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add_Story_Form";
+            this.Load += new System.EventHandler(this.Add_Story_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);

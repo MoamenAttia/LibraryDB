@@ -40,19 +40,25 @@ namespace Egypt_National_Library
 
         private void Add_Computer_Click(object sender, EventArgs e)
         {
+            if (Check_ImageValidation(PictureBox) == 0) return;
+            int CmpID = Check_IDValidation(Cmp_ID.Text, "Cmp "); if (CmpID == 0) return;
+            int Price = CheckPriceValidation(); if (Price == 0) return;
+            int LibDepID = Check_IDValidation(Lib_Dep_ID.Text, "Lib Dep "); if (LibDepID == 0) return;
             MemoryStream ms = new MemoryStream();
             PictureBox.Image.Save(ms, PictureBox.Image.RawFormat);
             byte[] image = ms.ToArray();
-            Controller_OBJ.UpdateComputerImage(int.Parse(Cmp_ID.Text), int.Parse(Lib_Dep_ID.Text), Cmp_Sec_Name.Text, image);
+            Controller_OBJ.Add_New_Softawre(CmpID, Cmp_Sec_Name.Text, LibDepID, image);
         }
 
         private void Add_Software_Click(object sender, EventArgs e)
         {
+            if (Check_ImageValidation(SoftwarePicturebox) == 0) return;
+            int CmpID = Check_IDValidation(Cmp_ID.Text, "Cmp "); if (CmpID == 0) return;
+            int LibDepID = Check_IDValidation(Lib_Dep_ID.Text, "Lib Dep "); if (LibDepID == 0) return;
             MemoryStream ms = new MemoryStream();
             SoftwarePicturebox.Image.Save(ms, SoftwarePicturebox.Image.RawFormat);
             byte[] image = ms.ToArray();
-
-            Controller_OBJ.UpdateSoftwareImage(image, Software.Text, int.Parse(Lib_Dep_ID.Text), Cmp_Sec_Name.Text, int.Parse(Cmp_ID.Text));
+            Controller_OBJ.Add_New_Softawre(CmpID, Cmp_Sec_Name.Text, LibDepID, image);
         }
 
         private void BrowseSoftwareImage_Click(object sender, EventArgs e)
@@ -66,6 +72,41 @@ namespace Egypt_National_Library
         private void SoftwarePicturebox_Click(object sender, EventArgs e)
         {
 
+        }
+ 
+        private int Check_IDValidation(string Text, string type)
+        {
+            int ID = 0;
+            try { ID = int.Parse(Text); }
+            catch (Exception Ex) { MessageBox.Show("Please Sir , Add A valid " + type + " ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
+            if (ID < 1)
+            { MessageBox.Show("Please Sir , Add A valid " + type + " ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
+            return ID;
+        }
+        private int CheckPriceValidation()
+        {
+            int price = 0;
+            try { price = int.Parse(Cmp_Price.Text); }
+            catch (Exception Ex) { MessageBox.Show("Please Sir , Add A valid Price", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
+            if (price < 1)
+            { MessageBox.Show("Please Sir , Add A valid Price", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
+            return price;
+        }
+
+        private int Check_ImageValidation(PictureBox PictureBox)
+        {
+            MemoryStream ms = new MemoryStream();
+            try
+            {
+                PictureBox.Image.Save(ms, PictureBox.Image.RawFormat);
+                byte[] image = ms.ToArray();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Please Sir Insert The Image", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return 0;
+            }
+            return 1;
         }
     }
 }

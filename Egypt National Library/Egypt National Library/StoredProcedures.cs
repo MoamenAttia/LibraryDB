@@ -18,8 +18,19 @@ namespace Egypt_National_Library
         public static string GetBooks = "spGetBooks";
         public static string UpdateBookStatusAndBookUserID = "spUpdateBookStatusAndBookUserID";
         public static string UpdateBookStatusAndBookUserID_NULL = "spUpdateBookStatusAndBookUserID_NULL";
-        public static string RateBook = "RateBook";
-
+        public static string RateBook = "spRateBook";
+        public static string GetAvailableBooks = "spGetAvailableBooks";
+        public static string GetTopPriceBooks = "spGetTopPriceBooks";
+        public static string GetTopRatedBooks = "spGetTopRatedBooks";
+        public static string GetLowPriceBooks = "spGetLowPriceBooks";
+        public static string GetLowRatedBooks = "spGetLowRatedBooks";
+        public static string GetNotAvailableBooks = "spGetNotAvailableBooks";
+        public static string GetAvailableBooksBySection = "spGetAvailableBooksBySection";
+        public static string GetTopPriceBooksBySection = "spGetTopPriceBooksBySection";
+        public static string GetTopRatedBooksBySection = "spGetTopRatedBooksBySection";
+        public static string GetLowPriceBooksBySection = "spGetLowPriceBooksBySection";
+        public static string GetLowRatedBooksBySection = "spGetLowRatedBooksBySection";
+        public static string GetNotAvailableBooksBySection = "spGetNotAvailableBooksBySection";
 
 
         // Stored Procedures About Stories //
@@ -31,7 +42,20 @@ namespace Egypt_National_Library
         public static string GetStories = "spGetStories";
         public static string UpdateStoryStatusAndStoryUserID = "spUpdateStoryStatusAndStoryUserID";
         public static string UpdateStoryStatusAndStoryUserID_NULL = "spUpdateStoryStatusAndStoryUserID_NULL";
-        public static string RateStory = "RateStory";
+        public static string RateStory = "spRateStory";
+        public static string GetAvailableStories = "spGetAvailableStories";
+        public static string GetTopPriceStories = "spGetTopPriceStory";
+        public static string GetTopRatedStories = "spGetTopRatedStories";
+        public static string GetLowPriceStories = "spGetLowPriceStory";
+        public static string GetLowRatedStories = "spGetLowRatedStories";
+        public static string GetNotAvailableStories = "spGetNotAvailableStories";
+        public static string GetAvailableStoriesBySection = "spGetAvailableStoriesBySection";
+        public static string GetTopPriceStoriesBySection = "spGetTopPriceStoryBySection";
+        public static string GetTopRatedStoriesBySection = "spGetTopRatedStoriesBySection";
+        public static string GetLowPriceStoriesBySection = "spGetLowPriceStoryBySection";
+        public static string GetLowRatedStoriesBySection = "spGetLowRatedStoriesBySection";
+        public static string GetNotAvailableStoriesBySection = "spGetNotAvailableStoriesBySection";
+
 
         // Stored Procedures About Music_Instruments //
         public static string AddMusicSection = "";
@@ -43,10 +67,27 @@ namespace Egypt_National_Library
         public static string GetMusicInstruments = "spGetMusicInstruments";
         public static string UpdateInstrumentStatusAndInstrumentUserID = "spUpdateInstrumentStatusAndInstrumentUserID";
         public static string UpdateInstrumentStatusAndInstrumentUserID_NULL = "spUpdateInstrumentStatusAndInstrumentUserID_NULL";
-        public static string RateInstrument = "RateInstrument";
+        public static string RateInstrument = "spRateMusical_Instrument";
+        public static string GetAvailableMusical_Instruments = "spGetAvailableMusical_Instruments";
+        public static string GetNotAvailableMusical_Instruments = "spGetNotAvailableMusical_Instruments";
+        public static string GetTopPriceMusical_Instruments = "spGetTopPriceMusicInstruments";
+        public static string GetTopRatedMusical_Instruments = "spGetTopRatedMusicInstruments";
+        public static string GetLowPriceMusical_Instruments = "spGetLowPriceMusicInstruments";
+        public static string GetLowRatedMusical_Instruments = "spGetLowRatedMusicInstruments";
+        public static string GetAvailableMusical_InstrumentsBySection = "spGetAvailableMusical_InstrumentsBySection";
+        public static string GetNotAvailableMusical_InstrumentsBySection = "spGetNotAvailableMusical_InstrumentsBySection";
+        public static string GetTopPriceMusical_InstrumentsBySection = "spGetTopPriceMusicInstrumentsBySection";
+        public static string GetTopRatedMusical_InstrumentsBySection = "spGetTopRatedMusicInstrumentsBySection";
+        public static string GetLowPriceMusical_InstrumentsBySection = "spGetLowPriceMusicInstrumentsBySection";
+        public static string GetLowRatedMusical_InstrumentsBySection = "spGetLowRatedMusicInstrumentsBySection";
+
+
+
+
         // Stored Procedures About Computers //
         public static string AddComputerSection = "";
-        public static string AddComputer = "";
+        public static string AddNewSoftware = "spAddNewSoftware";
+        public static string AddComputer = "spAddNewComputer";
         public static string GetComputerByName = "spGetComputerByName";
         public static string GetSpecificComputers = "spGetSpecificComputers";
         public static string GetCmpAvSeats = "spGetComputerDepAvailableSeates";
@@ -56,7 +97,21 @@ namespace Egypt_National_Library
         public static string GetComputers = "spGetComputers";
         public static string UpdateCmpStatusAndCmpUserID = "spUpdateCmpStatusAndCmpUserID";
         public static string UpdateCmpStatusAndCmpUserID_NULL = "spUpdateCmpStatusAndCmpUserID_NULL";
-        public static string RateCmp = "RateCmp";
+        public static string RateCmp = "spRateComputer";
+        public static string GetAvailableComputers = "spGetAvailableComputers";
+        public static string GetNotAvailableComputers = "spGetNotAvailableComputers";
+        public static string GetTopPriceComputers = "spGetTopPriceComputer";
+        public static string GetTopRatedComputers = "spGetTopRatedComputer";
+        public static string GetLowPriceComputers = "spGetLowPriceComputer";
+        public static string GetLowRatedComputers = "spGetLowRatedComputer";
+        public static string GetAvailableComputersBySection = "spGetAvailableComputersBySection";
+        public static string GetNotAvailableComputersBySection = "spGetNotAvailableComputersBySection";
+        public static string GetTopPriceComputersBySection = "spGetTopPriceComputerBySection";
+        public static string GetTopRatedComputersBySection = "spGetTopRatedComputerBySection";
+        public static string GetLowPriceComputersBySection = "spGetLowPriceComputerBySection";
+        public static string GetLowRatedComputersBySection = "spGetLowRatedComputerBySection";
+
+
         // User Stored Procedure //
         public static string UpdateUserImage = "spUpdateUserImage";
         public static string GetUserByID = "GetUserByUserID";
@@ -72,11 +127,11 @@ namespace Egypt_National_Library
         public static string AddSoftware = "";
         public static string AddLibraryDepartment = "spAddLibDep";
         public static string GetEmployee_Image = "spGetEmployee_Image";
-    
-    
+        public static string UpdateAvailableSeats = "spUpdateAvailableSeats";
+
         //Zizo//
         public static string GetAllEmployees = "spGetEmployees";
-        public static string GetEmloyeebyID = "spGetEmployeesbyID";
+        public static string GetEmloyeebyID = "spGetEmployeesByID";
         public static string GetEmpbyfirstname = "spGetEmployeesbyfname";
         public static string GetEmpbyFandLname = "spGetEmployeesbyflname";
         public static string GetEmpbyFullname = "spGetEmployeesbyfullname";

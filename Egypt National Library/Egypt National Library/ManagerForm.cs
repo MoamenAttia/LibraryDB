@@ -17,6 +17,7 @@ namespace Egypt_National_Library
         Login_Form lf;
         Controller cobj;
         DataTable Dt;
+        string Password;
         public ManagerForm(Login_Form l,string n,int i)
         {
             cobj = new Controller();
@@ -24,6 +25,13 @@ namespace Egypt_National_Library
             id = Convert.ToString(i);
             lf = l;
             InitializeComponent();
+            Dt = cobj.Get_Employee_by_ID(Convert.ToInt32(id));
+            Password = Dt.Rows[0].ItemArray[5].ToString();
+            AddStory.Visible = AddBookBtn.Visible = AddMusic.Visible = AddCmp.Visible = false;
+            if (Password == "SPR123") AddBookBtn.Visible = true;
+            else if (Password == "SPR456") AddStory.Visible = true;
+            else if (Password == "SPR789") AddMusic.Visible = true;
+            else if (Password == "SPR101112") AddCmp.Visible = true;
         }
 
         private void GET_Stat_BT_Click(object sender, EventArgs e)
@@ -85,6 +93,30 @@ namespace Egypt_National_Library
             this.Hide();
             Editmyprofile_emp f = new Editmyprofile_emp(this, null, null, nme, id);
             f.Show();
+        }
+
+        private void AddBookBtn_Click(object sender, EventArgs e)
+        {
+            Add_Book_Form Form = new Add_Book_Form();
+            Form.Show();
+        }
+
+        private void AddMusic_Click(object sender, EventArgs e)
+        {
+            Add_Musical_Instrument_Form Form = new Add_Musical_Instrument_Form();
+            Form.Show();
+        }
+
+        private void AddCmp_Click(object sender, EventArgs e)
+        {
+            Add_Computer_Form Form = new Add_Computer_Form();
+            Form.Show();
+        }
+
+        private void AddStory_Click(object sender, EventArgs e)
+        {
+            Add_Story_Form Form = new Add_Story_Form();
+            Form.Show();
         }
     }
 }

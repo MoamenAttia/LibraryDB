@@ -18,7 +18,29 @@ namespace Egypt_National_Library
         {
             dbMan.CloseConnection();
         }
-       
+        public int Add_New_Computer(int CmpID,string opSys,int price,string SecName,int LibDepID,byte[] image)
+        {
+            string StoredProcedureName = StoredProcedures.AddComputer;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Cmp_ID", CmpID);
+            Parameters.Add("@OperatingSystem", opSys);
+            Parameters.Add("@Cmp_Price", price);
+            Parameters.Add("@Cmp_Sec_Name", SecName);
+            Parameters.Add("@Lib_Dep_ID", LibDepID);
+            Parameters.Add("@Cmp_Image", image);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int Add_New_Softawre(int CmpID,  string SecName, int LibDepID, byte[] image)
+        {
+            string StoredProcedureName = StoredProcedures.AddNewSoftware;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Cmp_ID", CmpID);
+            Parameters.Add("@Cmp_Sec_Name", SecName);
+            Parameters.Add("@Lib_Dep_ID", LibDepID);
+            Parameters.Add("@SoftwareImage", image);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+
         public int Add_Library_Department(int Lib_Dep_ID , string Lib_Dep_Name , string Construction_Date , string Services_Can_Provide , int Available_Seats , int Supervisor_ID)
         {
             string StoredProcedureName = StoredProcedures.AddLibraryDepartment;
@@ -329,6 +351,14 @@ namespace Egypt_National_Library
             Parameters.Add("@Instrument_Type", Instrument_Type);
             Parameters.Add("@Instrument_Dep", Instrument_Dep);
             Parameters.Add("@Status", Status);
+            return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
+        }
+        public int UpdateAvailableSeats(int LibDepID,int Seats)
+        {
+            string StoredProcedureName = StoredProcedures.UpdateAvailableSeats;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Dep", LibDepID);
+            Parameters.Add("@AS", Seats);
             return dbMan.ExecuteNonQuery(StoredProcedureName, Parameters);
         }
         /// 
@@ -1006,6 +1036,306 @@ namespace Egypt_National_Library
             Dictionary<string, object> Parameters = new Dictionary<string, object>();
             Parameters.Add("@id", id);
             Parameters.Add("@mid", mid);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        // Added Functions //
+        //----------------------------------Book Part-----------------------------------//
+        public DataTable GetTopRatedBooks()
+        {
+            string StoredProcedureName = StoredProcedures.GetTopRatedBooks;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetLowRatedBooks()
+        {
+            string StoredProcedureName = StoredProcedures.GetLowRatedBooks;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetTopPriceBooks()
+        {
+            string StoredProcedureName = StoredProcedures.GetTopPriceBooks;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetLowPriceBooks()
+        {
+            string StoredProcedureName = StoredProcedures.GetLowPriceBooks;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetAvailableBooks()
+        {
+            string StoredProcedureName = StoredProcedures.GetAvailableBooks;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetNotAvailableBooks()
+        {
+            string StoredProcedureName = StoredProcedures.GetNotAvailableBooks;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        //-------------------------Story Part------------------------//
+        public DataTable GetTopRatedStories()
+        {
+            string StoredProcedureName = StoredProcedures.GetTopRatedStories;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetLowRatedStories()
+        {
+            string StoredProcedureName = StoredProcedures.GetLowRatedStories;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetTopPriceStories()
+        {
+            string StoredProcedureName = StoredProcedures.GetTopPriceStories;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetLowPriceStories()
+        {
+            string StoredProcedureName = StoredProcedures.GetLowPriceStories;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetAvailableStories()
+        {
+            string StoredProcedureName = StoredProcedures.GetAvailableStories;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetNotAvailableStories()
+        {
+            string StoredProcedureName = StoredProcedures.GetNotAvailableStories;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        //-------------------Musical Instrument Part --------------------//
+        public DataTable GetTopRatedMusical_Instrument()
+        {
+            string StoredProcedureName = StoredProcedures.GetTopRatedMusical_Instruments;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetLowRatedMusical_Instrument()
+        {
+            string StoredProcedureName = StoredProcedures.GetLowRatedMusical_Instruments;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetTopPriceMusical_Instrument()
+        {
+            string StoredProcedureName = StoredProcedures.GetTopPriceMusical_Instruments;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetLowPriceMusical_Instrument()
+        {
+            string StoredProcedureName = StoredProcedures.GetLowPriceMusical_Instruments;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetAvailableMusical_Instrument()
+        {
+            string StoredProcedureName = StoredProcedures.GetAvailableMusical_Instruments;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetNotAvailableMusical_Instrument()
+        {
+            string StoredProcedureName = StoredProcedures.GetNotAvailableMusical_Instruments;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        // ----------------------------------- Computer Part ----------------------------- //
+        public DataTable GetTopRatedComputer()
+        {
+            string StoredProcedureName = StoredProcedures.GetTopRatedComputers;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetLowRatedComputer()
+        {
+            string StoredProcedureName = StoredProcedures.GetLowRatedComputers;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetTopPriceComputer()
+        {
+            string StoredProcedureName = StoredProcedures.GetTopPriceComputers;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetLowPriceComputer()
+        {
+            string StoredProcedureName = StoredProcedures.GetLowPriceComputers;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetAvailableComputer()
+        {
+            string StoredProcedureName = StoredProcedures.GetAvailableComputers;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+        public DataTable GetNotAvailableComputer()
+        {
+            string StoredProcedureName = StoredProcedures.GetNotAvailableComputers;
+            return dbMan.ExecuteReader(StoredProcedureName, null);
+        }
+
+        //------------------------------SpecificFiltering------------------//
+        //--------------------------------BookPart------------------------------//
+        public DataTable GetTopRatedBooksBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetTopRatedBooksBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetLowRatedBooksBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetLowRatedBooksBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetTopPriceBooksBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetTopPriceBooksBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetLowPriceBooksBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetLowPriceBooksBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetAvailableBookBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetAvailableBooksBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetNotAvailableBooksBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetNotAvailableBooksBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+
+        //--------------------------------Story Part----------------------------//
+        public DataTable GetTopRatedStoriesBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetTopRatedStoriesBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetLowRatedStoriesBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetLowRatedStoriesBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetTopPriceStoriesBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetTopPriceStoriesBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetLowPriceStoriesBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetLowPriceStoriesBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetAvailableStoriesBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetAvailableStoriesBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetNotAvailableStoriesBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetNotAvailableStoriesBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        //--------------------------------Musical Instrument Part----------------------------//
+        public DataTable GetTopRatedMusical_InstrumentBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetTopRatedMusical_InstrumentsBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetLowRatedMusical_InstrumentBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetLowRatedMusical_InstrumentsBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetTopPriceMusical_InstrumentBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetTopPriceMusical_InstrumentsBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetLowPriceMusical_InstrumentBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetLowPriceMusical_InstrumentsBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetAvailableMusical_InstrumentBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetAvailableMusical_InstrumentsBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetNotAvailableMusical_InstrumentBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetNotAvailableMusical_InstrumentsBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        //-----------------------------Computer Part Filtering----------------------------//
+        public DataTable GetTopRatedComputerBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetTopRatedComputersBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetLowRatedComputerBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetLowRatedComputersBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetTopPriceComputerBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetTopPriceComputersBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetLowPriceComputerBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetLowPriceComputersBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetAvailableComputerBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetAvailableComputersBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
+            return dbMan.ExecuteReader(StoredProcedureName, Parameters);
+        }
+        public DataTable GetNotAvailableComputerBySection(string Type)
+        {
+            string StoredProcedureName = StoredProcedures.GetNotAvailableComputersBySection;
+            Dictionary<string, object> Parameters = new Dictionary<string, object>();
+            Parameters.Add("@Type", Type);
             return dbMan.ExecuteReader(StoredProcedureName, Parameters);
         }
 

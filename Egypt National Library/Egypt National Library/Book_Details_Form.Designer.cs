@@ -55,6 +55,7 @@
             this.VeryGood = new System.Windows.Forms.RadioButton();
             this.Excellent = new System.Windows.Forms.RadioButton();
             this.InUse = new System.Windows.Forms.Label();
+            this.BookRateLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Book_ImagePicturebox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +84,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.label1.Location = new System.Drawing.Point(367, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 28);
+            this.label1.Size = new System.Drawing.Size(141, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "Author FName";
             // 
@@ -93,7 +94,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.label2.Location = new System.Drawing.Point(367, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(189, 28);
+            this.label2.Size = new System.Drawing.Size(149, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "Author MName";
             // 
@@ -103,7 +104,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.label3.Location = new System.Drawing.Point(367, 131);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 28);
+            this.label3.Size = new System.Drawing.Size(140, 23);
             this.label3.TabIndex = 4;
             this.label3.Text = "Author LName";
             // 
@@ -113,7 +114,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.label4.Location = new System.Drawing.Point(367, 184);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 28);
+            this.label4.Size = new System.Drawing.Size(56, 23);
             this.label4.TabIndex = 5;
             this.label4.Text = "Price";
             // 
@@ -123,7 +124,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.label5.Location = new System.Drawing.Point(367, 238);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 28);
+            this.label5.Size = new System.Drawing.Size(92, 23);
             this.label5.TabIndex = 6;
             this.label5.Text = "Publisher";
             // 
@@ -133,7 +134,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.label6.Location = new System.Drawing.Point(367, 291);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(175, 28);
+            this.label6.Size = new System.Drawing.Size(140, 23);
             this.label6.TabIndex = 7;
             this.label6.Text = "Section Name";
             // 
@@ -143,7 +144,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.label7.Location = new System.Drawing.Point(367, 343);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(166, 28);
+            this.label7.Size = new System.Drawing.Size(132, 23);
             this.label7.TabIndex = 8;
             this.label7.Text = "Release Date";
             // 
@@ -221,8 +222,8 @@
             // 
             this.BorrowBtn.Enabled = false;
             this.BorrowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BorrowBtn.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.BorrowBtn.Location = new System.Drawing.Point(384, 397);
+            this.BorrowBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.BorrowBtn.Location = new System.Drawing.Point(487, 397);
             this.BorrowBtn.Name = "BorrowBtn";
             this.BorrowBtn.Size = new System.Drawing.Size(142, 36);
             this.BorrowBtn.TabIndex = 16;
@@ -235,8 +236,8 @@
             // 
             this.ReturnBtn.Enabled = false;
             this.ReturnBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReturnBtn.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.ReturnBtn.Location = new System.Drawing.Point(566, 397);
+            this.ReturnBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.ReturnBtn.Location = new System.Drawing.Point(487, 397);
             this.ReturnBtn.Name = "ReturnBtn";
             this.ReturnBtn.Size = new System.Drawing.Size(142, 36);
             this.ReturnBtn.TabIndex = 17;
@@ -251,15 +252,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(20, 656);
+            this.panel1.Size = new System.Drawing.Size(20, 791);
             this.panel1.TabIndex = 18;
             // 
             // Return
             // 
             this.Return.FlatAppearance.BorderSize = 2;
             this.Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Return.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Return.Location = new System.Drawing.Point(738, 608);
+            this.Return.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.Return.Location = new System.Drawing.Point(710, 743);
             this.Return.Name = "Return";
             this.Return.Size = new System.Drawing.Size(80, 36);
             this.Return.TabIndex = 19;
@@ -270,8 +271,8 @@
             // RateBtn
             // 
             this.RateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RateBtn.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.RateBtn.Location = new System.Drawing.Point(566, 511);
+            this.RateBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.RateBtn.Location = new System.Drawing.Point(487, 631);
             this.RateBtn.Name = "RateBtn";
             this.RateBtn.Size = new System.Drawing.Size(142, 36);
             this.RateBtn.TabIndex = 20;
@@ -283,9 +284,9 @@
             // 
             this.VeryPoor.AutoSize = true;
             this.VeryPoor.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.VeryPoor.Location = new System.Drawing.Point(371, 467);
+            this.VeryPoor.Location = new System.Drawing.Point(494, 454);
             this.VeryPoor.Name = "VeryPoor";
-            this.VeryPoor.Size = new System.Drawing.Size(138, 32);
+            this.VeryPoor.Size = new System.Drawing.Size(111, 27);
             this.VeryPoor.TabIndex = 21;
             this.VeryPoor.TabStop = true;
             this.VeryPoor.Text = "VeryPoor";
@@ -295,9 +296,9 @@
             // 
             this.Poor.AutoSize = true;
             this.Poor.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Poor.Location = new System.Drawing.Point(371, 500);
+            this.Poor.Location = new System.Drawing.Point(494, 487);
             this.Poor.Name = "Poor";
-            this.Poor.Size = new System.Drawing.Size(84, 32);
+            this.Poor.Size = new System.Drawing.Size(69, 27);
             this.Poor.TabIndex = 22;
             this.Poor.TabStop = true;
             this.Poor.Text = "Poor";
@@ -307,9 +308,9 @@
             // 
             this.Good.AutoSize = true;
             this.Good.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Good.Location = new System.Drawing.Point(371, 533);
+            this.Good.Location = new System.Drawing.Point(494, 520);
             this.Good.Name = "Good";
-            this.Good.Size = new System.Drawing.Size(99, 32);
+            this.Good.Size = new System.Drawing.Size(81, 27);
             this.Good.TabIndex = 23;
             this.Good.TabStop = true;
             this.Good.Text = "Good";
@@ -319,9 +320,9 @@
             // 
             this.VeryGood.AutoSize = true;
             this.VeryGood.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.VeryGood.Location = new System.Drawing.Point(371, 566);
+            this.VeryGood.Location = new System.Drawing.Point(494, 553);
             this.VeryGood.Name = "VeryGood";
-            this.VeryGood.Size = new System.Drawing.Size(153, 32);
+            this.VeryGood.Size = new System.Drawing.Size(123, 27);
             this.VeryGood.TabIndex = 24;
             this.VeryGood.TabStop = true;
             this.VeryGood.Text = "VeryGood";
@@ -331,9 +332,9 @@
             // 
             this.Excellent.AutoSize = true;
             this.Excellent.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.Excellent.Location = new System.Drawing.Point(371, 599);
+            this.Excellent.Location = new System.Drawing.Point(494, 586);
             this.Excellent.Name = "Excellent";
-            this.Excellent.Size = new System.Drawing.Size(136, 32);
+            this.Excellent.Size = new System.Drawing.Size(112, 27);
             this.Excellent.TabIndex = 25;
             this.Excellent.TabStop = true;
             this.Excellent.Text = "Excellent";
@@ -342,20 +343,31 @@
             // InUse
             // 
             this.InUse.AutoSize = true;
-            this.InUse.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.InUse.Location = new System.Drawing.Point(517, 436);
+            this.InUse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.InUse.Location = new System.Drawing.Point(528, 404);
             this.InUse.Name = "InUse";
-            this.InUse.Size = new System.Drawing.Size(74, 28);
+            this.InUse.Size = new System.Drawing.Size(59, 23);
             this.InUse.TabIndex = 27;
             this.InUse.Text = "InUse";
             this.InUse.Visible = false;
             // 
+            // BookRateLabel
+            // 
+            this.BookRateLabel.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.BookRateLabel.Location = new System.Drawing.Point(123, 563);
+            this.BookRateLabel.Name = "BookRateLabel";
+            this.BookRateLabel.Size = new System.Drawing.Size(126, 30);
+            this.BookRateLabel.TabIndex = 28;
+            this.BookRateLabel.Text = "label8";
+            this.BookRateLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Book_Details_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(830, 656);
+            this.ClientSize = new System.Drawing.Size(802, 791);
+            this.Controls.Add(this.BookRateLabel);
             this.Controls.Add(this.InUse);
             this.Controls.Add(this.Excellent);
             this.Controls.Add(this.VeryGood);
@@ -425,5 +437,6 @@
         private System.Windows.Forms.RadioButton VeryGood;
         private System.Windows.Forms.RadioButton Excellent;
         private System.Windows.Forms.Label InUse;
+        private System.Windows.Forms.Label BookRateLabel;
     }
 }

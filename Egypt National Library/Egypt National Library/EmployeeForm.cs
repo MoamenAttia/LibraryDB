@@ -17,6 +17,7 @@ namespace Egypt_National_Library
         Login_Form lf;
         Controller cobj;
         DataTable Dt;
+        string Password;
         public EmployeeForm(Login_Form l, string n, int i)
         {
             cobj = new Controller();
@@ -24,17 +25,19 @@ namespace Egypt_National_Library
             id = Convert.ToString(i);
             lf = l;
             InitializeComponent();
+           
+
         }
 
         private void Get_Emp_By_BT_Click(object sender, EventArgs e)
         {
             Dt = cobj.Get_Employee_by_ID(Convert.ToInt32(id));
-            this.Hide();
             if (Dt != null)
             {
                 Getempinfo_empmode f = new Getempinfo_empmode(null, null, this, Dt);
                 f.Show();
             }
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -56,5 +59,7 @@ namespace Egypt_National_Library
             label1.Text = nme;
             label4.Text = id;
         }
+
+   
     }
 }

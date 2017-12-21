@@ -37,7 +37,7 @@ namespace Egypt_National_Library
         {
             int Story_id = Check_IDValidation(Story_ID, "Story_ID");    int price = CheckPriceValidation();
             int Story_dep = Check_IDValidation(Story_Dep, "Story_Dep");
-
+            if (Check_ImageValidation() == 0) return;
             MemoryStream ms = new MemoryStream();
             PictureBox.Image.Save(ms, PictureBox.Image.RawFormat);
             byte[] image = ms.ToArray();
@@ -65,6 +65,26 @@ namespace Egypt_National_Library
             if (price < 1)
             { MessageBox.Show("Please Sir , Add A valid Price", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); return 0; }
             return price;
+        }
+
+        private void Add_Story_Form_Load(object sender, EventArgs e)
+        {
+
+        }
+        private int Check_ImageValidation()
+        {
+            MemoryStream ms = new MemoryStream();
+            try
+            {
+                PictureBox.Image.Save(ms, PictureBox.Image.RawFormat);
+                byte[] image = ms.ToArray();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Please Sir Insert The Image", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return 0;
+            }
+            return 1;
         }
     }
 }

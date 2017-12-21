@@ -39,17 +39,20 @@ namespace Egypt_National_Library
         }
 
         private void Add_Button_Click(object sender, EventArgs e)
-        { 
+        {
+            if (Check_ImageValidation() == 0) return;
             MemoryStream ms = new MemoryStream();
             PictureBox.Image.Save(ms, PictureBox.Image.RawFormat);
             byte[] image = ms.ToArray();
-
-            int Year = CheckYearValidation(); int Month = CheckMonthValidation();  int Day = CheckDayValidation();
-            int Book_id = Check_IDValidation(Book_ID.Text, "Book"); int price = CheckPriceValidation();
-            int Book_Lib_Dep_id = Check_IDValidation(Book_Lib_Dep_ID.Text, "Lib Dep");
-            if (Year == 0 || Month == 0 || Day == 0 || Book_id == 0 || price == 0 || Book_Lib_Dep_id == 0) { return; }
+            //----------------------- Validations -------------------------//
+            int Book_id = Check_IDValidation(Book_ID.Text, "Book"); if (Book_id == 0) return;
+            int price = CheckPriceValidation(); if (price == 0) return;
+            int Book_Lib_Dep_id = Check_IDValidation(Book_Lib_Dep_ID.Text, "Lib Dep"); if (Book_Lib_Dep_id == 0) return;
+            int Year = CheckYearValidation(); if (Year == 0) return;
+            int Month = CheckMonthValidation(); if (Month == 0) return;
+            int Day = CheckDayValidation(); if (Day == 0) return;
+            //------------------Creating The Date ----------------------//
             string Construction_Date = Day.ToString() + "/" + Month.ToString() + "/" + Year.ToString();
-
             int Success = Controller_OBJ.Add_Book(AuthorFName.Text, AuthorMName.Text, AuthorLName.Text
                 , Book_id, Construction_Date, Book_Name.Text, price, Publisher.Text, "Available",
                Book_Sec_Name.Text, Book_Lib_Dep_id, image);
@@ -57,7 +60,6 @@ namespace Egypt_National_Library
                 MessageBox.Show("Failed To Add A new Book", "Informaion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("A New Book has been added Successfully", "Informaion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
         private int CheckYearValidation()
         {
@@ -108,6 +110,21 @@ namespace Egypt_National_Library
         private void PictureBox_Click(object sender, EventArgs e)
         {
 
+        }
+        private int Check_ImageValidation()
+        {
+            MemoryStream ms = new MemoryStream();
+            try
+            {
+                PictureBox.Image.Save(ms, PictureBox.Image.RawFormat);
+                byte[] image = ms.ToArray();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Please Sir Insert The Cover of The Book", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return 0;
+            }
+            return 1;
         }
     }
 }

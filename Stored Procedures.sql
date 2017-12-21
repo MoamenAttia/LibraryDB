@@ -458,3 +458,597 @@ Begin
 End
 Go
 
+Create Procedure spRateBook
+@Book_ID int,
+@Book_Type nvarchar(30),
+@Book_Dep int,
+@Rate int
+As
+Begin
+	update Book
+	set Book_Rate = @Rate
+	where Book_ID=@Book_ID and Book_Type=@Book_Type and Book_Dep=@Book_Dep
+
+End
+Go
+
+Create Procedure spRateStory
+@Story_ID int,
+@Story_Type nvarchar(30),
+@Story_Dep int,
+@Rate int
+As
+Begin
+	update Story
+	set Story_Rate = @Rate
+	where Story_ID=@Story_ID and Story_Type=@Story_Type and Story_Dep=@Story_Dep
+
+End
+Go
+
+Create Procedure spRateMusical_Instrument
+@Instrumentp_ID int,
+@Instrument_Type nvarchar(30),
+@Instrument_Dep int,
+@Rate int
+As
+Begin
+	update Musical_Instrument
+	set Musical_Instrument_Rate = @Rate
+	where Musical_Ins_ID=@Instrumentp_ID and Musical_Ins_Type=@Instrument_Type and Musical_Ins_Dep=@Instrument_Dep
+
+End
+Go
+
+
+Create Procedure spRateComputer
+@Cmp_ID int,
+@Cmp_Type nvarchar(30),
+@Cmp_Dep int,
+@Rate int
+As
+Begin
+	update Computer
+	set Computer_Rate = @Rate
+	where Cmp_ID=@Cmp_ID and Cmp_Type=@Cmp_Type and Cmp_Dep=@Cmp_Dep
+
+End
+Go
+Select * From Computer
+
+
+
+--- New Stored Procedures ---
+
+Create Procedure spGetTopRatedBooks
+As
+Begin
+	Select * 
+	From Book
+	order by -Book_Rate
+End
+Go
+
+Create Procedure spGetTopRatedStories
+As
+Begin
+	Select * 
+	From Story
+	order by -Story_Rate
+End
+Go
+
+Create Procedure spGetTopRatedComputer
+As
+Begin
+	Select * 
+	From Computer
+	order by -Computer_Rate
+End
+Go
+
+Create Procedure spGetTopRatedMusicInstruments
+As
+Begin
+	Select * 
+	From Musical_Instrument
+	order by -Musical_Instrument_Rate
+End
+Go
+
+
+Create Procedure spGetLowRatedBooks
+As
+Begin
+	Select * 
+	From Book
+	order by Book_Rate
+End
+Go
+
+Create Procedure spGetLowRatedStories
+As
+Begin
+	Select * 
+	From Story
+	order by Story_Rate
+End
+Go
+
+Create Procedure spGetLowRatedComputer
+As
+Begin
+	Select * 
+	From Computer
+	order by Computer_Rate
+End
+Go
+
+Create Procedure spGetLowRatedMusicInstruments
+As
+Begin
+	Select * 
+	From Musical_Instrument
+	order by Musical_Instrument_Rate
+End
+Go
+
+
+Create Procedure spGetTopPriceBooks
+As
+Begin
+	Select * 
+	From Book
+	order by -price
+End
+Go
+
+Create Procedure spGetTopPriceStory
+As
+Begin
+	Select * 
+	From Story
+	order by -Sroty_Price
+End
+Go
+
+Create Procedure spGetTopPriceComputer
+As
+Begin
+	Select * 
+	From Computer
+	order by -Cmp_Price
+End
+Go
+
+Create Procedure spGetTopPriceMusicInstruments
+As
+Begin
+	Select * 
+	From Musical_Instrument
+	order by -Musical_Ins_price 
+End
+Go
+
+Create Procedure spGetLowPriceBooks
+As
+Begin
+	Select * 
+	From Book
+	order by price
+End
+Go
+
+Create Procedure spGetLowPriceStory
+As
+Begin
+	Select * 
+	From Story
+	order by Sroty_Price
+End
+Go
+
+Create Procedure spGetLowPriceComputer
+As
+Begin
+	Select * 
+	From Computer
+	order by Cmp_Price
+End
+Go
+
+Create Procedure spGetLowPriceMusicInstruments
+As
+Begin
+	Select * 
+	From Musical_Instrument
+	order by Musical_Ins_price 
+End
+Go
+
+Create Procedure spGetAvailableBooks
+As
+Begin
+	Select * 
+	from Book
+	where Book_Status= 'Available'
+End
+GO
+
+
+Create Procedure spGetAvailableStories
+As
+Begin
+	Select * 
+	from Story
+	where Story_Status= 'Available'
+End
+GO
+
+Create Procedure spGetAvailableMusical_Instruments
+As
+Begin
+	Select * 
+	from Musical_Instrument
+	where Musical_Ins_Status= 'Available'
+End
+GO
+
+Create Procedure spGetAvailableComputers
+As
+Begin
+	Select * 
+	from Computer
+	where Cmp_Status= 'Available'
+End
+GO
+
+Create Procedure spGetNotAvailableBooks
+As
+Begin
+	Select * 
+	from Book
+	where Book_Status= 'InUse'
+End
+GO
+
+
+Create Procedure spGetNotAvailableStories
+As
+Begin
+	Select * 
+	from Story
+	where Story_Status= 'InUse'
+End
+GO
+
+Create Procedure spGetNotAvailableMusical_Instruments
+As
+Begin
+	Select * 
+	from Musical_Instrument
+	where Musical_Ins_Status= 'InUse'
+End
+GO
+
+Create Procedure spGetNotAvailableComputers
+As
+Begin
+	Select * 
+	from Computer
+	where Cmp_Status= 'InUse'
+End
+GO
+
+--Specific Filtering--
+Create Procedure spGetTopRatedBooksBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Book
+	where Book_Type=@Type and Book_Dep=1
+	order by -Book_Rate
+End
+Go
+
+Create Procedure spGetTopRatedStoriesBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Story
+	where Story_Type=@Type and Story_Dep=2
+	order by -Story_Rate
+End
+Go
+
+Create Procedure spGetTopRatedComputerBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Computer
+	where Cmp_Type=@Type and Cmp_Dep=4
+	order by -Computer_Rate
+End
+Go
+
+Create Procedure spGetTopRatedMusicInstrumentsBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Musical_Instrument
+	where Musical_Ins_Type=@Type and Musical_Ins_Dep=3
+	order by -Musical_Instrument_Rate
+End
+Go
+
+
+Create Procedure spGetLowRatedBooksBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Book
+	where Book_Type=@Type and Book_Dep=1
+	order by Book_Rate
+End
+Go
+
+Create Procedure spGetLowRatedStoriesBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Story
+	where Story_Type=@Type and Story_Dep=2
+	order by Story_Rate
+End
+Go
+
+Create Procedure spGetLowRatedComputerBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Computer
+	where Cmp_Type=@Type and Cmp_Dep=4
+	order by Computer_Rate
+End
+Go
+
+Create Procedure spGetLowRatedMusicInstrumentsBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Musical_Instrument
+	where Musical_Ins_Type=@Type and Musical_Ins_Dep=3
+	order by Musical_Instrument_Rate
+End
+Go
+
+
+Create Procedure spGetTopPriceBooksBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Book
+	where Book_Type=@Type and Book_Dep=1
+	order by -price
+End
+Go
+
+Create Procedure spGetTopPriceStoryBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Story
+	where Story_Type=@Type and Story_Dep=2
+	order by -Sroty_Price
+End
+Go
+
+Create Procedure spGetTopPriceComputerBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Computer
+	where Cmp_Type=@Type and Cmp_Dep=4
+	order by -Cmp_Price
+End
+Go
+
+Create Procedure spGetTopPriceMusicInstrumentsBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Musical_Instrument
+	where Musical_Ins_Type=@Type and Musical_Ins_Dep=3
+	order by -Musical_Ins_price 
+End
+Go
+
+Create Procedure spGetLowPriceBooksBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Book
+	where Book_Type=@Type and Book_Dep=1
+	order by price
+End
+Go
+
+Create Procedure spGetLowPriceStoryBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Story
+	where Story_Type=@Type and Story_Dep=2
+	order by Sroty_Price
+End
+Go
+
+Create Procedure spGetLowPriceComputerBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Computer
+	where Cmp_Type=@Type and Cmp_Dep=4
+	order by Cmp_Price
+End
+Go
+
+Create Procedure spGetLowPriceMusicInstrumentsBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	From Musical_Instrument
+	where Musical_Ins_Type=@Type and Musical_Ins_Dep=3
+	order by Musical_Ins_price 
+End
+Go
+
+Create Procedure spGetAvailableBooksBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	from Book
+	where Book_Type=@Type and Book_Dep=1
+	and Book_Status= 'Available'
+End
+GO
+
+
+Create Procedure spGetAvailableStoriesBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	from Story
+	where Story_Type=@Type and Story_Dep=2
+	and Story_Status= 'Available'
+End
+GO
+
+Create Procedure spGetAvailableMusical_InstrumentsBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	from Musical_Instrument
+	where Musical_Ins_Type=@Type and Musical_Ins_Dep=3
+	and Musical_Ins_Status= 'Available'
+End
+GO
+
+Create Procedure spGetAvailableComputersBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	from Computer
+	where Cmp_Type=@Type and Cmp_Dep=4
+	and Cmp_Status= 'Available'
+End
+GO
+
+Create Procedure spGetNotAvailableBooksBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	from Book
+	where Book_Type=@Type and Book_Dep=1
+	and Book_Status= 'InUse'
+End
+GO
+
+
+Create Procedure spGetNotAvailableStoriesBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	from Story
+	where Story_Type=@Type and Story_Dep=2
+	and Story_Status= 'InUse'
+End
+GO
+
+Create Procedure spGetNotAvailableMusical_InstrumentsBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	from Musical_Instrument
+	where Musical_Ins_Type=@Type and Musical_Ins_Dep=3
+	and Musical_Ins_Status= 'InUse'
+End
+GO
+
+Create Procedure spGetNotAvailableComputersBySection
+@Type nvarchar(30)
+As
+Begin
+	Select * 
+	from Computer
+	where Cmp_Type=@Type and Cmp_Dep=4
+	and Cmp_Status= 'InUse'
+End
+GO
+
+--Searching Part--
+
+
+Create Procedure spSearchForaBook
+@String nvarchar(max)
+As
+Begin
+	Select * 
+	From Book
+	where Book_Name Like '%'+@String+'%'
+End
+Go
+
+Create Procedure spSearchForaStory
+@String nvarchar(max)
+As
+Begin
+	Select * 
+	From Story
+	where Story_Name Like '%'+@String+'%'
+End
+Go
+
+Create Procedure spSearchForaMusicInstrument
+@String nvarchar(max)
+As
+Begin
+	Select * 
+	From Musical_Instrument
+	where Musical_Ins_Name Like '%'+@String+'%'
+End
+Go
+
+Create Procedure spSearchForaComputer
+@String nvarchar(max)
+As
+Begin
+	Select * 
+	From Computer
+	where Operating_System Like '%'+@String+'%'
+End
+Go
+

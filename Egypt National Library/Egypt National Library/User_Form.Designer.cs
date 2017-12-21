@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Form));
             this.panelheader = new System.Windows.Forms.Panel();
+            this.FilterBtn = new System.Windows.Forms.Button();
             this.DiscoverBtn = new System.Windows.Forms.Button();
             this.LibDepBtn = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
@@ -87,13 +88,12 @@
             this.PowerEngineeringDepBtn = new System.Windows.Forms.Button();
             this.ArchitectureDepBtn = new System.Windows.Forms.Button();
             this.FilterPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.FilterBtn = new System.Windows.Forms.Button();
+            this.InUseBtn = new System.Windows.Forms.Button();
+            this.AvailableBtn = new System.Windows.Forms.Button();
+            this.LowRatedbtn = new System.Windows.Forms.Button();
+            this.TopRatedbtn = new System.Windows.Forms.Button();
+            this.LowPricebtn = new System.Windows.Forms.Button();
+            this.TopPricebtn = new System.Windows.Forms.Button();
             this.panelheader.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserPicturebox)).BeginInit();
@@ -118,6 +118,19 @@
             this.panelheader.Name = "panelheader";
             this.panelheader.Size = new System.Drawing.Size(1019, 35);
             this.panelheader.TabIndex = 4;
+            // 
+            // FilterBtn
+            // 
+            this.FilterBtn.FlatAppearance.BorderSize = 0;
+            this.FilterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FilterBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.FilterBtn.Location = new System.Drawing.Point(865, 0);
+            this.FilterBtn.Name = "FilterBtn";
+            this.FilterBtn.Size = new System.Drawing.Size(71, 35);
+            this.FilterBtn.TabIndex = 31;
+            this.FilterBtn.Text = "Filter";
+            this.FilterBtn.UseVisualStyleBackColor = true;
+            this.FilterBtn.Click += new System.EventHandler(this.FilterBtn_Click);
             // 
             // DiscoverBtn
             // 
@@ -830,102 +843,95 @@
             // FilterPanel
             // 
             this.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.FilterPanel.Controls.Add(this.button5);
-            this.FilterPanel.Controls.Add(this.button6);
-            this.FilterPanel.Controls.Add(this.button1);
-            this.FilterPanel.Controls.Add(this.button2);
-            this.FilterPanel.Controls.Add(this.button3);
-            this.FilterPanel.Controls.Add(this.button4);
+            this.FilterPanel.Controls.Add(this.InUseBtn);
+            this.FilterPanel.Controls.Add(this.AvailableBtn);
+            this.FilterPanel.Controls.Add(this.LowRatedbtn);
+            this.FilterPanel.Controls.Add(this.TopRatedbtn);
+            this.FilterPanel.Controls.Add(this.LowPricebtn);
+            this.FilterPanel.Controls.Add(this.TopPricebtn);
             this.FilterPanel.Location = new System.Drawing.Point(182, 268);
             this.FilterPanel.Name = "FilterPanel";
             this.FilterPanel.Size = new System.Drawing.Size(708, 35);
             this.FilterPanel.TabIndex = 30;
             this.FilterPanel.Visible = false;
             // 
-            // button1
+            // InUseBtn
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.button1.Location = new System.Drawing.Point(337, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 35);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Low Rated";
-            this.button1.UseVisualStyleBackColor = true;
+            this.InUseBtn.FlatAppearance.BorderSize = 0;
+            this.InUseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InUseBtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.InUseBtn.Location = new System.Drawing.Point(604, 0);
+            this.InUseBtn.Name = "InUseBtn";
+            this.InUseBtn.Size = new System.Drawing.Size(109, 35);
+            this.InUseBtn.TabIndex = 33;
+            this.InUseBtn.Text = "In Use";
+            this.InUseBtn.UseVisualStyleBackColor = true;
+            this.InUseBtn.Click += new System.EventHandler(this.InUseBtn_Click);
             // 
-            // button2
+            // AvailableBtn
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.button2.Location = new System.Drawing.Point(220, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 35);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Top Rated";
-            this.button2.UseVisualStyleBackColor = true;
+            this.AvailableBtn.FlatAppearance.BorderSize = 0;
+            this.AvailableBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AvailableBtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.AvailableBtn.Location = new System.Drawing.Point(468, 0);
+            this.AvailableBtn.Name = "AvailableBtn";
+            this.AvailableBtn.Size = new System.Drawing.Size(130, 35);
+            this.AvailableBtn.TabIndex = 32;
+            this.AvailableBtn.Text = "Available";
+            this.AvailableBtn.UseVisualStyleBackColor = true;
+            this.AvailableBtn.Click += new System.EventHandler(this.AvailableBtn_Click);
             // 
-            // button3
+            // LowRatedbtn
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.button3.Location = new System.Drawing.Point(111, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 35);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "Low Price";
-            this.button3.UseVisualStyleBackColor = true;
+            this.LowRatedbtn.FlatAppearance.BorderSize = 0;
+            this.LowRatedbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LowRatedbtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.LowRatedbtn.Location = new System.Drawing.Point(337, 0);
+            this.LowRatedbtn.Name = "LowRatedbtn";
+            this.LowRatedbtn.Size = new System.Drawing.Size(125, 35);
+            this.LowRatedbtn.TabIndex = 31;
+            this.LowRatedbtn.Text = "Low Rated";
+            this.LowRatedbtn.UseVisualStyleBackColor = true;
+            this.LowRatedbtn.Click += new System.EventHandler(this.LowRatedbtn_Click);
             // 
-            // button4
+            // TopRatedbtn
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.button4.Location = new System.Drawing.Point(3, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(102, 35);
-            this.button4.TabIndex = 25;
-            this.button4.Text = "Top Price";
-            this.button4.UseVisualStyleBackColor = true;
+            this.TopRatedbtn.FlatAppearance.BorderSize = 0;
+            this.TopRatedbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TopRatedbtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.TopRatedbtn.Location = new System.Drawing.Point(220, 0);
+            this.TopRatedbtn.Name = "TopRatedbtn";
+            this.TopRatedbtn.Size = new System.Drawing.Size(112, 35);
+            this.TopRatedbtn.TabIndex = 27;
+            this.TopRatedbtn.Text = "Top Rated";
+            this.TopRatedbtn.UseVisualStyleBackColor = true;
+            this.TopRatedbtn.Click += new System.EventHandler(this.TopRatedbtn_Click);
             // 
-            // button5
+            // LowPricebtn
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.button5.Location = new System.Drawing.Point(604, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(109, 35);
-            this.button5.TabIndex = 33;
-            this.button5.Text = "Reserved";
-            this.button5.UseVisualStyleBackColor = true;
+            this.LowPricebtn.FlatAppearance.BorderSize = 0;
+            this.LowPricebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LowPricebtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.LowPricebtn.Location = new System.Drawing.Point(111, 0);
+            this.LowPricebtn.Name = "LowPricebtn";
+            this.LowPricebtn.Size = new System.Drawing.Size(108, 35);
+            this.LowPricebtn.TabIndex = 26;
+            this.LowPricebtn.Text = "Low Price";
+            this.LowPricebtn.UseVisualStyleBackColor = true;
+            this.LowPricebtn.Click += new System.EventHandler(this.LowPricebtn_Click);
             // 
-            // button6
+            // TopPricebtn
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.button6.Location = new System.Drawing.Point(468, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(130, 35);
-            this.button6.TabIndex = 32;
-            this.button6.Text = "Available";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // FilterBtn
-            // 
-            this.FilterBtn.FlatAppearance.BorderSize = 0;
-            this.FilterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FilterBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.FilterBtn.Location = new System.Drawing.Point(865, 0);
-            this.FilterBtn.Name = "FilterBtn";
-            this.FilterBtn.Size = new System.Drawing.Size(71, 35);
-            this.FilterBtn.TabIndex = 31;
-            this.FilterBtn.Text = "Filter";
-            this.FilterBtn.UseVisualStyleBackColor = true;
-            this.FilterBtn.Visible = false;
+            this.TopPricebtn.FlatAppearance.BorderSize = 0;
+            this.TopPricebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TopPricebtn.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.TopPricebtn.Location = new System.Drawing.Point(3, 0);
+            this.TopPricebtn.Name = "TopPricebtn";
+            this.TopPricebtn.Size = new System.Drawing.Size(102, 35);
+            this.TopPricebtn.TabIndex = 25;
+            this.TopPricebtn.Text = "Top Price";
+            this.TopPricebtn.UseVisualStyleBackColor = true;
+            this.TopPricebtn.Click += new System.EventHandler(this.TopPricebtn_Click);
             // 
             // User_Form
             // 
@@ -1027,12 +1033,12 @@
         private System.Windows.Forms.Button MyInstrumentsBtn;
         private System.Windows.Forms.Button AddComputersBtn;
         private System.Windows.Forms.Panel FilterPanel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button LowRatedbtn;
+        private System.Windows.Forms.Button TopRatedbtn;
+        private System.Windows.Forms.Button LowPricebtn;
+        private System.Windows.Forms.Button TopPricebtn;
+        private System.Windows.Forms.Button InUseBtn;
+        private System.Windows.Forms.Button AvailableBtn;
         private System.Windows.Forms.Button FilterBtn;
     }
 }

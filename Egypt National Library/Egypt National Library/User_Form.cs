@@ -19,6 +19,7 @@ namespace Egypt_National_Library
     public partial class User_Form : Form
     {
         Panel ActivePanel = new Panel();
+        string CurrentPanel = "";
         int User_ID;
         DataTable dataTable = new DataTable();
         Controller Controller_OBJ;
@@ -40,7 +41,7 @@ namespace Egypt_National_Library
         private void User_Form_Load(object sender, EventArgs e)
         {
             Point Location = new Point(225, 35);
-            LibDepsPanel.Location = MusicDepPanel.Location = BookDepPanel.Location = StoryDepPanel.Location = CmpDepPanel.Location = Location;
+            LibDepsPanel.Location = MusicDepPanel.Location = BookDepPanel.Location = StoryDepPanel.Location = CmpDepPanel.Location = FilterPanel.Location = Location;
             dataTable = Controller_OBJ.GetBookDepAvailableSeats();
             AvSeatsLabel.Text = dataTable.Rows[0].ItemArray[0].ToString();
             dataTable = Controller_OBJ.GetStoryDepAvailableSeats();
@@ -51,12 +52,14 @@ namespace Egypt_National_Library
             CmpDepAvSeats.Text= dataTable.Rows[0].ItemArray[0].ToString();
 
         }
+       
         private void closeButton_Click(object sender, EventArgs e) { this.Close(); Application.Exit(); }
         private void LibDepBtn_Click(object sender, EventArgs e)    { ActivatePanel(LibDepsPanel);   }
-        private void BookDepBtn_Click(object sender, EventArgs e)  { ActivatePanel(BookDepPanel);   }
-        private void StoryDepBtn_Click(object sender, EventArgs e) { ActivatePanel(StoryDepPanel);  }
-        private void MusicDepBtn_Click(object sender, EventArgs e) { ActivatePanel(MusicDepPanel); }
-        private void CmpDepBtn_Click(object sender, EventArgs e) { ActivatePanel(CmpDepPanel); }
+        private void BookDepBtn_Click(object sender, EventArgs e)  { UpdateAvailableSeats(); ActivatePanel(BookDepPanel);   }
+        private void StoryDepBtn_Click(object sender, EventArgs e) { UpdateAvailableSeats(); ActivatePanel(StoryDepPanel);  }
+        private void MusicDepBtn_Click(object sender, EventArgs e) { UpdateAvailableSeats(); ActivatePanel(MusicDepPanel); }
+        private void CmpDepBtn_Click(object sender, EventArgs e) { UpdateAvailableSeats(); ActivatePanel(CmpDepPanel); }
+        private void FilterBtn_Click(object sender, EventArgs e) { ActivatePanel(FilterPanel); }
         private void ActivatePanel(Panel panel){ if (!panel.Visible) { ActivePanel.Visible = false; ActivePanel = panel; ActivePanel.Show(); } else ActivePanel.Visible = false; }
         private void Label_Click(object sender,EventArgs e) { }
         private void Book_PictureBox_Click(object sender, EventArgs e)
@@ -95,10 +98,22 @@ namespace Egypt_National_Library
                         (byte[])dt.Rows[0].ItemArray[14],
                         User_ID, dt.Rows[0].ItemArray[9].ToString(),
                         BookUserID,
-                        int.Parse(dt.Rows[0].ItemArray[3].ToString()));
+                        int.Parse(dt.Rows[0].ItemArray[3].ToString()),
+                        int.Parse(dt.Rows[0].ItemArray[4].ToString()));
                     Form.Show();
                     return;
                 }
+        }
+        private void UpdateAvailableSeats()
+        {
+            dataTable = Controller_OBJ.GetBookDepAvailableSeats();
+            AvSeatsLabel.Text = dataTable.Rows[0].ItemArray[0].ToString();
+            dataTable = Controller_OBJ.GetStoryDepAvailableSeats();
+            StoryDepAvailableSeats.Text = dataTable.Rows[0].ItemArray[0].ToString();
+            dataTable = Controller_OBJ.GetMusicDepAvailableSeats();
+            MusicDepAvSeats.Text = dataTable.Rows[0].ItemArray[0].ToString();
+            dataTable = Controller_OBJ.GetCmpDepAvailableSeats();
+            CmpDepAvSeats.Text = dataTable.Rows[0].ItemArray[0].ToString();
         }
         private void DeletePanels()
         {
@@ -148,14 +163,11 @@ namespace Egypt_National_Library
                         //null
                     }
 
-
-
-
-
                     Form = new Story_Details_Form(dt.Rows[0].ItemArray[1].ToString(),dt.Rows[0].ItemArray[2].ToString(),
                         dt.Rows[0].ItemArray[4].ToString(), (byte[])dt.Rows[0].ItemArray[7], User_ID, dt.Rows[0].ItemArray[9].ToString(),
                         StoryUserID,
-                        int.Parse(dt.Rows[0].ItemArray[0].ToString()));
+                        int.Parse(dt.Rows[0].ItemArray[0].ToString()),
+                         int.Parse(dt.Rows[0].ItemArray[8].ToString()));
                     Form.Show();
                     return;
                 }
@@ -186,7 +198,9 @@ namespace Egypt_National_Library
                     Form = new Music_Instrument_Details_Form(dt.Rows[0].ItemArray[1].ToString(), dt.Rows[0].ItemArray[3].ToString(), dt.Rows[0].ItemArray[5].ToString(), (byte[])dt.Rows[0].ItemArray[7], User_ID,
                         dt.Rows[0].ItemArray[2].ToString(),
                         InstrumentUserID,
-                        int.Parse(dt.Rows[0].ItemArray[0].ToString()));
+                        int.Parse(dt.Rows[0].ItemArray[0].ToString()),
+                        int.Parse(dt.Rows[0].ItemArray[8].ToString()));
+
                     Form.Show();
                     return;
                 }
@@ -218,58 +232,108 @@ namespace Egypt_National_Library
                     Form = new Computer_Details_Form(Panels, Panels.Length, dt1.Rows[0].ItemArray[3].ToString(), dt1.Rows[0].ItemArray[5].ToString(), (byte[])dt1.Rows[0].ItemArray[7], dt1.Rows[0].ItemArray[1].ToString(), User_ID
                         ,dt1.Rows[0].ItemArray[2].ToString(),
                         CmpUserID,
-                        int.Parse(dt1.Rows[0].ItemArray[0].ToString()));
+                        int.Parse(dt1.Rows[0].ItemArray[0].ToString()),
+                         int.Parse(dt1.Rows[0].ItemArray[8].ToString()));
                     Form.Show();
                     return;
                 }
         }
 
         // Show User Reservations //
-        private void MyBooksBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_MyBooks_Panels(); }
-        private void MyStoriesBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_MyStories_Panels(); }
-        private void MyInstrumentsBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_MyInstruments_Panels(); }
-        private void AddComputersBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_MyComputers_Panels(); }
+        private void MyBooksBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "MyBook"; Show_MyBooks_Panels(); }
+        private void MyStoriesBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "MyStory"; Show_MyStories_Panels(); }
+        private void MyInstrumentsBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "MyMusicInstrument"; Show_MyInstruments_Panels(); }
+        private void AddComputersBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "MyComputer"; Show_MyComputers_Panels(); }
         //-----------------------------------------------------------------------------------------------------------//
         //Show All Library Store//
-        private void DiscoverBtn_Click(object sender, EventArgs e) { DeletePanels(); ShowAllItems(); }
+        private void DiscoverBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Library"; ShowAllItems(); }
         //----------------------------------------------------------------------------------------------------------//
         //Book Department Buttons Click ,, showing panels of each Book Department//
-        private void ProgrammingDepBtn_Click(object sender, EventArgs e){ DeletePanels(); Show_Book_Panels("Programming", 1); }
-        private void BabyCareDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Book_Panels("Baby Care", 1); }
-        private void ScienceDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Book_Panels("Science", 1); }
-        private void ReligiousDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Book_Panels("Religious", 1);}
-        private void GeographyDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Book_Panels("Geographic", 1); }
-        private void HealthDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Book_Panels("Health", 1); }
-        private void HumanDevDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Book_Panels("Human Development", 1); }
-        private void NutritionDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Book_Panels("Nutrition", 1); }
-        private void ArabLitDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Book_Panels("Literature", 1); }
-        private void HistoryDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Book_Panels("History", 1); }
-        private void MathsDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Book_Panels("Maths", 1); }
+        private void ProgrammingDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Book/Programming"; Show_Book_Panels("Programming", 1); }
+        private void BabyCareDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Book/Baby Care"; Show_Book_Panels("Baby Care", 1); }
+        private void ScienceDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Book/Science"; Show_Book_Panels("Science", 1); }
+        private void ReligiousDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Book/Religious"; Show_Book_Panels("Religious", 1); }
+        private void GeographyDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Book/Geographic"; Show_Book_Panels("Geographic", 1); }
+        private void HealthDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Book/Health"; Show_Book_Panels("Health", 1); }
+        private void HumanDevDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Book/Human Development"; Show_Book_Panels("Human Development", 1); }
+        private void NutritionDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Book/Nutrition"; Show_Book_Panels("Nutrition", 1); }
+        private void ArabLitDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Book/Literature"; Show_Book_Panels("Literature", 1); }
+        private void HistoryDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Book/History"; Show_Book_Panels("History", 1); }
+        private void MathsDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Book/Maths"; Show_Book_Panels("Maths", 1); }
         //----------------------------------------------------------------------------------------------------------//
         //Story Department Buttons Click ,, showing panels of each Story Department//
-        private void HorrorDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Stories_Panels("Horror", 2); }
-        private void RomanticDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Stories_Panels("Romantic", 2); }
-        private void DramaDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Stories_Panels("Drama", 2); }
-        private void LearningDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Stories_Panels("Learning", 2); }
+        private void HorrorDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Story/Horror"; Show_Stories_Panels("Horror", 2); }
+        private void RomanticDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Story/Romantic"; Show_Stories_Panels("Romantic", 2); }
+        private void DramaDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Story/Drama"; Show_Stories_Panels("Drama", 2); }
+        private void LearningDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Story/Learning"; Show_Stories_Panels("Learning", 2); }
         //----------------------------------------------------------------------------------------------------------//
         //Music Department Buttons Click ,, showing panels of each Music Department//
-        private void DrumsDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Instruments_Panels("Drums", 3); }
-        private void GuitarDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Instruments_Panels("Guitar", 3); }
-        private void MicrophonesDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Instruments_Panels("Microphones&HeadSets", 3); }
-        private void PianoDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Instruments_Panels("Piano", 3); }
+        private void DrumsDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Music Instrument/Drums"; Show_Instruments_Panels("Drums", 3); }
+        private void GuitarDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Music Instrument/Guitar"; Show_Instruments_Panels("Guitar", 3); }
+        private void MicrophonesDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Music Instrument/Microphones&HeadSets"; Show_Instruments_Panels("Microphones&HeadSets", 3); }
+        private void PianoDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Music Instrument/Piano"; Show_Instruments_Panels("Piano", 3); }
         //----------------------------------------------------------------------------------------------------------//
         //Computer Department Buttons Click ,, showing panels of each Computer Department//
-        private void ArchitectureDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Computers_Panels("Architecture", 4); }
-        private void PowerEngineeringDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Computers_Panels("Power Engineering", 4); }
-        private void SoftwareDepBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_Computers_Panels("SoftWare Engineering", 4); }
+        private void ArchitectureDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Computer/Architecture"; Show_Computers_Panels("Architecture", 4); }
+        private void PowerEngineeringDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Computer/Power Engineering"; Show_Computers_Panels("Power Engineering", 4); }
+        private void SoftwareDepBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Computer/SoftWare Engineering"; Show_Computers_Panels("SoftWare Engineering", 4); }
         //----------------------------------------------------------------------------------------------------------//
         //All Of Books,Instrumsents,Computers,Stories //
-        private void ShowAll_BooksBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_AllBooks_Panels(); }
-        private void ShowAll_StoriesBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_AllStories_Panels(); }
-        private void ShowAll_IstrumentBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_All_Instrumetns_Panels(); }
-        private void ShowAll_CmpBtn_Click(object sender, EventArgs e) { DeletePanels(); Show_AllComputers_Panels(); }
+        private void ShowAll_BooksBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Book"; Show_AllBooks_Panels(); }
+        private void ShowAll_StoriesBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Story"; Show_AllStories_Panels(); }
+        private void ShowAll_IstrumentBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Music Instrument"; Show_All_Instrumetns_Panels(); }
+        private void ShowAll_CmpBtn_Click(object sender, EventArgs e) { DeletePanels(); CurrentPanel = "Computer"; Show_AllComputers_Panels(); }
         //----------------------------------------------------------------------------------------------------------//
-
+        //Filtered Things//
+        private void TopPricebtn_Click(object sender, EventArgs e)
+        {
+            DeletePanels();
+            string Section = "";
+            string Temp = CurrentPanel;
+            for (int k = 0; k < Temp.Length; ++k) if (Temp[k] == '/') { Section = Temp; Section = Section.Remove(0, k + 1); break; }
+            Show_Filtered_Panels("TopPrice", Section);
+        }
+        private void TopRatedbtn_Click(object sender, EventArgs e)
+        {
+            DeletePanels();
+            string Section = "";
+            string Temp = CurrentPanel;
+            for (int k = 0; k < Temp.Length; ++k) if (Temp[k] == '/') { Section = Temp; Section = Section.Remove(0, k + 1); break; }
+            Show_Filtered_Panels("TopRated", "");
+        }
+        private void LowPricebtn_Click(object sender, EventArgs e)
+        {
+            DeletePanels();
+            string Section = "";
+            string Temp = CurrentPanel;
+            for (int k = 0; k < Temp.Length; ++k) if (Temp[k] == '/') { Section = Temp; Section = Section.Remove(0, k + 1); break; }
+            Show_Filtered_Panels("LowPrice", "");
+        }
+        private void LowRatedbtn_Click(object sender, EventArgs e)
+        {
+            DeletePanels();
+            string Section = "";
+            string Temp = CurrentPanel;
+            for (int k = 0; k < Temp.Length; ++k) if (Temp[k] == '/') { Section = Temp; Section = Section.Remove(0, k + 1); break; }
+            Show_Filtered_Panels("LowRated", "");
+        }
+        private void AvailableBtn_Click(object sender, EventArgs e)
+        {
+            DeletePanels();
+            string Section = "";
+            string Temp = CurrentPanel;
+            for (int k = 0; k < Temp.Length; ++k) if (Temp[k] == '/') { Section = Temp; Section = Section.Remove(0, k + 1); break; }
+            Show_Filtered_Panels("Available", "");
+        }
+        private void InUseBtn_Click(object sender, EventArgs e)
+        {
+            DeletePanels();
+            string Section = "";
+            string Temp = CurrentPanel;
+            for (int k = 0; k < Temp.Length; ++k) if (Temp[k] == '/') { Section = Temp; Section = Section.Remove(0, k + 1); break; }
+            Show_Filtered_Panels("NotAvailable", "");
+        }
+        //*-----------------------------------------//
         private Panel CreatePanel(int i,Color Backcolor,int width,int height,int locationX,int locationY)
         {
             Panel panel = new Panel();
@@ -378,6 +442,7 @@ namespace Egypt_National_Library
                 Controls.Add(Panels[i]);
             }
         }
+
         private void Show_Instruments_Panels(string type, int libDepID)
         {
             ActivePanel.Visible = false;
@@ -689,5 +754,177 @@ namespace Egypt_National_Library
                 Controls.Add(Panels[i]);
             }
         }
+        private void Show_Filtered_Panels(string Filteration_Type, string Type)
+        {
+            //Music Instrument
+            ActivePanel.Visible = false;
+            int Num_OF_Panels = 0;
+            if (Filteration_Type == "TopRated" && Type == "")
+            {
+                if (CurrentPanel == "Book") { dataTable = Controller_OBJ.GetTopRatedBooks(); if (dataTable == null) return; Num_OF_Panels = NumofBookpictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Story") { dataTable = Controller_OBJ.GetTopRatedStories(); if (dataTable == null) return; Num_OF_Panels = NumofStorypictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Music Instrument") { dataTable = Controller_OBJ.GetTopRatedMusical_Instrument(); if (dataTable == null) return; Num_OF_Panels = NumofInstrumentspictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Computer") { dataTable = Controller_OBJ.GetTopRatedComputer(); if (dataTable == null) return; Num_OF_Panels = NumofComputerpictureboxes = dataTable.Rows.Count; }
+            }
+            else if (Filteration_Type == "LowRated" && Type == "")
+            {
+                if (CurrentPanel == "Book") { dataTable = Controller_OBJ.GetLowRatedBooks(); if (dataTable == null) return; Num_OF_Panels = NumofBookpictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Story") { dataTable = Controller_OBJ.GetLowRatedStories(); if (dataTable == null) return; Num_OF_Panels = NumofStorypictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Music Instrument") { dataTable = Controller_OBJ.GetLowRatedMusical_Instrument(); if (dataTable == null) return; Num_OF_Panels = NumofInstrumentspictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Computer") { dataTable = Controller_OBJ.GetLowRatedComputer(); if (dataTable == null) return; Num_OF_Panels = NumofComputerpictureboxes = dataTable.Rows.Count; }
+            }
+            else if (Filteration_Type == "TopPrice" && Type == "")
+            {
+                if (CurrentPanel == "Book") { dataTable = Controller_OBJ.GetTopPriceBooks(); if (dataTable == null) return; Num_OF_Panels = NumofBookpictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Story") { dataTable = Controller_OBJ.GetTopPriceStories(); if (dataTable == null) return; Num_OF_Panels = NumofStorypictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Music Instrument") { dataTable = Controller_OBJ.GetTopPriceMusical_Instrument(); if (dataTable == null) return; Num_OF_Panels = NumofInstrumentspictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Computer") { dataTable = Controller_OBJ.GetTopPriceComputer(); if (dataTable == null) return; Num_OF_Panels = NumofComputerpictureboxes = dataTable.Rows.Count; }
+            }
+            else if (Filteration_Type == "LowPrice" && Type == "")
+            {
+                if (CurrentPanel == "Book") { dataTable = Controller_OBJ.GetLowPriceBooks(); if (dataTable == null) return; Num_OF_Panels = NumofBookpictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Story") { dataTable = Controller_OBJ.GetLowPriceStories(); if (dataTable == null) return; Num_OF_Panels = NumofStorypictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Music Instrument") { dataTable = Controller_OBJ.GetLowPriceMusical_Instrument(); if (dataTable == null) return; Num_OF_Panels = NumofInstrumentspictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Computer") { dataTable = Controller_OBJ.GetLowPriceComputer(); if (dataTable == null) return; Num_OF_Panels = NumofComputerpictureboxes = dataTable.Rows.Count; }
+            }
+            else if (Filteration_Type == "Available" && Type == "")
+            {
+                if (CurrentPanel == "Book") { dataTable = Controller_OBJ.GetAvailableBooks(); if (dataTable == null) return; Num_OF_Panels = NumofBookpictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Story") { dataTable = Controller_OBJ.GetAvailableStories(); if (dataTable == null) return; Num_OF_Panels = NumofStorypictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Music Instrument") { dataTable = Controller_OBJ.GetAvailableMusical_Instrument(); if (dataTable == null) return; Num_OF_Panels = NumofInstrumentspictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Computer") { dataTable = Controller_OBJ.GetAvailableComputer(); if (dataTable == null) return; Num_OF_Panels = NumofComputerpictureboxes = dataTable.Rows.Count; }
+            }
+            else if (Filteration_Type == "NotAvailable" && Type == "")
+            {
+                if (CurrentPanel == "Book") { dataTable = Controller_OBJ.GetNotAvailableBooks(); if (dataTable == null) return; Num_OF_Panels = NumofBookpictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Story") { dataTable = Controller_OBJ.GetNotAvailableStories(); if (dataTable == null) return; Num_OF_Panels = NumofStorypictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Music Instrument") { dataTable = Controller_OBJ.GetNotAvailableMusical_Instrument(); if (dataTable == null) return; Num_OF_Panels = NumofInstrumentspictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Computer") { dataTable = Controller_OBJ.GetNotAvailableComputer(); if (dataTable == null) return; Num_OF_Panels = NumofComputerpictureboxes = dataTable.Rows.Count; }
+            }
+            //------------------Specific Filtering--------------------------------//
+            else if (Filteration_Type == "TopRated" && Type != "")
+            {
+                if (CurrentPanel == "Book" + '/' + Type) { dataTable = Controller_OBJ.GetTopRatedBooksBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofBookpictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Story" + '/' + Type) { dataTable = Controller_OBJ.GetTopRatedStoriesBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofStorypictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Music Instrument" + '/' + Type) { dataTable = Controller_OBJ.GetTopRatedMusical_InstrumentBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofInstrumentspictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Computer" + '/' + Type) { dataTable = Controller_OBJ.GetTopRatedComputerBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofComputerpictureboxes = dataTable.Rows.Count; }
+            }
+            else if (Filteration_Type == "LowRated" && Type != "")
+            {
+                if (CurrentPanel == "Book" + '/' + Type) { dataTable = Controller_OBJ.GetLowRatedBooksBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofBookpictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Story" + '/' + Type) { dataTable = Controller_OBJ.GetLowRatedStoriesBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofStorypictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Music Instrument" + '/' + Type) { dataTable = Controller_OBJ.GetLowRatedMusical_InstrumentBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofInstrumentspictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Computer" + '/' + Type) { dataTable = Controller_OBJ.GetLowRatedComputerBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofComputerpictureboxes = dataTable.Rows.Count; }
+            }
+            else if (Filteration_Type == "TopPrice" && Type != "")
+            {
+                if (CurrentPanel == "Book" + '/' + Type) { dataTable = Controller_OBJ.GetTopPriceBooksBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofBookpictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Story" + '/' + Type) { dataTable = Controller_OBJ.GetTopPriceStoriesBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofStorypictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Music Instrument" + '/' + Type) { dataTable = Controller_OBJ.GetTopPriceMusical_InstrumentBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofInstrumentspictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Computer" + '/' + Type) { dataTable = Controller_OBJ.GetTopPriceComputerBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofComputerpictureboxes = dataTable.Rows.Count; }
+            }
+            else if (Filteration_Type == "LowPrice" && Type != "")
+            {
+                if (CurrentPanel == "Book" + '/' + Type) { dataTable = Controller_OBJ.GetLowPriceBooksBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofBookpictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Story" + '/' + Type) { dataTable = Controller_OBJ.GetLowPriceStoriesBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofStorypictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Music Instrument" + '/' + Type) { dataTable = Controller_OBJ.GetLowPriceMusical_InstrumentBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofInstrumentspictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Computer" + '/' + Type) { dataTable = Controller_OBJ.GetLowPriceComputerBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofComputerpictureboxes = dataTable.Rows.Count; }
+            }
+            else if (Filteration_Type == "Available" && Type != "")
+            {
+                if (CurrentPanel == "Book" + '/' + Type) { dataTable = Controller_OBJ.GetAvailableBookBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofBookpictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Story" + '/' + Type) { dataTable = Controller_OBJ.GetAvailableStoriesBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofStorypictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Music Instrument" + '/' + Type) { dataTable = Controller_OBJ.GetAvailableMusical_InstrumentBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofInstrumentspictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Computer" + '/' + Type) { dataTable = Controller_OBJ.GetAvailableComputerBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofComputerpictureboxes = dataTable.Rows.Count; }
+            }
+            else if (Filteration_Type == "NotAvailable" && Type != "")
+            {
+                if (CurrentPanel == "Book" + '/' + Type) { dataTable = Controller_OBJ.GetNotAvailableBooksBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofBookpictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Story" + '/' + Type) { dataTable = Controller_OBJ.GetNotAvailableStoriesBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofStorypictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Music Instrument" + '/' + Type) { dataTable = Controller_OBJ.GetNotAvailableMusical_InstrumentBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofInstrumentspictureboxes = dataTable.Rows.Count; }
+                else if (CurrentPanel == "Computer" + '/' + Type) { dataTable = Controller_OBJ.GetNotAvailableComputerBySection(Type); if (dataTable == null) return; Num_OF_Panels = NumofComputerpictureboxes = dataTable.Rows.Count; }
+            }
+
+
+            Panel[] Panels = BookPanels = new Panel[Num_OF_Panels];
+            Bookpictureboxes = new PictureBox[Num_OF_Panels];
+            LinkLabel[] Labels = new LinkLabel[Num_OF_Panels];
+            int incrementer = 1, rows = 1;
+            for (int i = 0; i < Num_OF_Panels; ++i)
+            {
+                if (incrementer == 5) { rows++; incrementer = 1; }
+                Panels[i] = CreatePanel(i, Color.White, 214, 260, 225 * (incrementer++), 75 + (rows - 1) * 300);
+                if (CurrentPanel == "Book")
+                {
+                    Labels[i] = CreateLabel(i, dataTable.Rows[i].ItemArray[6].ToString());
+                    Bookpictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[14]);
+                    Bookpictureboxes[i].Name = Labels[i].Text + "/" + dataTable.Rows[i].ItemArray[3].ToString() + "/" + dataTable.Rows[i].ItemArray[12].ToString();
+                    Bookpictureboxes[i].Click += new EventHandler(this.Book_PictureBox_Click);
+                    InesertControlToPanel(ref Panels[i], ref Labels[i], ref Bookpictureboxes[i]);
+                    Controls.Add(Panels[i]);
+                }
+                else if (CurrentPanel == "Story")
+                {
+                    Labels[i] = CreateLabel(i, dataTable.Rows[i].ItemArray[1].ToString());
+                    Storypictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[7]);
+                    Storypictureboxes[i].Name = "Stories" + "/" + dataTable.Rows[i].ItemArray[0].ToString() + "/" + dataTable.Rows[i].ItemArray[4].ToString();
+                    Storypictureboxes[i].Click += new System.EventHandler(this.Story_PictureBox_Click);
+                    InesertControlToPanel(ref Panels[i], ref Labels[i], ref Storypictureboxes[i]);
+                }
+                else if (CurrentPanel == "Music Instrument")
+                {
+                    Labels[i] = CreateLabel(i, dataTable.Rows[i].ItemArray[1].ToString());
+                    Instrumentspictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[7]);
+                    Instrumentspictureboxes[i].Name = "Instruments" + "/" + dataTable.Rows[i].ItemArray[0].ToString() + "/" + dataTable.Rows[i].ItemArray[5].ToString();
+                    Instrumentspictureboxes[i].Click += new System.EventHandler(this.Instrument_PictureBox_Click);
+                    InesertControlToPanel(ref Panels[i], ref Labels[i], ref Instrumentspictureboxes[i]);
+                }
+                else if (CurrentPanel == "Computer")
+                {
+                    Labels[i] = CreateLabel(i, dataTable.Rows[i].ItemArray[5].ToString());
+                    Computerpictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[7]);
+                    Computerpictureboxes[i].Name = "Computers" + "/" + dataTable.Rows[i].ItemArray[0].ToString() + "/" + dataTable.Rows[i].ItemArray[5].ToString();
+                    Computerpictureboxes[i].Click += new System.EventHandler(this.Computer_PictureBox_Click);
+                    InesertControlToPanel(ref Panels[i], ref Labels[i], ref Computerpictureboxes[i]);
+                }
+                else if (CurrentPanel == "Book" + '/' + Type)
+                {
+                    Labels[i] = CreateLabel(i, dataTable.Rows[i].ItemArray[6].ToString());
+                    Bookpictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[14]);
+                    Bookpictureboxes[i].Name = Labels[i].Text + "/" + dataTable.Rows[i].ItemArray[3].ToString() + "/" + dataTable.Rows[i].ItemArray[12].ToString();
+                    Bookpictureboxes[i].Click += new EventHandler(this.Book_PictureBox_Click);
+                    InesertControlToPanel(ref Panels[i], ref Labels[i], ref Bookpictureboxes[i]);
+                    Controls.Add(Panels[i]);
+                }
+                else if (CurrentPanel == "Story" + '/' + Type)
+                {
+                    Labels[i] = CreateLabel(i, dataTable.Rows[i].ItemArray[1].ToString());
+                    Storypictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[7]);
+                    Storypictureboxes[i].Name = "Stories" + "/" + dataTable.Rows[i].ItemArray[0].ToString() + "/" + dataTable.Rows[i].ItemArray[4].ToString();
+                    Storypictureboxes[i].Click += new System.EventHandler(this.Story_PictureBox_Click);
+                    InesertControlToPanel(ref Panels[i], ref Labels[i], ref Storypictureboxes[i]);
+                }
+                else if (CurrentPanel == "Music Instrument" + '/' + Type)
+                {
+                    Labels[i] = CreateLabel(i, dataTable.Rows[i].ItemArray[1].ToString());
+                    Instrumentspictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[7]);
+                    Instrumentspictureboxes[i].Name = "Instruments" + "/" + dataTable.Rows[i].ItemArray[0].ToString() + "/" + dataTable.Rows[i].ItemArray[5].ToString();
+                    Instrumentspictureboxes[i].Click += new System.EventHandler(this.Instrument_PictureBox_Click);
+                    InesertControlToPanel(ref Panels[i], ref Labels[i], ref Instrumentspictureboxes[i]);
+                }
+                else if (CurrentPanel == "Computer" + '/' + Type)
+                {
+                    Labels[i] = CreateLabel(i, dataTable.Rows[i].ItemArray[5].ToString());
+                    Computerpictureboxes[i] = CreatePicturebox(i, (byte[])dataTable.Rows[i].ItemArray[7]);
+                    Computerpictureboxes[i].Name = "Computers" + "/" + dataTable.Rows[i].ItemArray[0].ToString() + "/" + dataTable.Rows[i].ItemArray[5].ToString();
+                    Computerpictureboxes[i].Click += new System.EventHandler(this.Computer_PictureBox_Click);
+                    InesertControlToPanel(ref Panels[i], ref Labels[i], ref Computerpictureboxes[i]);
+                }
+
+                Controls.Add(Panels[i]);
+            }
+        }
+
+
     }
 }

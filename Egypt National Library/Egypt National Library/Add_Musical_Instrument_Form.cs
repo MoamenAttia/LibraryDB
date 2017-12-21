@@ -34,6 +34,8 @@ namespace Egypt_National_Library
 
         private void Add_Button_Click(object sender, EventArgs e)
         {
+
+            if (Check_ImageValidation() == 0) return;
             MemoryStream ms = new MemoryStream();
             PictureBox.Image.Save(ms, PictureBox.Image.RawFormat);
             byte[] image = ms.ToArray();
@@ -116,6 +118,21 @@ namespace Egypt_National_Library
             {
                 e.Handled = true;
             }
+        }
+        private int Check_ImageValidation()
+        {
+            MemoryStream ms = new MemoryStream();
+            try
+            {
+                PictureBox.Image.Save(ms, PictureBox.Image.RawFormat);
+                byte[] image = ms.ToArray();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Please Sir Insert The Image", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return 0;
+            }
+            return 1;
         }
     }
 }
