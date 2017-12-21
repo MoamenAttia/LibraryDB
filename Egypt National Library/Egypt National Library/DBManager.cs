@@ -16,7 +16,7 @@ namespace Egypt_National_Library
 
         public DBManager()
         {
-            myConnection = new SqlConnection(DB_Connection_String);
+             myConnection = new SqlConnection(DB_Connection_String);
             try
             {
                 myConnection.Open();
